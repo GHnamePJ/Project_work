@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "l-icon": "../../miniprogram_npm/lin-ui/icon",
+    "l-toast": "../../miniprogram_npm/lin-ui/toast/index"
+  },
+  "navigationBarTitleText": "",
+  "navigationStyle": "default"
+}

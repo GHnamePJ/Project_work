@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mapper.ServerCostMapper">
+    <resultMap id="ServerCostResultMap" type="ServerCost">
+        <id property="id" column="id"/>
+        <result property="costName" column="cost_name"/>
+        <result property="costValue" column="cost_value"/>
+        <result property="lastUpdate" column="last_update"/>
+        <result property="comment" column="comment"/>
+        <result property="defaultValue" column="default_value"/>
+    </resultMap>
+    <select id="getServerCostByName" resultMap="ServerCostResultMap">
+        select * from server_cost
+    </select>
+</mapper>

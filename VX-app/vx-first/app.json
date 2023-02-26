@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/menu/menu",
+    "pages/order/order",
+    "pages/mine/mine",
+    "pages/addres/addres",
+    "pages/login/login",
+    "pages/vip/vip",
+    "pages/quanbao/quanbao",
+    "pages/teabar/teabar",
+    "pages/buy/buy",
+    "pages/history/history",
+    "pages/evalate/evalate",
+    "static/image/menu/menu"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#adb838",
+    "navigationBarTitleText": "胖橘🍊",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#0f0"
+  },
+  "swiper": {},
+  "tabBar": {
+    "color": "#adb838",
+    "selectedColor": "#fff",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/image/dibu/index.png",
+        "selectedIconPath": "static/image/dibu/index_selected.png"
+      },
+      {
+        "pagePath": "pages/menu/menu",
+        "text": "点餐",
+        "iconPath": "static/image/dibu/drink.png",
+        "selectedIconPath": "static/image/dibu/drink_selected.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "取餐",
+        "iconPath": "static/image/dibu/take.png",
+        "selectedIconPath": "static/image/dibu/take_selected.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "static/image/dibu/mine.png",
+        "selectedIconPath": "static/image/dibu/mine_selected.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

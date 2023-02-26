@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/jquery-3.6.0.js"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#login").hide();
+            // $("#register").hide();
+            //监听登录、注册按钮
+            $("#register_button1").click(function () {
+                $("#login").show();
+                $("#register").hide();
+                // alert("去注册");
+            })
+            $("#login_button1").click(function () {
+                $("#login").hide();
+                $("#register").show();
+            })
+            // 拍照
+            // 画布
+            var constraints = {
+                // 摄像头像素
+                audio: true,
+                video: {
+                    width: { min: 1280 },
+                    height: { min: 720 }
+                }
+            };
+            //登录
+            //验证码
+            $("#refresh_a").click(function (){
+                let url = '../../ValidateCode/image?t='+ new Date().getTime();
+                $('#captchaImage').attr('src',url);
+            });
+
+            //登录，密码框失去焦点后，判断密码是否大于等于8位数且小于等于16位数,判断手机号码是否为11位数
+            $("#register_password").blur(function(){
+                //isNaN()函数用于检查其参数是否是非数字值。如果参数值为 NaN 或字符串、对象、undefined等非数字值则返回 true, 否则返回 false。
+                if(isNaN($("#register_phone").val())==false&&$("#register_phone").val()!=null&&$("#register_phone").val().length>0&&$("#register_phone").val().length==11){
+
+                }else{
+                    alert("手机号格式输入错误！");
+                    //输入错误后，清空input里的值
+                    $("#register_phone").val("");
+                }
+                if($("#register_password").val()!=null&&$("#register_password").val().length>=8&&$("#register_password").val().length<=16){
+
+                }else if($("#register_password").val().length<8){
+                    alert("密码不少于8位");
+                    //输入错误后，清空input里的值
+                    $("#register_password").val("");
+                }else if($("#register_password").val().length>16){
+                    alert("密码不大于16位");
+                    //输入错误后，清空input里的值
+                    $("#register_password").val("");
+                }
+            });
+            //失去焦点，判断手机号是否注册
+            $("#register_phone").blur(function (){
+                if($("#register_phone").val().length>0){
+                    let phone=$("#register_phone").val();
+                    let json=JSON.stringify(phone);
+                    $.ajax({
+                        url: "../../user/phone",
+                        type: "post",
+                        data:json,
+                        contentType: "application/json",
+                        success: function (responseText) {//请求成功的回调函数
+                            if(responseText.success==true){
+                                alert("该手机号还未注册");
+                                $("#register_phone").val("");
+                            }else{
+                            }
+                        },
+                        error: function (responseText) {//请求失败的回调函数
+                            alert("请求失败！！！");
+                        }
+                    });
+                }else {
+                    // alert("请输入手机号！");
+                }
+            });
+            //登录
+            $("#register_button").click(function () {
+                if($("#verifyId").val().length>0&&$("#register_phone").val().length>0&&$("#register_password").val().length>0){
+                    let param_array = $("#register_form").serializeArray();
+                    let json = {};
+                    for (i in param_array) {
+                        json[param_array[i].name] = param_array[i].value;
+                    }
+                    const json_str = JSON.stringify(json);
+                    $.ajax({
+                        url: '../../user/register?t='+new Date().getTime()+ '&verify_code=' + json.verify_code,
+                        type: "POST",
+                        data: json_str,
+                        contentType: "application/json",
+                        success: function (results) {//请求成功的回调函数
+                            if(results.success==true){
+                                console.log(results.message);
+                                console.log(results.date);
+                                // localStorage.token=results.message;/持久性存储
+                                sessionStorage.setItem('token',results.message);//会话存储
+                                sessionStorage.setItem('phone',results.date.phone);//会话存储
+                                sessionStorage.setItem('name',results.date.name);//会话存储
+                                //跳转到首页
+                                $(window).attr("location","home_page.html");
+                            }else{
+                                alert(results.success);
+                                $(window).attr("location","index.html");
+                            }
+                        },
+                        error: function (results) {//请求失败的回调函数
+                            alert("请求失败！！！");
+                        }
+                    });
+                }else{
+                    alert("请填写完整的登录信息！！！");
+                }
+            });
+            //注册
+            //手机号框失去焦点后，判断手机号码是否为11位数
+            $("#login_phone").blur(function(){
+                //isNaN()函数用于检查其参数是否是非数字值。如果参数值为 NaN 或字符串、对象、undefined等非数字值则返回 true, 否则返回 false。
+                if(isNaN($("#login_phone").val())==false&&$("#login_phone").val()!=null&&$("#login_phone").val().length>0&&$("#login_phone").val().length==11){
+
+                }else{
+                    alert("手机号格式输入错误！");
+                    //输入错误后，清空input里的值
+                    $("#login_phone").val("");
+                }
+            });
+            //不为空手机号框失去焦点，进行后台验证
+            $("#login_phone").blur(function (){
+                if($("#login_phone").val().length>0){
+                    let phone=$("#login_phone").val();
+                    let json=JSON.stringify(phone);
+                    $.ajax({
+                        url: "../../user/phone",
+                        type: "post",
+                        data:json,
+                        contentType: "application/json",
+                        success: function (responseText) {//请求成功的回调函数
+                            if(responseText.success==true){
+                                $("#span_phone").html(responseText.message);
+                            }else{
+                                $("#span_phone").html(responseText.message);
+                            }
+                        },
+                        error: function (responseText) {//请求失败的回调函数
+                            alert("请求失败！！！");
+                        }
+                    });
+                }else {
+                    // alert("请输入手机号！");
+                }
+            });
+            //密码框失去焦点，判断密码是否大于等于8位数且小于等于16位数
+            $("#login_password").blur(function(){
+                if($("#login_password").val()!=null&&$("#login_password").val().length>=8&&$("#login_password").val().length<=16){
+
+                }else if($("#login_password").val().length<8){
+                    alert("密码不少于8位");
+                    //输入错误后，清空input里的值
+                    $("#login_password").val("");
+                }else if($("#login_password").val().length>16){
+                    alert("密码不大于16位");
+                    //输入错误后，清空input里的值
+                    $("#login_password").val("");
+                }
+            });
+            //确认密码框失去焦点，密码与确认密码进行比对是否一致
+            $("#login_password1").blur(function(){
+                if($("#login_password").val()!=null&&$("#login_password1").val()!=null&&$("#login_password").val()==$("#login_password1".val())){
+
+                }else{
+                    alert("密码不一致！");
+                    //输入错误后，清空input里的值
+                    $("#login_password1").val("");
+
+                }
+            });
+            //点击上传开启视频
+            $("#uploading").click(function (){
+                // 开启视频
+                // navigator.mediaDevices.getUserMedia调用摄像头
+                navigator.mediaDevices.getUserMedia(constraints).then(function (mediaStream) {
+                    // console.log('getUserMedia', mediaStream);
+                    var video = document.querySelector('video');
+                    video.srcObject = mediaStream;
+                    //onloadedmetadata 事件在指定视频/音频（audio/video）的元数据加载后触发。
+                    video.onloadedmetadata = function (e) {
+                        //带有播放和暂停按钮的一段视频：
+                        video.play();
+                    };
+                    // 使用canvas进行拍照
+                    var canvas = document.getElementById('canvas')
+                    $('#paizhao').click(function () {
+                        //canvas.getContext('2d')创建 context 对象;
+                        //drawImage把一幅图像放置到画布上
+                        canvas.getContext('2d').drawImage(video, 0, 0, 300, 300);
+                        //   返回捕捉图片的url一个字符串
+                        console.log(canvas.toDataURL('image/png'));
+                    })
+                    // //关闭摄像头
+                    $("#notarize").click(function (){
+                        video.srcObject = null;
+                    });
+                }).catch(function (err) {
+                    console.log(err.name + ": " + err.message);
+                });
+            });
+            //点击注册
+            $("#login_button").click(function () {
+                if($("#login_name").val().length>0&&$("#login_phone").val().length>0&&$("#login_password").val().length>0&&$("#login_password1").val().length>0){
+                    const url=canvas.toDataURL('image/png');
+                    //去除图片首端的一些说明信息
+                    var imageB64=url.substring(22);
+                    alert(imageB64);
+                    let param_array = $("#login_form").serializeArray();
+                    let json = {"name":param_array[0].value,"phone":param_array[1].value,"password":param_array[2].value,"url":imageB64};
+                    const json_str=JSON.stringify(json);
+                    alert(json_str);
+                    $.ajax({
+                        //加上随机时间 防止IE浏览器不请求数据
+                        url: "../../user/login",
+                        type: "POST",
+                        data: json_str,
+                        contentType: "application/json",
+                        success: function (results) {//请求成功的回调函数
+                            if(results.success==true){
+                                $("#login").hide();
+                                $("#register").show();
+                            }else{
+                                alert(results.message);
+                            }
+
+                        },
+                        error: function (responseText) {//请求失败的回调函数
+                            alert("请求失败！！！");
+                        }
+                    });
+                }else{
+                    alert("有内容未填写！！！")
+                }
+            });
+            //修改密码，手机号框失去焦点后，判断手机号是否位11位数phone
+            $("#phone").blur(function(){
+                //isNaN()函数用于检查其参数是否是非数字值。如果参数值为 NaN 或字符串、对象、undefined等非数字值则返回 true, 否则返回 false。
+                if(isNaN($("#phone").val())==false&&$("#phone").val()!=null&&$("#phone").val().length>0&&$("#phone").val().length==11){
+
+                }else{
+                    alert("手机号格式输入错误！");
+                    //输入错误后，清空input里的值
+                    $("#phone").val("");
+                }
+            });
+            //修改密码，新密码框失去焦点后，判断密码是否大于等于8位数且小于等于16位数newPassword
+            $("#newPassword").blur(function(){
+                if($("#newPassword").val()!=null&&$("#newPassword").val().length>=8&&$("#newPassword").val().length<=16){
+
+                }else if($("#newPassword").val().length<8){
+                    alert("密码不少于8位");
+                    //输入错误后，清空input里的值
+                    $("#newPassword").val("");
+                }else if($("#newPassword").val().length>16){
+                    alert("密码不大于16位");
+                    //输入错误后，清空input里的值
+                    $("#newPassword").val("");
+                }
+            });
+            // 修改密码
+            $("#amend").click(function () {
+                // alert($("#phone").val());
+                // alert($("#old_password").val());
+                if($("#phone").val()!=null&&$("#old_password").val()!=null){//如果手机号密码不为空
+                    let param_array = $("#chang_password_form").serializeArray();
+                    let json = {};
+                    for (i in param_array) {
+                        json[param_array[i].name] = param_array[i].value;
+                    }
+                    const json_str = JSON.stringify(json);
+                    // alert(param_array);
+                    // alert(json_str);
+                    $.ajax({
+                        //加上随机时间 防止IE浏览器不请求数据
+                        url: "../../user/changePassword",
+                        type: "POST",
+                        data: json_str,
+                        contentType: "application/json",
+                        success: function (results) {//请求成功的回调函数
+                            if(results.success==true){
+                                if($("#newPassword").val()!=null&&$("#confirm_password").val()!=null&&$("#newPassword").val()==$("#confirm_password").val()){
+                                    sessionStorage.setItem('phone',$("#phone").val());//会话存储
+                                    var newPassword=JSON.stringify($("#newPassword").val());
+                                    $.ajax({
+                                        headers:{"phone":sessionStorage.getItem("phone")},
+                                        url: "../../user/updatePassword",
+                                        type: "POST",
+                                        data:newPassword,
+                                        contentType: "application/json",
+                                        success: function (results) {
+                                            if(results.success==true){
+                                                alert("修改密码成功");
+                                            }else{
+                                                alert("修改密码失败");
+                                            }
+                                        },
+                                        error: function (results) {//请求失败的回调函数
+
+                                        }
+                                    });
+                                }else{
+                                    alert("密码不一致");
+                                }
+                            }else{
+                                alert(results.success);
+                            }
+
+                        },
+                        error: function (responseText) {//请求失败的回调函数
+                            alert("请求失败！！！");
+                        }
+                    });
+                }else{
+                    alert("手机号，密码不能为空");
+                }
+            });
+        });
+
+    </script>
+</head>
+<!--谨慎改动id和name属性，其他随意-->
+<body>
+<div id="register_login">
+    <!-- 登录 -->
+    <div id="register">
+        <label>登录</label>
+        <div id="logo">
+            <img src="../img/logo.jpeg" style="width: 300px;hight:180px"/>
+        </div>
+        <form id="register_form">
+            手机号：<input id="register_phone" type="text" name="phone" placeholder="不能为空">
+            <!--标签必须要有name属性 -->
+            <br />
+            密&nbsp;&nbsp;码：<input id="register_password" type="password" name="password" placeholder="不能为空">
+            <br />
+            验证码：<input id="verifyId" type="text" name="verify_code" value="" placeholder="请输入验证码" style="width: 140px"/>
+            <img src="../../ValidateCode/image" width="85" height="34" class="code" id="captchaImage"/>
+            <br>
+            <a href="javascript:void(0);" id="refresh_a">看不清，换一个</a>
+        </form>
+
+        <div class="register_login">
+            <button id="register_button" type="button">登录</button>
+            <br>
+            <button id="register_button1" type="button">新用户注册</button>
+            <!-- button的type得是button才能获取到值 -->
+        </div>
+        <!--修改密码-->
+        <!--输入用户名和密码后，后台判断是否有该用户，有该用户在根据用户手机号去修改密码-->
+        <button id="register_button2" class="btn btn-primary btn-sm"data-toggle="modal" data-target="#myModal">
+            修改密码
+        </button>
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="width: 300px;margin: auto">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel1">
+                            修改密码
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="chang_password_form">
+                            手机号：<input name="phone" id="phone"><br><br>
+                            旧密码：<input name="password" id="old_password"><br><br>
+                        </form>
+                        新密码：<input id="newPassword" name="newPassword"><br><br>
+                        确认密码：<input id="confirm_password"><br>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" id="amend"data-dismiss="modal">确认修改</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+
+    </div>
+    <!-- 注册 -->
+    <div id="login">
+        <label>注册</label>
+        <form id="login_form">
+            姓&nbsp;&nbsp;&nbsp;&nbsp;名：<input id="login_name" type="text" name="name"placeholder="不能为空">
+            <br>
+            手&nbsp;机&nbsp;号：<input id="login_phone" type="text" name="phone"placeholder="不能为空">
+            <!--标签必须要有name属性 -->
+            <br>
+            密&nbsp;&nbsp;&nbsp;&nbsp;码：<input id="login_password" type="password" name="password"placeholder="不能为空">
+            <br>
+            确认密码：<input id="login_password1" type="password"placeholder="不能为空">
+            <br>
+        </form>
+
+        <!-- bootstrap按钮触发模态框拍照 -->
+        <button class="btn btn-primary btn-sm" id="uploading" data-toggle="modal" data-target="#myModal2">
+            上传人脸信息
+        </button>
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            录入人脸信息
+                        </h4>
+                    </div>
+                    <!-- 拍照 -->
+                    <div class="modal-body">
+                        <!-- 摄像头框  -->
+                        <video src="" id="video" width="50%" height="100%"></video>
+                        <!-- <video> 播放录像 -->
+                        <canvas id="canvas" width="200" height="200"></canvas>
+                        <!-- <canvas> 标签用于绘制图像,拍照框位置 -->
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" id="notarize" data-dismiss="modal">确认</button>
+                        <button type="button" class="btn btn-primary" id="paizhao">拍照</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        <div class="register_login">
+            <button id="login_button" type="button">注册</button>
+            <br>
+            <button id="login_button1" type="button">返回登录</button>
+            <!-- button的type得是button才能获取到值 -->
+        </div>
+    </div>
+</div>
+</body>
+</html>

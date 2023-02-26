@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var stus = [
+
+				['小A', '女', 21, '大一'],
+
+				['小B', '男', 23, '大三'],
+
+				['小C', '男', 24, '大四'],
+
+				['小D', '女', 21, '大一'],
+
+				['小E', '女', 22, '大四'],
+
+				['小F', '男', 21, '大一'],
+
+				['小G', '女', 22, '大二'],
+
+				['小H', '女', 20, '大三'],
+
+				['小I', '女', 20, '大一'],
+
+				['小J', '男', 20, '大三']
+
+			];
+		//创建Student构造函数	
+		function Student(name,sex,age,grade){
+			this.name=name;
+			this.sex=sex;
+			this.age=age;
+			this.grade=grade;
+			
+			this.showTr=function(){
+				document.write('<tr><td>'+this.name+'</td><td>'+this.sex+'</td></tr>')
+			}
+			
+		}
+		var students=new Array();
+		var stu1=new Student(stus[0][0],stus[0][1],stus[0][2],stus[0][3]);
+		var stu2=new Student(stus[1][0],stus[1][1],stus[1][2],stus[1][3]);
+		
+		for(var i=0;i<stus.length;i++){
+			students[i]=new Student(stus[i][0],stus[i][1],stus[i][2],stus[i][3])
+		}
+		
+		console.log(students);
+		document.write('<table border="1">')
+		for(i=0;i<students.length;i++)
+		  if(students[i].sex=='女') {students[i].showTr();}
+		document.write('</table>');
+		
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "selectPage":"../../components/selectPage/selectPage",
+    "l-icon":"../../miniprogram_npm/lin-ui/icon/index"
+  }
+}

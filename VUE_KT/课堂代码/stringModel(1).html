@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>字符串模板</title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    let username = "zhangsan"
+    //ES5
+    let str = 'this is my student' + username
+    alert(str)
+
+    //ES6 字符串模板 支持字符串变量，注意是反向引号
+    alert(`this is my student ${username}`)
+    //支持表达式
+    let today = new Date();
+    let text = `The time and date is ${today.toLocaleString()}`;
+    alert(text)
+
+  </script>
+
+</body>
+
+</html>

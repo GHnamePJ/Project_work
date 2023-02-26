@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>修改链接地址和元素的文本内容</title>
+	</head>
+	<body>
+		<ul id="fLinks">
+			<li><a href="#">友情链接1</a></li>
+			<li><a href="#">友情链接2</a></li>
+			<li><a href="#">友情链接3</a></li>
+		</ul>
+		
+		
+		<script type="text/javascript">
+			//课后的作业：
+			var links=[['baidu.com','百度'],['taobao.com','淘宝'],['163.com','网易']];//本网站的友情链接
+			var ul=document.getElementById('fLinks');
+			var a=ul.getElementsByTagName('a');
+			for(i=0;i<a.length;i++){
+			a[i].setAttribute('href','https://www.'+links[i][0]);//设置标签的属性与属性值
+			console.log(a[i].getAttribute('href'));
+			a[i].innerText=links[i][1];//修改元素的文本内容
+			}
+		</script>
+	</body>
+</html>

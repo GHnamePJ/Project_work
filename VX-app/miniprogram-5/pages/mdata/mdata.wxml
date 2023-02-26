@@ -1,0 +1,71 @@
+<!--pages/mdata/mdata.wxml-->
+<menubar></menubar>
+<scroll-view scroll-y="{{true}}" class="page" style="height: {{forecastHeight}}px;">
+<!-- 左边的圈圈 -->
+<view class="container">
+    <view class="circle"></view>
+    <view class="circle"></view>
+    <view class="circle"></view>
+  </view>
+  <!-- 切换气象站 -->
+    <view id="qiehuan" bindtap="onChangeStation">
+      <l-icon name="qiehuan" l-class="iconfont" size="50"></l-icon>
+      <text>{{changeStation}}</text>
+    </view>
+    <!-- 日期-温度 -->
+    <view id="data-temperature">
+      <text>{{today}}</text>
+      <text>{{templement}}℃</text>
+    </view>
+    <!-- 时间-温度滚动 -->
+    <view id="time-temperature"> 
+      <scroll-view scroll-x class="scroll" show-scrollbar="{{false}}" enhanced="{{true}}" bindscroll='scrollCanvas'> 
+  <view>
+    <view class="hours">
+      <view wx:for="{{hourList}}" wx:key="index">{{item}}</view>
+    </view>
+    <!-- -->
+    <view class="chart"  style="display: {{isDisplay}};">
+        <line-chart line-class="line" width="{{scrollWidth}}" height="100" data="{{temp}}" />
+    </view>
+  </view>
+  </scroll-view>
+    </view>
+    <!-- 时间滚动 -->
+    <view id="time-scroll">
+    <dataSwitching bindmydata="mydata"></dataSwitching>
+    </view>
+    <!-- 气象因素 -->
+    <view id="newest">
+      <text>气象因素</text>
+      <view class="hr"></view>
+      <view id="newest-factor" wx:for="{{data}}" wx:key="index">
+        <l-icon name="{{item.icon}}" l-class="iconfont" size="55"></l-icon>
+        <text>{{item.value}}{{item.company}}</text>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+</scroll-view>
+
+<!-- 弹框 -->
+<l-popup show="{{isShow}}" l-class="l-popup" content-align="bottom">
+  <view class="botton">
+    <view class="botton-title">
+      <text decode="{{true}}" >切&nbsp;换&nbsp;气&nbsp;象&nbsp;站</text>
+    </view>
+    <scroll-view scroll-y="{{true}}" class="botton-content">
+      <block wx:for="{{stationdata}}" wx:key="index" >
+      <view class="station-view" data-index="{{index}}" bindtap="onClickStation">
+        <view class="station-name">
+          <l-icon name="station" size="65" l-class="iconfont"></l-icon>
+          <text>{{item.name}}</text>
+        </view>
+        <view class="station-num">
+          <l-icon name="num" size="45" l-class="iconfont"></l-icon>
+        <text>{{item.station}}</text>
+        </view>
+      </view>
+      </block>
+    </scroll-view>
+  </view>
+</l-popup>

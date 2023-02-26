@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace不能乱写，一定要和BookInfoMapper.xml路径相对应-->
+<mapper namespace="org.example.mapper.BookInfoMapper">
+         <select id="getBookByName" parameterType="string" resultType="BookInfo">
+             select * from t_book where bookName like '%${bookName}%'
+         </select>
+        <select id="getBookById" parameterType="int" resultType="BookInfo">
+            select * from t_book where id=#{id}
+        </select>
+        <insert id="insertBook" parameterType="BookInfo" >
+            insert into t_book (id,bookName,price,publisher)values(#{id},#{bookName},#{price},#{publisher})
+        </insert>
+        <update id="updateBook" parameterType="BookInfo" >
+            update t_book set bookName=#{bookName},price=#{price},publisher=#{publisher} where id=#{id}
+        </update>
+        <!--即使接口的方法有返回类型也不用在这里返回，会报错-->
+        <delete id="deleteBook" parameterType="int">
+            delete from t_book where id=#{id}
+        </delete>
+</mapper>

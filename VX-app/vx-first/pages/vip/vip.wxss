@@ -1,0 +1,122 @@
+/* pages/vip/vip.wxss */
+.container{
+  display: flex;
+  justify-content: center;
+}
+.content{
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+}
+.vip_top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  float: inline-end;
+  margin-top: 20px;
+  margin-bottom: -25px;
+  z-index: 2;
+}
+.vip_top_ico{
+  position: ab;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+}
+.vip_live{
+  position: absolute;
+  width: 80rpx;
+  height: 40rpx;
+  top: 135rpx;
+  right: 117px;
+  line-height: 40rpx;
+  text-align: center;
+  background: white;
+  border-radius:160rpx ;
+  color: rgb(255, 198, 33);
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.username{
+  font-size: 32rpx;
+  margin-top: 14rpx;
+}
+.vip_top_ico1{
+  width: 26rpx;
+  height: 26rpx;
+  border-radius: 120rpx;
+}
+.vip_mid{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-top: -20px;
+  background: white;
+}
+.mid_one{
+  display: flex;
+  height: 80px;
+  align-items: center;
+  margin-top: 30px;
+
+}
+.mid_text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 170px;
+  font-size: 34rpx;
+}
+.mid_two{
+  display: flex;
+  justify-content: center;
+}
+.mid_two>image{
+  width: 150px;
+  height: 150px;
+}
+.mid_three{
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: gray;
+  font-size: 13px;
+}
+.mid_four{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.mid_four_content{
+  display: flex;
+  height: 45px;
+  width: 190px;
+  justify-content: center;
+  align-items: center;
+  background: rgb(87, 183, 55);
+  border-radius: 8px;
+}
+.mid_four_content>image{
+  width: 20px;
+  height: 18px;
+}
+.mid_four_content>text{
+  margin-left: 5px;
+  font-size: 14px;
+  color: white;
+  background: rgb(87, 183, 55);
+}
+.vip_button{
+  margin-top: 10px;
+  height: 60px;
+  width: 100%;
+  background: rgb(167,211,120);
+}
+.vip_button>image{
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,10 @@
+<!--components/goback/goback.wxml-->
+<!-- 自定义顶部栏 -->
+<view class="nav-bar" style="height:{{navBarHeight}}px;">
+  <view bindtap="goBack" style=" position: absolute;width: 10%;height:{{menuHeight}}px; min-height:{{menuHeight}}px; line-height:{{menuHeight}}px; left:{{menuRight}}px; top:{{menuTop}}px;">
+    <!-- 返回首页图标 -->
+    <l-icon name="left" color="black" size="45" l-class="menu" />
+  </view>
+</view>
+<!-- 占位，高度与顶部栏一样 -->
+<view style="height:{{navBarHeight}}px;"></view>

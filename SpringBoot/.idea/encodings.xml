@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/springboot-condition/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-enable-test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-enable/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-helloworld/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-init/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-mybatis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-mybatisplus/springboot-mybatisplus/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-mybatisplus/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-profiles/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-vue/src/main/java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

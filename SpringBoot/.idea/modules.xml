@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/SpringBoot.iml" filepath="$PROJECT_DIR$/.idea/SpringBoot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-condition/springboot-condition.iml" filepath="$PROJECT_DIR$/springboot-condition/springboot-condition.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-config/springboot-config.iml" filepath="$PROJECT_DIR$/springboot-config/springboot-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-enable/springboot-enable.iml" filepath="$PROJECT_DIR$/springboot-enable/springboot-enable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-enable-test/springboot-enable-test.iml" filepath="$PROJECT_DIR$/springboot-enable-test/springboot-enable-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-helloworld/springboot-helloworld.iml" filepath="$PROJECT_DIR$/springboot-helloworld/springboot-helloworld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-init/springboot-init.iml" filepath="$PROJECT_DIR$/springboot-init/springboot-init.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-mybatis/springboot-mybatis.iml" filepath="$PROJECT_DIR$/springboot-mybatis/springboot-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-mybatisplus/springboot-mybatisplus.iml" filepath="$PROJECT_DIR$/springboot-mybatisplus/springboot-mybatisplus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-profiles/springboot-profiles.iml" filepath="$PROJECT_DIR$/springboot-profiles/springboot-profiles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-redis/springboot-redis.iml" filepath="$PROJECT_DIR$/springboot-redis/springboot-redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-test/springboot-test.iml" filepath="$PROJECT_DIR$/springboot-test/springboot-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-vue/springboot-vue.iml" filepath="$PROJECT_DIR$/springboot-vue/springboot-vue.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,82 @@
+/* components/menubar/menubar.wxss */
+@import "/style/iconcss.wxss";
+.nav-bar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.nav-bar .menu {
+  padding-left: 30%;
+}
+
+.popup{
+  width: 100vw;
+  height: 100vh;
+}
+
+.menuBar{
+  width: 55vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+}
+/* 分割线 */
+.hr{
+  width: 70%;
+  height: 2rpx;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+/* 用户模块 */
+.user{
+width: 100%;
+flex:4;
+display: flex;
+justify-content: center;
+align-items: center;
+/* background-color: rgba(0, 0, 0, 0.15); */
+}
+.photo{
+  margin-top: 30%;
+}
+.photo_txt{
+  color: black;
+  font-size: 30rpx;
+  font-weight: 700;
+  font-family: "幼圆";
+}
+/* 菜单模块 */
+.menus{
+  width: 100%;
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  /* background-color: rgba(206, 60, 60, 0.15); */
+}
+
+.statistics,.forecast,.search{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* 关于模块 */
+.about{
+  width: 100%;
+  flex: 4;
+  /* background-color: rgba(6, 182, 50, 0.15); */
+}
+.aboutwe{
+  padding-top: 15%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

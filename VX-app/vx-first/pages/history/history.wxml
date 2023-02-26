@@ -1,0 +1,38 @@
+<!--pages/history/history.wxml-->
+<view class="container">
+  <view class="content">
+  <!-- 订单列表 -->
+    <view class="order_list">
+      <view class="order" wx:for="{{obj}}" wx:key="index">
+        <view class="order_top">
+          <view class="top_left">
+            <text>{{item.name}}</text>
+            <text>订单编号：{{item.bianhao}}</text>
+          </view>
+          <view class="top_right">
+            <text>{{item.zhuangtai}}</text>
+          </view>
+        </view>
+        <view class="order_bottom">
+          <view class="bottom_top">
+            <text>{{item.naicha}}</text>
+          </view>
+          <view class="bottom_mid">
+            <text>{{item.date}}</text>
+            <text>共{{item.num}}件商品，实付</text>
+            <text>{{item.money}}</text>
+          </view>
+          <view class="bottom_bottom">
+            <view>
+              <text>{{item.text}}</text>
+            </view>
+            <view>
+              <text bindtap="evalate">去评价</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+  </view>
+</view>

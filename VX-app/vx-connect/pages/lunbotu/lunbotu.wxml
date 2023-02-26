@@ -1,0 +1,9 @@
+<view class="container">
+<!-- 轮播图自适应 -->
+  <swiper id="swiper" indicator-dots="false" indicator-color="pink" indicator-active-color="black" autoplay="pink" interval="5000" circular="true" style="height:{{screenheight}};">
+    <swiper-item wx:for="{{images}}" wx:key="index">
+      <!-- <image class="image" src="{{item.url}}" model="widthFix" bindload="refreshImg"></image> -->
+    </swiper-item>
+  </swiper>
+  <!--  -->
+</view>

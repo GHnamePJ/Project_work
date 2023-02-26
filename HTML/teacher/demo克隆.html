@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="model1">
+			<h1>标题1</h1>
+			<p>段落内容1</p>
+		</div>
+		
+  <div class="nav">
+  	   <ul>
+  	   	<li><a href="#">首页</a></li>
+  	   	<!--<li><a href="#">博客</a></li>--> 
+  	   </ul>
+  	</div>
+		<script type="text/javascript">
+			//1找到选中的板块
+			var model1=document.getElementsByClassName('model1')[0];
+			//2克隆这个板块
+			var model2=model1.cloneNode(true);//true参数表示深度克隆，拷贝整个家族节点
+			console.log(model2);
+			//把克隆的节点加入到指定位置
+		document.body.appendChild(model2)	;
+		   //修改节点的内容
+		model2.childNodes[1].innerText='标题2';
+		
+		//练习 ：
+		var items=["博客","相册","联系我们"];
+		
+		var div=document.getElementsByClassName("nav")[0];
+		var ul=div.childNodes[1];
+		var li=ul.childNodes[1];
+		for(var i=0;i<3;i++)
+		{
+		//拷贝
+		var liClone=li.cloneNode(true);
+		//添加
+		ul.appendChild(liClone);
+		//修改链接中的内容
+		// var a=liClone.childNodes[0];
+		// a.innerText=items[i];
+		}
+		
+		
+		</script>
+	</body>
+</html>

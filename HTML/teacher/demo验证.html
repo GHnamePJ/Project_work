@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//document中所有元素都加载完毕之后再执行
+		window.onload=function(){
+			//找到要验证的对象
+			var useName=document.getElementsByName('useName')[0];
+			//绑定什么事件,失去焦点onblur  获取焦点onfocus
+			useName.onblur=function(){
+				if(this.value.length<8){
+					this.nextSibling.innerText='长度不够8个，请重新输入'
+				}else{
+					this.nextSibling.innerText='ok';
+				}
+			}
+			//练习：验证两次密码输入是否一致
+			
+			//限制用户名只能是数字和字母
+			useName.onfocus=function(){
+				console.log(this.value)
+			}
+			//借助键盘事件
+			useName.onkeyup=function(event){
+			if	(event.keyCode<65||event.keyCode>90){
+				this.nextSibling.innerText='不能输入非字母的字符'
+			}
+			 //if(	event.key <"a" ||)
+			}
+			 
+			 
+			 
+			 
+			 
+			 
+			 //段落中的内容不可以复制，可以不让鼠标选中
+			var para=document.getElementsByClassName('test')[0];
+			para.onselectstart=function(event){ 
+				//让事件无法发生
+				console.log('版权问题，不许拷贝')
+				  event.returnValue=false;
+			}
+			 
+			 
+			 
+			 
+			 
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<label>用户名</label><input type="text" name="useName" /><span>nih</span><br />
+		<label>密码</label><input type="password" name="pwd1" /><span></span><br />
+		<label>确认密码</label><input type="password" name="pwd2" /><span></span><br /> 
+		<p class="test">段落文本段落文本段落文本段落文本段落文本段落文本段落文本段落文本</p>
+		
+	</body>
+</html>

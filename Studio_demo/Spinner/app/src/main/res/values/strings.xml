@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Spinner</string>
+    <string name="sport">选择你喜欢的运动：</string>
+    <string-array name="habit">
+        <item>健身</item>
+        <item>爬山</item>
+        <item>游泳</item>
+        <item>打篮球</item>
+    </string-array>
+</resources>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>async, await用法示例</title>
+</head>
+<body>
+<script type="text/javascript">
+  let myfun = function(flag){    
+    let val = 'hello' 
+    return new Promise((resolve, reject) => {
+      if(flag) {
+        resolve(val)
+      }else{
+        reject('fail')
+      }
+    })
+  }
+  //将异步转为同步
+  let syncFun = async function(){
+    try{
+      let rs = await myfun(true)
+      alert(rs)
+    } catch(error) {
+      alert(error)
+    }
+    
+  }
+  syncFun()
+</script>
+</body>
+</html>

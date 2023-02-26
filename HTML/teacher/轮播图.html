@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#outer{
+				width:1170px;
+				position: relative;
+			}
+			#ads{
+				width:1170px;
+				border: 1px solid red;
+				overflow:hidden;
+			}
+			#ads ul{
+				list-style: none;
+				width:2340px;
+			}
+			#ads ul li{
+				float: left;
+			}
+			#outer span{
+				display: block;
+				width:30px;
+				height: 30px;
+				font-size: 50px;
+				position: absolute;
+				
+				top:200px;
+			}
+			#outer span:first-child{
+				left:20px;
+			}
+			#outer span:last-child{
+				right:20px;
+			}
+		</style>
+		
+	</head>
+	<body>
+	<div id="outer">
+		<div id="ads">
+			<ul>
+				<li><img src="实训images/pi2.jpg"></li>
+				<li><img src="实训images/pi3.jpg"></li>
+				<li><img src="实训images/pi4.jpg"></li>
+			</ul>			
+		</div>
+		<span><</span><span>></span>
+	</div>
+		<script type="text/javascript">
+			window.onload=function(){
+			var ads=document.getElementById("ads");
+			var ul=ads.childNodes[1];
+			var lis=ul.getElementsByTagName("li");
+			var imageWidth=lis[0].offsetWidth;//单个图片的宽
+			var spanL=ads.nextSibling.nextSibling;
+			var spanR=spanL.nextSibling;
+			
+			
+			var len=lis.length;
+			for(var i=0;i<len;i++){//克隆
+				var newLi=lis[i].cloneNode(true);
+				ul.appendChild(newLi);
+				// console.log(i)
+			}
+			function move(){
+				//三张图片的宽度1170
+				ads.scrollLeft=(ul.offsetWidth/2+ads.scrollLeft+10)%(ul.offsetWidth/2);
+			}
+  			var t=setInterval(move,100);
+ 			var num=0;//表示当前图片滚动到了第几张
+ 			function roundImage(){
+ 			 
+   				num= Math.floor( ads.scrollLeft/390);
+   				ads.scrollLeft= num*390;
+ 				clearInterval(t)
+ 			 
+ 			}
+ 			spanL.onmouseenter=roundImage;// 事件在鼠标指针移动到元素上时触发。
+ 			spanL.onmouseleave=function(){//在鼠标指针移出指针时执行
+ 				t=setInterval(move,100);
+ 			}
+ 			spanL.onclick=function(){
+// 				num--;
+ 				ads.scrollLeft=(ul.offsetWidth/2+ads.scrollLeft-imageWidth)%(ul.offsetWidth/2);
+ 				console.log(ul.offsetWidth/2);
+ 				console.log(ads.scrollLef);
+				console.log(imageWidth);
+ 			}
+//  			spanR.onmouseenter=roundImage;
+// 			spanR.onmouseleave=function(){
+// 				t=setInterval(move,100);
+// 			}
+//  			spanR.onclick=function(){
+// // 				num--;
+//  				ads.scrollLeft=(ads.scrollLeft+imageWidth)%(ul.offsetWidth/2);
+ 				
+ 				 
+//  			}
+			
+ 		}
+		</script>
+	</body>
+</html>
+

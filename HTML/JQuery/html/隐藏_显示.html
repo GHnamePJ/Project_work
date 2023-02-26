@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JQuery隐藏/显示</title>
+		<link rel="stylesheet" href="../css/隐藏_显示.css">
+		<!-- <script src="../jquery/jquery-3.6.0.js"></script> -->
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#text1").hide();
+				$("#text2").hide();
+				$("#bno").click(function(){
+					$("#text1").show();
+					$("#text2").hide();
+					$("#text1").hide(1500);
+					$('#no').hide(1000);
+				})
+				$("#byes").click(function(){
+					$("#text1").hide();
+					$("#text2").hide();
+					$('#text2').show(1500);
+					$("#no").show(1000)
+				})
+			});
+		</script>
+		
+		<p id="no">熬夜，黑眼圈(⓿_⓿)</p>
+		<p id="text1">我要隐藏啦</p>
+		<p id="text2">我要显示啦</p>
+		<button id="bno">隐藏</button>
+		<button id="byes">显示</button>
+	</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>person</title>
+	<link rel="stylesheet" type="text/css" href="../css/person.css"/>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		$(function(){
+			//头像照片
+			let facephoto = ""
+			let headphotos = ""
+
+			//根据用户名查找信息
+			function name(){
+				$.ajax({
+					headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},
+					url: "../../user/name",
+					type: "POST",
+					success: function (responseText) {//请求成功的回调函数
+						console.log(responseText);
+						facephoto = responseText.date.face_photo
+						headphotos = responseText.date.head_photo
+					},
+					error: function (responseText) {//请求失败的回调函数
+						alert("请求失败！！！");
+					}
+				});
+			}
+			// if(sessionStorage.getItem("token")==null){
+			// 	$(window).attr("location","../../index.jsp");
+			// }else {
+			// }
+
+			//签到部分
+			// 拍照
+			// 画布
+			var constraints = {
+				// 摄像头像素
+				audio: true,
+				video: {
+					width: { min: 1280 },
+					height: { min: 720 }
+				}
+			};
+			$("#change_facePicture").click(function(){
+				// 开启视频
+				// navigator.mediaDevices.getUserMedia调用摄像头
+				navigator.mediaDevices.getUserMedia(constraints).then(function (mediaStream) {
+					// console.log('getUserMedia', mediaStream);
+					var video = document.querySelector('video');
+					video.srcObject = mediaStream;
+					//onloadedmetadata 事件在指定视频/音频（audio/video）的元数据加载后触发。
+					video.onloadedmetadata = function (e) {
+						//带有播放和暂停按钮的一段视频：
+						video.play();
+					};
+					// 使用canvas进行拍照
+					var canvas = document.getElementById('canvas')
+					$('#paizhao').click(function () {
+						//canvas.getContext('2d')创建 context 对象;
+						//drawImage把一幅图像放置到画布上
+						canvas.getContext('2d').drawImage(video, 0, 0, 300, 300);
+						//   返回捕捉图片的url一个字符串
+						console.log(canvas.toDataURL('image/png'));
+					})
+					// //关闭摄像头
+					$("#notarize").click(function (){
+						video.srcObject = null;
+					});
+				}).catch(function (err) {
+					console.log(err.name + ": " + err.message);
+				});
+			});
+
+			$("#back_name").val(sessionStorage.getItem("name"));
+			$("#name").html(sessionStorage.getItem("name"));
+			$.ajax({
+				headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},
+				url: "../../user/name",
+				type: "POST",
+				success: function (responseText) {//请求成功的回调函数
+					console.log(responseText);
+					if(responseText.success==true){
+						facephoto = responseText.date.face_photo
+						headphotos = responseText.date.head_photo
+						$("#back_name").text(responseText.date.name)
+						if (responseText.date.head_photo == null){
+							$("#back_photo").attr("src","../img/any.jpeg")
+						}
+						else {
+							$("#back_photo").attr("src","../../../"+responseText.date.head_photo)
+						}
+						$("#back_num").text(responseText.date.phone)
+						$("#back_facePicture").attr("src","../../../"+responseText.date.face_photo)
+					}else{
+						alert("未登录");
+					}
+				},
+				error: function (responseText) {//请求失败的回调函数
+					alert("请求失败！！！");
+				}
+			});
+			//点击列表：名字（change_name）进入模态框点击“确定修改”(change_name_btn)
+			$("#change_name_btn").click(function(){
+				if($("#phone").val()!=null&&$("#old_name").val()!=null){//如果手机号密码不为空
+					let param_array = $("#change_name_form").serializeArray();
+					let json = {};
+					for (i in param_array) {
+						json[param_array[i].name] = param_array[i].value;
+					}
+					const json_str = JSON.stringify(json);
+					$.ajax({
+						headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},
+						//加上随机时间 防止IE浏览器不请求数据
+						url: "../../user/changeName",
+						type: "POST",
+						data: json_str,
+						contentType: "application/json",
+						success: function (results) {//请求成功的回调函数
+							if(results.success==true){
+								if($("#newName").val()!=null){
+									sessionStorage.setItem('phone',$("#phone").val());//会话存储
+									var newName=JSON.stringify($("#newName").val());
+									$.ajax({
+										headers:{"phone":sessionStorage.getItem("phone"),"token":sessionStorage.getItem("token"),"name":sessionStorage.getItem("name")},
+										url: "../../user/updateName",
+										type: "POST",
+										data:newName,
+										contentType: "application/json",
+										success: function (results) {
+											if(results.success==true){
+												alert("修改名字成功");
+												$(window).attr("location","person.html");
+											}else{
+												alert("修改名字失败");
+											}
+										},
+										error: function (results) {//请求失败的回调函数
+
+										}
+									});
+								}else{
+									alert("密码不一致");
+								}
+							}else{
+								alert(results.success);
+							}
+
+						},
+						error: function (responseText) {//请求失败的回调函数
+							alert("请求失败！！！");
+						}
+					});
+				}else{
+					alert("手机号，名字不能为空");
+				}
+			});
+			//点击列表：头像（change_photo）进入模态框点击“确定修改”(change_photo_btn)
+			$("#change_photo_btn").click(function (){
+				var head_photo=new FormData($("#change_photo_form")[0])
+				//删除更改的图片
+				let headphototrue = headphotos.split("/headPhoto/")[1];
+				head_photo.append("headPhotopath",headphototrue)
+				$.ajax({
+					headers:{"phone":sessionStorage.getItem("phone"),"token":sessionStorage.getItem("token")},
+					url: "../../user/upload",
+					type: "POST",
+					data:head_photo,
+					dataType:"json",
+					cache: false,    //上传文件不需缓存
+					processData: false, //需设置为false。因为data值是FormData对象，不需要对数据做处理
+					contentType: false, //需设置为false。因为是FormData对象，且已经声明了属性enctype="multipart/form-data"
+
+					success: function (results) {
+						if(results.success==true){
+							alert("修改头像成功");
+							$("#back_photo").attr("src","../../../"+results.date)
+							name()
+							// $(window).attr("location","person.html");
+						}else{
+							alert("修改头像失败");
+						}
+					},
+
+					error: function (results) {//请求失败的回调函数
+						alert("失败")
+
+					}
+				});
+
+			});
+			//点击列表：手机号（change_num）进入模态框点击“确定修改”(change_num_btn)
+			$("#change_num_btn").click(function () {
+				if($("#old_phone").val()!=null){//如果手机号不为空
+					let param_array = $("#change_num_form").serializeArray();
+					let json = {};
+					for (i in param_array) {
+						json[param_array[i].name] = param_array[i].value;
+					}
+					const json_str = JSON.stringify(json);
+					$.ajax({
+						headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},
+						//加上随机时间 防止IE浏览器不请求数据
+						url: "../../user/changePhone",
+						type: "POST",
+						data: json_str,
+						contentType: "application/json",
+						success: function (results) {//请求成功的回调函数
+							if(results.success==true){
+								if($("#newPhone").val()!=null){
+									// sessionStorage.setItem('phone',$("#phone").val());//会话存储
+									var newPhone=JSON.stringify($("#newPhone").val());
+
+									$.ajax({
+										headers:{"phone":sessionStorage.getItem("phone"),"token":sessionStorage.getItem("token"),},
+										url: "../../user/updatePhone",
+										type: "POST",
+										data:newPhone,
+										contentType: "application/json",
+										success: function (result) {
+											if(result.success==true){
+												alert("修改手机号成功");
+												$(window).attr("location","person.html");
+											}else{
+												alert("修改手机号失败");
+											}
+										},
+										error: function (result) {//请求失败的回调函数
+
+										}
+									});
+								}else{
+									alert("密码不一致");
+								}
+							}else{
+								alert(results.success);
+							}
+
+						},
+						error: function (responseText) {//请求失败的回调函数
+							alert("请求失败！！！");
+						}
+					});
+				}else{
+					alert("手机号，名字不能为空");
+				}
+			});
+			//点击列表：人脸照片（change_facePicture）进入模态框点击“确定修改”(change_facePicture_btn)
+			$("#notarize").click(function (){
+				let face_photo = canvas.toDataURL('image/png');
+				//去除图片首端的一些说明信息
+				let imageB64=face_photo.substring(22);
+				//删除更改的图片
+				let facephototrue = facephoto.split("/facePhoto/")[1];
+				// alert("去除多余信息的base64图片"+imageB64);
+				console.log("图片名 ： "+facephototrue)
+				$.ajax({
+					headers:{"phone":sessionStorage.getItem("phone"),"token":sessionStorage.getItem("token")},
+					url: "../../user/updateFace_photo",
+					type: "POST",
+					data:	{"url":imageB64,"facePhotopath":facephototrue},
+					dataType:"json",
+					success: function (results) {
+						if(results.success==true){
+							alert("修改照片成功");
+							$("#back_facePicture").attr("src","../../.."+results.date)
+							name()
+						}else{
+							alert("修改照片失败");
+						}
+					},
+
+					error: function (results) {//请求失败的回调函数
+						alert("失败")
+
+					}
+				});
+
+
+
+			});
+			//点击返回按钮，返回首页
+			$("#back_btn").click(function (){
+				$(window).attr("location","home_page.html");//首页html
+
+			})
+		});
+
+
+	</script>
+
+</head>
+<body>
+<div id="container">
+	<div id="header">
+		<p>个人信息</p>
+	</div>
+	<div id="content">
+		<div id="content_center">
+			<ul>
+				<li id="change_name" class="btn-sm"data-toggle="modal" data-target="#myModal01"><a>名&nbsp;&nbsp;&nbsp;&nbsp;字：</a><span id="back_name">pj</span></li>
+				<!-- 模态框（Modal） -->
+				<div class="modal fade" id="myModal01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+					 aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content" style="width: 300px;margin: auto">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									&times;
+								</button>
+								<h4 class="modal-title" id="myModalLabel1">
+									修改名字
+								</h4>
+							</div>
+							<div class="modal-body">
+								<form id="change_name_form">
+									手&nbsp;机&nbsp;号：<input id="phone" name="phone"><br><br>
+									旧&nbsp;名&nbsp;字：<input id="old_name" name="name"><br><br>
+									新&nbsp;名&nbsp;字：<input id="newName" name="newName"><br><br>
+								</form>
+							</div>
+
+							<div class="modal-footer">
+								<button type="button" class="btn btn-success" id="change_name_btn"data-dismiss="modal">确定修改</button>
+
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal -->
+				</div>
+				<li id="change_photo" class="btn-sm"data-toggle="modal" data-target="#myModal02"><a>头&nbsp;&nbsp;&nbsp;&nbsp;像：</a><span style="display:inline-block; width: 65px;height: 65px" ><img src="../img/any.jpeg" id="back_photo" style="width: 100%;height: 100%"></span></li>
+				<!-- 模态框（Modal） -->
+				<div class="modal fade" id="myModal02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+					 aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content" style="width: 300px;margin: auto">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									&times;
+								</button>
+								<h4 class="modal-title" id="myModalLabel2">
+									修改头像
+								</h4>
+							</div>
+							<div class="modal-body">
+								<form id="change_photo_form"  enctype="multipart/form-data" method="post">
+									<input id="head_photo" type="file" name="file">
+								</form>
+							</div>
+
+							<div class="modal-footer">
+								<button type="button" class="btn btn-success" id="change_photo_btn"data-dismiss="modal">确定修改</button>
+
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal -->
+				</div>
+				<li id="change_num" class="btn-sm"data-toggle="modal" data-target="#myModal03"><a>手&nbsp;机&nbsp;号：</a><span id="back_num">12345678911</span></li>
+				<!-- 模态框（Modal） -->
+				<div class="modal fade" id="myModal03" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+					 aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content" style="width: 300px;margin: auto">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									&times;
+								</button>
+								<h4 class="modal-title" id="myModalLabel3">
+									修改手机号
+								</h4>
+							</div>
+							<div class="modal-body">
+								<form id="change_num_form">
+									旧手机号：<input name="phone" id="old_phone"><br><br>
+									新手机号：<input id="newPhone" name="newPhone"><br><br>
+								</form>
+							</div>
+
+							<div class="modal-footer">
+								<button type="button" class="btn btn-success" id="change_num_btn"data-dismiss="modal">确定修改</button>
+
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal -->
+				</div>
+				<li id="change_facePicture" class="btn-sm"data-toggle="modal" data-target="#myModal04"><a href="#">人脸照片：</a><span style="display:inline-block; width: 65px;height: 65px" ><img src="../img/any.jpeg" id="back_facePicture" style="width: 100%;height: 100%"></span></li>
+				<!-- 模态框（Modal） -->
+				<div class="modal fade" id="myModal04" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+					 aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									&times;
+								</button>
+								<h4 class="modal-title" id="myModalLabel">
+									人脸拍照签到
+								</h4>
+							</div>
+							<!-- 拍照 -->
+							<div class="modal-body">
+								<!-- 摄像头框  -->
+								<video src="" id="video" width="50%" height="100%"></video>
+								<!-- <video> 播放录像 -->
+								<canvas id="canvas" width="200" height="200"></canvas>
+								<!-- <canvas> 标签用于绘制图像,拍照框位置 -->
+							</div>
+
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" id="notarize" data-dismiss="modal">确认</button>
+								<button type="button" class="btn btn-primary" id="paizhao">拍照</button>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal -->
+				</div>
+			</ul>
+		</div>
+		<div id="content_bottom">
+			<button id="back_btn">返&nbsp;&nbsp;回</button>
+		</div>
+	</div>
+</div>
+</body>
+</html>

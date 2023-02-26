@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>vuex应用示例</title>
+  <!-- <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/vuex"></script>	 -->
+  <script src="./vue.global.js"></script>
+  <script src="./vuex.global.js"></script>
+  
+</head>
+<body>
+  <div id="app">
+    <input type="text" name="search" v-model="id"/>
+    <button v-on:click="searchMutations">search(mutations)</button>
+    <button v-on:click="searchActions">search(actions)</button>
+    <p>result:{{$store.getters.userlist}}</p>
+    <ul>
+      <li v-for="item in $store.state.users">{{item}}</li>
+    </ul>
+  </div>
+</body>
+<script type="text/javascript">
+    const store = Vuex.createStore({
+        state:{
+            users: [{id:1, name:'zhangsan',email:'11@qq.com'},{id:2,name:'lisi',email:'22@qq.com'}],
+            id:0
+        },
+        mutations:{//支持同步处理
+            getUserInfo:function(state, id){        
+              state.id = id;
+              console.log(state.id);
+            }
+        },
+        actions:{ //支持异步处理
+            searchUserInfo:function({state, commit}, id){
+              //...异步处理任务
+              commit('getUserInfo', id);
+            }
+        },
+        getters:{
+            userlist: state => {return state.users.filter(u => u.id == state.id)}
+        }
+    });
+    let vueApp = Vue.createApp({ 
+        setup() {
+            let id = Vue.ref('')
+            const searchMutations = () => {
+                store.commit('getUserInfo', id.value);        
+            }
+            const searchActions = () => {
+                store.dispatch('searchUserInfo', id.value);
+            }
+            return {
+                id,
+                searchActions,
+                searchMutations
+            }
+        } 
+    })
+    vueApp.use(store)
+    vueApp.mount('#app')
+</script>
+<!--option API 
+<script type="text/javascript">
+  const store = Vuex.createStore({
+    state:{
+      users: [{id:1, name:'zhangsan',email:'11@qq.com'},{id:2,name:'lisi',email:'22@qq.com'}],
+      id:0
+    },
+    mutations:{//支持同步处理
+      getUserInfo:function(state, id){        
+        state.id = id;
+        console.log(state.id);
+      }
+    },
+    actions:{ //支持异步处理
+      searchUserInfo:function({state, commit}, id){
+        commit('getUserInfo', id);
+      }
+    },
+    getters:{
+      userlist: state => {return state.users.filter(u => u.id == state.id)}
+    }
+  });
+  let vueApp = Vue.createApp({    
+    data(){
+      return {
+        id:''
+      }      
+    },
+    methods:{
+      searchMutations:function(){
+        this.$store.commit('getUserInfo', this.id);        
+      },
+      searchActions:function(){
+        this.$store.dispatch('searchUserInfo', this.id);
+      }
+    }
+
+  })
+  vueApp.use(store)
+  vueApp.mount('#app')
+
+  html:
+
+  //{{x}}  //1 -> 2
+  {{this.$store.getters.getX1}}
+  <button @click="do">change</button>
+
+  script:
+  x = 1  //响应式对象
+
+  do () {
+    //x = 2
+    store.commit('m_do', 2)
+  }
+
+store = {
+  state:{
+    x1 : 1
+  },
+  getters:{
+    getX1: state => state.x1
+  },
+  mutations:{
+    m_do（state, val）｛
+       state.x1 = val
+    ｝
+  }
+}
+  (u) => {return (u.id == state.id)}
+
+</script> -->
+</html>

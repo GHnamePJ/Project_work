@@ -1,0 +1,272 @@
+body {
+	margin: 0px;
+}
+
+.container {
+	height: 1064px;
+	width: 958px;
+	background: #90EE90;
+	margin: auto;
+}
+
+.main {
+	height: 931px;
+	width: 958px;
+	padding-top: 10px;
+	/* background: #000000; */
+	background-image: url(../升级网页images/main_bg.gif);
+}
+
+.main .inner {
+	height: 931px;
+	width: 958px;
+	background: url(../升级网页images/innerbg.gif);
+}
+
+.main .left {
+	height: 826px;
+	width: 195px;
+	/* background:#F4A460; */
+	background: url(../升级网页images/left_panel_bg.gif) no-repeat;
+	/* 图片不重复 */
+	float: left;
+}
+
+.main .left h2 {
+	height: 38px;
+	width: 144px;
+	color: white;
+	background-color: #000000;
+	margin: auto;
+	/* h2板块水平居中 */
+	margin-top: 30px;
+	margin-bottom: 0px;
+	text-align: center;
+	/* 文本垂直居中 */
+}
+
+.main .left ul {
+	height: 646px;
+	width: 154px;
+	padding-left: 0px;
+	list-style: none;
+	margin: auto;
+}
+
+.main .left ul li p {
+	margin: 0px;
+}
+
+.main .left .li1 {
+	height: 68px;
+	width: 130px;
+	background-image: url(../升级网页images/project_pic1.gif);
+	padding: 12px;
+	padding-top: 130px;
+	letter-spacing: -0.5px;
+}
+
+.main .left .li2 {
+	height: 66px;
+	width: 130px;
+	background-image: url(../升级网页images/project_pic2.gif);
+	margin-top: 20px;
+	padding: 12px;
+	padding-top: 140px;
+	letter-spacing: -0.5px;
+}
+
+.main .left .li3 {
+	height: 66px;
+	width: 130px;
+	background-image: url(../升级网页images/project_pic3.gif);
+	margin-top: 20px;
+	padding: 12px;
+	/* 一定要放在padding-top前 */
+	padding-top: 140px;
+	letter-spacing: -0.5px;
+
+}
+
+.main .mid {
+	height: 866px;
+	width: 199px;
+	/* background:#FAFAD2; */
+	background: url(../升级网页images/mid_panel_bg.gif);
+	float: left;
+}
+
+.main .mid .ul1 {
+	height: 160px;
+	width: 188px;
+	margin: 0px;
+	padding: 0px;
+	margin: auto;
+	list-style: none;
+	/* background: #87CEEB; */
+}
+
+.main .mid .ul1 li {
+	height: 21px;
+	background: #696969;
+	font-size: 11px;
+	color: #DCDCDC;
+	margin-bottom: 2px;
+}
+
+.main .mid h2 {
+	height: 41px;
+	width: 188px;
+	margin: auto;
+	margin-top: 9px;
+	margin-bottom: 20px;
+	padding-top: 4px;
+	/* background: #ADD8E6; */
+	background: #556B2F;
+}
+
+.main .mid .ul2 {
+	list-style: none;
+	height: 190px;
+	width: 188px;
+	padding: 0px;
+	margin-top: 20px;
+	/* margin: 0px; */
+	margin: auto;
+	/* background: #F08080; */
+}
+
+.main .mid .ul2 li {
+	height: 22px;
+}
+
+.main .mid .ul2 a {
+	font-size: 0.5px;
+	letter-spacing: -0.5px;
+	/* 使文本紧凑 */
+	color: #008000;
+}
+
+.main .mid .ul2 a:active {
+	color: white;
+}
+
+.main .mid .ul3 {
+	list-style: none;
+	margin: 0px;
+	padding-left: 0px;
+}
+
+.main .right {
+	height: 826px;
+	width: 564px;
+	/* background:#ADD8E6; */
+	background: url(../升级网页images/right_panel_bg.jpg) no-repeat;
+	float: left;
+}
+
+.main .right .nav {
+	height: 21px;
+	width: 220px;
+	/* background: #87CEEB; */
+	margin-left: 320px;
+}
+
+.main .right .nav li {
+	list-style: none;
+
+	float: right;
+	width: 69px;
+	background: url(../升级网页images/right_nav_bg.gif );
+}
+
+.main .right .nav li:hover {
+	background: url(../升级网页images/right_nav_bg_hover.gif);
+}
+
+.main .right .slogan {
+	height: 73px;
+	width: 206px;
+	margin-top: 42px;
+	margin-left: 320px;
+}
+
+.main .right .success {
+	height: 56px;
+	width: 539px;
+	background: url(../升级网页images/success_rate.gif);
+	margin: auto;
+	margin-top: 50px;
+}
+
+.main .right .success img {
+	margin-left: 480px;
+	margin-top: 4px;
+}
+
+.main .right .text {
+	height: 186px;
+	width: 540px;
+	/* background: #87CEEB; */
+	padding: 12px;
+}
+
+.main .right .testimonial {
+	height: 172px;
+	width: 540px;
+	background: url(../升级网页images/testimonial_bg.gif);
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
+
+.main .right .contactus {
+	width: 149px;
+}
+
+.main .right .text1 {
+	width: 351px;
+}
+
+.main .right .faq {
+	height: 56px;
+	width: 540px;
+	margin-top: 15px;
+	margin: auto;
+	background: #97ae2e;
+	/* background:paleturquoise; */
+}
+
+.main .right .number {
+	height: 56px;
+	width: 540px;
+	margin: auto;
+	margin-top: 20px;
+	/* background: lightcoral; */
+}
+
+.main .right .text3 {
+	height: 86px;
+	width: 512px;
+	margin: auto;
+	/* background: lightblue; */
+}
+
+header {
+	height: 133px;
+	width: 958px;
+	/* background:#000000; */
+	background: url(../升级网页images/footer_bg.gif);
+}
+
+header p {
+	padding: 5px;
+	margin: 0px;
+	text-align: center;
+}
+
+header a,
+span {
+	font-size: 10px;
+	color: white;
+}

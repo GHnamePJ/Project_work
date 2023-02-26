@@ -1,0 +1,465 @@
+/* pages/search/search.wxss */
+/* 下拉框 */
+@import "/style/iconcss.wxss";
+
+/* 查询下拉模块 */
+#select {
+  display: flex;
+  width: 100%;
+  z-index: 999;
+  height: 130rpx;
+  align-items: center;
+  /* background-color: burlywood; */
+}
+
+/* 查询下拉模块内部布局 */
+#topbtn {
+  display: flex;
+  width: 100%;
+  margin-left: 10rpx;
+  justify-content: space-between;
+}
+
+/* 气象站 */
+.changeStation {
+  width: 50%;
+}
+/* 暂无数据 */
+#zhanWuShuJu{
+  display: flex;
+  width: 100%;
+  height: 80vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(218, 218, 218); */
+}
+#zhanWuShuJu>image{
+  width: 50%;
+  /* background-color: rgb(207, 207, 207); */
+}
+
+/* 弹框 */
+.commonPopup .advancedPopup {
+  width: 100%;
+  height: 100vh;
+}
+
+/* 弹框标题 */
+.popup-title {
+  display: flex;
+  height: 130rpx;
+  align-items: center;
+  margin-left: 30rpx;
+  /* background-color: wheat; */
+}
+
+/* 弹框标题文本 */
+.popup-title text {
+  margin-left: 20rpx;
+  font-size: 36rpx;
+  color: rgb(97, 97, 97);
+}
+
+
+
+
+/* 按钮模块 */
+.popup-button {
+  display: flex;
+  margin-top: 40rpx;
+  margin-bottom: 70rpx;
+}
+
+/* 按钮 */
+.popup-button button {
+  width: 240rpx;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  background-color: rgb(42, 130, 228);
+}
+
+/* 取消按钮 */
+.popup-button button:nth-child(2) {
+  background-color: rgb(166, 166, 166);
+}
+
+/* 折线图 */
+.charts {
+  z-index: 1;
+  width: 95%;
+  height: 650rpx;
+  margin: auto;
+  margin-top: 18rpx;
+  border-radius: 5rpx;
+  /* background-color: rgb(225, 244, 245); */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px 0px;
+}            
+
+.ec-container {
+  height: 100%;
+  /* background-color: chartreuse; */
+  padding: 0;
+  margin: 0;
+}
+
+ec-canvas {
+  height: 100%;
+}
+#commonEchart{
+  height: 100%;
+  background-color: aquamarine;
+}
+
+
+/* ------------------------------------------------------------- */
+
+/* ---普通查询模块--- */
+/* 因素下拉 */
+#factors-select{
+  position: relative;
+  left: 59%;
+}
+
+#commonPopup-container {
+  width: 660rpx;
+  /* height: 1000rpx; */
+  border-radius: 28rpx;
+  padding-bottom: 20rpx;
+  background-color: rgb(255, 255, 255);
+}
+
+/* 普通弹框内容 */
+#commonPopup-content {
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  /* background-color: rgb(101, 101, 156); */
+}
+
+/* 下拉框 */
+#date-select {
+  display: flex;
+  width: 100%;
+  height: 100rpx;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blanchedalmond; */
+}
+
+/* 下拉框右侧显示内容 */
+.date-picker {
+  display: flex;
+  justify-content: center;
+  align-items:inherit;
+  width: 410rpx;
+  height: 80rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid rgb(95, 95, 95);
+}
+
+.date-text {
+  font-size: 30rpx;
+
+  /* background-color: antiquewhite; */
+}
+
+#commonPopup-factors {
+  width: 90%;
+  /* height: 500rpx; */
+  margin: auto;
+  margin-top: 38rpx;
+  margin-bottom: 60rpx;
+  /* background-color: bisque; */
+}
+
+#commonPopup-factors text:first-child {
+  display: block;
+  margin-top: 30rpx;
+  margin-bottom: 26rpx;
+}
+
+/* 单选框 */
+radio-group {
+  text-align: center;
+}
+
+radio {
+  margin-left: 14rpx;
+  margin-bottom: 20rpx;
+}
+
+radio l-icon {
+  display: inline-block;
+}
+
+/* 总结模块 */
+#summarize-factor {
+  display: flex;
+  width: 90%;
+  height: 200rpx;
+  margin: auto;
+  margin-top: 40rpx;
+  padding: 20rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 30rpx;
+  box-sizing: border-box;
+  background-color: rgb(181, 202, 255, 0.7);
+}
+
+/* 总结内容 */
+#summarize-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 18rpx;
+}
+
+#summarize-content text:first-child {
+  color: rgb(65, 66, 71);
+  margin: 10rpx;
+  font-size: 36rpx;
+}
+
+#summarize-content text:nth-child(2) {
+  margin-left: 14rpx;
+  color: rgb(83, 88, 106);
+  font-size: 28rpx;
+}
+
+/* 因素具体内容 */
+.factor-content {
+  display: flex;
+  width: 90%;
+  height: 200rpx;
+  margin: auto;
+  margin-top: 40rpx;
+  padding-left: 70rpx;
+  padding-right: 70rpx;
+  box-sizing: border-box;
+  border-radius: 40rpx;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(237, 242, 255);
+}
+
+.factor-content text:first-child {
+  font-size: 44rpx;
+}
+
+.factor-content text:nth-child(2) {
+  font-size: 44rpx;
+  font-weight: 750;
+}
+
+/*------------------------------------------------------ */
+
+/*---高级查询模块--- */
+#advancedPopup-container {
+  width: 660rpx;
+  border-radius: 28rpx;
+  background-color: rgb(255, 255, 255);
+}
+
+#advancedPopup-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  /* background-color: rgb(241, 239, 235); */
+}
+
+/* 开始日期-结束日期 */
+#date-text {
+  margin-top: -40rpx;
+  margin-left:30rpx ;
+  /* background-color: antiquewhite; */
+}
+
+.start-end {
+  display: flex;
+  width: 100%;
+  height: 90rpx;
+  align-items: flex-end;
+  /* background-color: rgb(196, 196, 196); */
+}
+
+.start-end>text {
+  letter-spacing: 6rpx;
+}
+.start-end-text{
+  display: block;
+  width: 390rpx;
+  height: 50rpx;
+  line-height: 70rpx;
+  margin-left: -3rpx;
+  border-bottom: 2rpx solid rgb(95, 95, 95); 
+}
+
+#advancedPopup-factors{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+#advancedPopup-factors text:first-child {
+  display: block;
+  margin-top: 30rpx;
+  margin-bottom: 26rpx;
+  margin-left: 30rpx;
+}
+
+#factors-min-max l-checkbox-group:nth-child(7) {
+  font-size: 30rpx;
+}
+
+#factors-min-max {
+  display: flex;
+  justify-content: center;
+}
+.min-max {
+  display: flex;
+  width: 420rpx;
+  height: 60rpx;
+  margin-bottom: 10rpx;
+  align-items: center;
+  /* background-color: aliceblue; */
+}
+
+/* min\max输入框 */
+input {
+  width: 140rpx;
+  height: 60rpx;
+  border: 2rpx solid rgb(197, 197, 201);
+  border-radius: 15rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  text-align: center;
+}
+
+/*横线 */
+hr {
+  height: 4rpx;
+  width: 44rpx;
+  background-color: rgb(184, 177, 177);
+}
+
+/* 多选组 */
+l-checkbox-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 多选项 */
+l-checkbox {
+  margin-bottom: 20rpx;
+}
+
+.checkbox-view {
+  width: 120rpx;
+  display: flex;
+}
+
+#time-factors {
+  width: 100%;
+  height: 400rpx;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 46rpx;
+  border-radius: 30rpx;
+  padding: 20rpx;
+  flex-direction: column;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+/* 时间滚动条 */
+#data-scorll {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  /* height: 140rpx; */
+  /* background-color: rgb(221, 230, 230); */
+
+}
+
+#data-content {
+  display: inline-block;
+  width: 170rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+  text-align: center;
+  background-color: rgb(248, 248, 248);
+}
+
+/* 图文滚动条 */
+#factor-scorll {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  /* background-color: aqua; */
+}
+
+/* 每个图文因素 */
+#factors-content {
+  display: inline-block;
+  width: 170rpx;
+  /* height: 280rpx; */
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 40rpx;
+  /* border: 2rpx solid black; */
+  background-color: rgb(248, 248, 248);
+}
+
+#factors-content text {
+  display: block;
+  margin-top: 24rpx;
+}
+
+#factors-content l-icon {
+  display: block;
+  margin-top: 24rpx;
+}
+
+
+.factor {
+  display: inline-block;
+  margin-top: 46rpx;
+  margin-left: 6%;
+  width: 310rpx;
+  height: 290rpx;
+  border-radius: 20px;
+  background: rgba(248, 248, 248);
+}
+
+.factor>text:first-child {
+  display: block;
+  margin-left: 48rpx;
+  margin-top: 40rpx;
+}
+
+.factor>l-icon:nth-child(2) {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.factor>text:nth-child(3) {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 40rpx;
+}

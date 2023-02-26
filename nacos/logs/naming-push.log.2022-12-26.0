@@ -1,0 +1,60 @@
+2022-12-26 15:41:24,631 INFO DEFAULT_GROUP@@service-user is changed, add it to push queue.
+
+2022-12-26 15:41:24,674 INFO serviceName: DEFAULT_GROUP@@service-user changed, schedule push for: 192.168.124.10:52043, agent: Nacos-Java-Client:v1.4.1, key: 192.168.124.10,52043,170331549396500
+
+2022-12-26 15:41:24,674 INFO send udp packet: 192.168.124.10,52043,170331549396500
+
+2022-12-26 15:41:24,690 INFO received ack: {"type": "push-ack", "lastRefTime":"170331549396500", "data":""} from: 192.168.124.10:52043, cost: 16 ms, unacked: 0, total push: 1
+
+2022-12-26 16:44:09,539 INFO DEFAULT_GROUP@@service-user is changed, add it to push queue.
+
+2022-12-26 16:44:12,097 INFO DEFAULT_GROUP@@service-user is changed, add it to push queue.
+
+2022-12-26 22:17:13,611 INFO DEFAULT_GROUP@@service-user is changed, add it to push queue.
+
+2022-12-26 22:17:13,616 INFO serviceName: DEFAULT_GROUP@@service-user changed, schedule push for: 192.168.124.10:52043, agent: Nacos-Java-Client:v1.4.1, key: 192.168.124.10,52043,194080500341200
+
+2022-12-26 22:17:13,617 INFO send udp packet: 192.168.124.10,52043,194080500341200
+
+2022-12-26 22:17:13,631 ERROR [NACOS-PUSH] failed to push data: {type=dom, data={"dom":"DEFAULT_GROUP@@service-user","name":"DEFAULT_GROUP@@service-user","cacheMillis":10000,"lastRefTime":1672064233612,"checksum":"7fd1b442516105018b8001cb06b108a2","useSpecifiedURL":false,"clusters":"DEFAULT","env":"","hosts":[],"metadata":{}}, lastRefTime=194080500341200} to client: 192.168.124.10, error: {}
+
+java.net.SocketException: Network is unreachable: Datagram send failed
+	at java.base/java.net.DualStackPlainDatagramSocketImpl.socketSend(Native Method)
+	at java.base/java.net.DualStackPlainDatagramSocketImpl.send(DualStackPlainDatagramSocketImpl.java:136)
+	at java.base/java.net.DatagramSocket.send(DatagramSocket.java:695)
+	at com.alibaba.nacos.naming.push.PushService.udpPush(PushService.java:615)
+	at com.alibaba.nacos.naming.push.PushService.lambda$onApplicationEvent$1(PushService.java:170)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-12-26 22:17:16,359 INFO DEFAULT_GROUP@@service-user is changed, add it to push queue.
+
+2022-12-26 22:17:16,360 INFO serviceName: DEFAULT_GROUP@@service-user changed, schedule push for: 192.168.124.10:52043, agent: Nacos-Java-Client:v1.4.1, key: 192.168.124.10,52043,194083248310400
+
+2022-12-26 22:17:16,360 INFO send udp packet: 192.168.124.10,52043,194083248310400
+
+2022-12-26 22:17:16,360 ERROR [NACOS-PUSH] failed to push data: {type=dom, data={"hosts":[{"ip":"192.168.124.10","port":9094,"valid":true,"healthy":true,"marked":false,"instanceId":"192.168.124.10#9094#DEFAULT#DEFAULT_GROUP@@service-user","metadata":{"preserved.register.source":"SPRING_CLOUD"},"enabled":true,"weight":1.0,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@service-user","ephemeral":true}],"dom":"DEFAULT_GROUP@@service-user","name":"DEFAULT_GROUP@@service-user","cacheMillis":10000,"lastRefTime":1672064236359,"checksum":"3805d3f424534fafe78eb7908816f505","useSpecifiedURL":false,"clusters":"DEFAULT","env":"","metadata":{}}, lastRefTime=194083248310400} to client: 192.168.124.10, error: {}
+
+java.net.SocketException: Network is unreachable: Datagram send failed
+	at java.base/java.net.DualStackPlainDatagramSocketImpl.socketSend(Native Method)
+	at java.base/java.net.DualStackPlainDatagramSocketImpl.send(DualStackPlainDatagramSocketImpl.java:136)
+	at java.base/java.net.DatagramSocket.send(DatagramSocket.java:695)
+	at com.alibaba.nacos.naming.push.PushService.udpPush(PushService.java:615)
+	at com.alibaba.nacos.naming.push.PushService.lambda$onApplicationEvent$1(PushService.java:170)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-12-26 23:12:50,265 INFO DEFAULT_GROUP@@service-user is changed, add it to push queue.
+
+2022-12-26 23:12:50,266 INFO serviceName: DEFAULT_GROUP@@service-user changed, schedule push for: 192.168.124.10:52043, agent: Nacos-Java-Client:v1.4.1, key: 192.168.124.10,52043,197417155012100
+
+2022-12-26 23:12:50,266 INFO send udp packet: 192.168.124.10,52043,197417155012100
+
+2022-12-26 23:12:50,272 INFO received ack: {"type": "push-ack", "lastRefTime":"197417155012100", "data":""} from: 192.168.124.10:52043, cost: 6 ms, unacked: 0, total push: 4
+

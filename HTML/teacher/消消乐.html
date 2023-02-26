@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var i, j;
+			var imgs=['img/p1.jpg','img/p2.jpg','img/p3.jpg','img/p4.jpg','img/p5.jpg','img/p6.jpg'];
+			
+			document.write("<table border='1'>");//打印表格
+			for (i = 1; i < 7; i++) {
+				document.write("<tr>")//在循环中打印每一行
+				for (j = 1; j < 7; j++) {
+					document.write("<td>");//在循环中打印每一行列
+					document.write("<img src=" + imgs[Math.floor(Math.random() * 6)] + ">"); //随机插入图片
+					document.write("</td>");
+				}
+				document.write("</tr>");
+			}
+			document.write("</table>");
+			
+			var table = document.getElementsByTagName('table')[0];//查找table节点
+			console.log(table);//查看table中的节点
+			
+			var tody = table.childNodes[0];//查找tbody节点
+			console.log(tody.childNodes);
+			
+			var img1=null;
+			var img2=null;
+				for(var i=0;i<tody.childNodes.length;i=i+1)
+				{
+					var tr=tody.childNodes[i];
+					console.log(tr.childNodes)
+					for(var j=0;j<tr.childNodes.length;j++)
+					{
+						var td=tr.childNodes[j];
+						
+						td.onclick=function(){
+							if(img1==null)
+							{
+								img1=this.firstChild;
+							}
+							else{
+								img2=this.firstChild;
+								if(img1.getAttribute('src')==img2.getAttribute('src'))
+								{
+									img1.setAttribute('src','#');
+									img2.setAttribute('src','#');
+								}
+								else{
+									alert("选择错误,请选择相同颜色的图片进行消除！");
+								}
+								img1=null;
+								img2=null;
+							}
+							
+							
+						}
+						
+								
+					}
+					
+			}
+				
+		</script>
+	</body>
+</html>

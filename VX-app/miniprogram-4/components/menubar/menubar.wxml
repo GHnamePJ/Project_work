@@ -1,0 +1,42 @@
+<!--components/menubar/menubar.wxml-->
+<!-- 自定义顶部栏 -->
+<view class="nav-bar" style="height:{{navBarHeight}}px;">
+  <view bindtap="toMenu" style=" position: absolute;width: 10%;height:{{menuHeight}}px; min-height:{{menuHeight}}px; line-height:{{menuHeight}}px; left:{{menuRight}}px; top:{{menuTop}}px;">
+    <!-- 菜单图标 -->
+    <l-icon name="caidan" color="black" size="40" l-class="menu iconfont" />
+  </view>
+</view>
+<!-- 占位，高度与顶部栏一样 -->
+<view style="height:{{navBarHeight}}px;"></view>
+
+<!-- 菜单显示 -->
+<l-popup show="{{ show }}" content-align="left" l-class="popup">
+  <!-- 菜单总框 -->
+  <view class="menuBar">
+    <view class="user">
+      <l-avatar l-class="photo" l-text-class="photo_txt" text="月野君" size="200" placement="bottom" src="https://img2.baidu.com/it/u=3855066892,2259800752&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" />
+    </view>
+    <view class="hr"></view>
+    <view class="menus">
+      <view class="search" bindtap="toSearch">
+        <l-icon name="search" size="50" color="#666666" l-class="iconfont" />
+        <text decode="{{true}}" style="font-size: 35rpx;">&nbsp;&nbsp;&nbsp;气象数据查询</text>
+      </view>
+      <view class="statistics" bindtap="toStatistics">
+        <l-icon name="tongji" size="50" color="#666666" l-class="iconfont" />
+        <text decode="{{true}}" style="font-size: 35rpx;">&nbsp;&nbsp;&nbsp;气象数据统计</text>
+      </view>
+      <view class="forecast" bindtap="toForecast">
+        <l-icon name="yuce" size="50" color="#666666" l-class="iconfont" />
+        <text decode="{{true}}" style="font-size: 35rpx;">&nbsp;&nbsp;&nbsp;气象数据预测</text>
+      </view>
+    </view>
+    <view class="hr"></view>
+    <view class="about">
+      <view class="aboutwe" bindtap="toAboutwe">
+        <l-icon name="guanyu" size="48" color="#666666" l-class="iconfont"/>
+        <text decode="{{true}}" style="font-size: 35rpx;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关于我们</text>
+      </view>
+    </view>
+  </view>
+</l-popup>

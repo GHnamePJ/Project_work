@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#tab{
+				width:600px;
+				height: 400px;
+				border: 1px solid lightblue;
+			}
+			#tab ul{
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			#tab ul>li{
+				width:150px;
+				height: 30px;
+				border: 2px solid #000;
+				float: left;
+				margin: 0 10px;
+				text-align: center;
+				line-height: 30px;
+			}
+			
+			#tab>div.show>div{
+				width:500px;
+				height: 300px;
+				border: 1px dashed  lightgray;
+				margin: 20px auto;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="tab">
+			<ul>
+				<li>women</li>
+				<li>men</li>
+				<li>shoes</li>
+		   </ul>
+		   <div style="clear: both;"></div>
+		   <div class="show">
+		   		<div style="display: block;" class="women" >
+		   			women的展示内容
+		   		</div>
+		   		<div  class="men" >
+		   			men的展示内容
+		   		</div>
+		   		<div  class="shoes" >
+		   			shoes的展示内容
+		   		</div>
+		   </div>
+		</div>
+	<script type="text/javascript">
+		var tab=document.getElementById("tab");
+		var ul=tab.childNodes[1];
+		var show=tab.childNodes[5];
+		console.log(ul.childNodes)
+ 	 for(var i=1;i<ul.childNodes.length;i=i+2){
+ 	 	ul.childNodes[i].onclick=function(){
+ 	 		//alert(this.innerText)
+ 	 		//要控制的目标
+ 	 	  var target=	show.getElementsByClassName(this.innerText)[0];
+ 	 	  //先把所有的元素隐藏
+ 	 	  
+ 	 	  for(var j=1;j<show.childNodes.length;j+=2){
+ 	 	  	show.childNodes[j].style.display="none";
+ 	 	  }
+ 	 	  //再把指定的元素显示
+ 	 	  target.style.display="block";
+ 	 	}
+ 	 }
+		
+	</script>	
+	</body>
+</html>

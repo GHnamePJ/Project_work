@@ -1,0 +1,11 @@
+{
+  
+  "usingComponents": {
+    "l-icon":"/miniprogram_npm/lin-ui/icon",
+    "menubar":"/components/menubar/menubar",
+    "l-popup":"/miniprogram_npm/lin-ui/popup/index",
+    "dataSwitching":"/components/dateSwitching/dateSwitching",
+    "line-chart":"/components/lineChart/lineChart"
+  },
+  "navigationStyle": "custom"
+}

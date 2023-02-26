@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot-redis" />
+        <module name="springboot-config" />
+        <module name="springboot-enable-test" />
+        <module name="springboot-mybatisplus" />
+        <module name="springboot-vue" />
+        <module name="springboot-init" />
+        <module name="springboot-enable" />
+        <module name="springboot-mybatis" />
+        <module name="springboot-profiles" />
+        <module name="springboot-test" />
+        <module name="springboot-condition" />
+        <module name="springboot-helloworld" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="11">
+      <module name="springboot-condition" target="11" />
+      <module name="springboot-config" target="11" />
+      <module name="springboot-enable" target="11" />
+      <module name="springboot-enable-test" target="11" />
+      <module name="springboot-helloworld" target="1.8" />
+      <module name="springboot-init" target="11" />
+      <module name="springboot-mybatis" target="11" />
+      <module name="springboot-mybatisplus" target="11" />
+      <module name="springboot-profiles" target="11" />
+      <module name="springboot-redis" target="11" />
+      <module name="springboot-test" target="11" />
+      <module name="springboot-vue" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot-condition" options="-parameters" />
+      <module name="springboot-config" options="-parameters" />
+      <module name="springboot-enable" options="-parameters" />
+      <module name="springboot-enable-test" options="-parameters" />
+      <module name="springboot-helloworld" options="-parameters" />
+      <module name="springboot-init" options="-parameters" />
+      <module name="springboot-mybatis" options="-parameters" />
+      <module name="springboot-mybatisplus" options="-parameters" />
+      <module name="springboot-profiles" options="-parameters" />
+      <module name="springboot-redis" options="-parameters" />
+      <module name="springboot-test" options="-parameters" />
+      <module name="springboot-vue" options="-parameters" />
+    </option>
+  </component>
+</project>

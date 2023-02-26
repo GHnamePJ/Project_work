@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+        <bean id="PrintInfoImpl_bean" class="cn.spring.aop.aspectj.PrintInfoImpl"/>
+        <bean id="AopAspect_bean" class="cn.spring.aop.aspectj.AopAspect"/>
+        <aop:config>
+            <aop:aspect ref="AopAspect_bean" id="p1">
+                <aop:pointcut id="p1" expression="execution(* cn.spring.aop.aspectj.IPrintInfo.printMessage(..))" />
+                <aop:before method="printMessage1" pointcut-ref="p1"/>
+            </aop:aspect>
+            <aop:aspect ref="AopAspect_bean" id="p2">
+                <aop:pointcut id="p2" expression="execution(* cn.spring.aop.aspectj.IPrintInfo.showMessage(..))"/>
+                <aop:before method="showMessage1" pointcut-ref="p2"/>
+            </aop:aspect>
+            <aop:aspect ref="AopAspect_bean" id="p3">
+                <aop:pointcut id="p3" expression="execution(* cn.spring.aop.aspectj.IPrintInfo.editMessage(..))"/>
+                <aop:before method="editMessage1" pointcut-ref="p3"/>
+            </aop:aspect>
+        </aop:config>
+   
+</beans>

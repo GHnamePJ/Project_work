@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="forCurd">
+    <select id="getBookBybookName" parameterType="java.lang.String" resultType="org.example.pojo.BookInfo">
+        select * from t_book where bookName like '%${bookName}%'
+    </select>
+    <insert id="insertBook" parameterType="org.example.pojo.BookInfo" >
+        insert into t_book (id,bookName,price,publisher)values(#{id},#{bookName},#{price},#{publisher})
+    </insert>
+    <update id="updateBook" parameterType="org.example.pojo.BookInfo" >
+        update t_book set bookName=#{bookName},price=#{price},publisher=#{publisher} where id=#{id}
+    </update>
+    <delete id="deleteBook" parameterType="java.lang.Integer">
+        delete from t_book where id=#{id}
+    </delete>
+</mapper>

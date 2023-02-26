@@ -1,0 +1,220 @@
+/* pages/index/index.wxss */
+.container-swiper .swiper-picture {
+  position: relative;
+}
+
+.zq_wm {
+  display: flex;
+  height: 84px;
+  /* 内容居中 */
+  justify-content: center;
+  margin-top: -30px;
+}
+
+#way {
+  position: relative;
+  display: flex;
+  width: 90%;
+  /* 两端对齐 */
+  justify-content: space-between;
+  border-radius: 6px;
+  box-shadow: 3px 4px 4px #888888;
+  background: white;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.way_left,
+.way_right {
+  position: relative;
+  display: flex;
+  /* 类似水平于权重 */
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  /* 水平排布 */
+  flex-direction: column;
+}
+
+.ico {
+  width: 40px;
+  height: 40px;
+}
+
+/* 竖线 */
+.way_left:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 60px;
+  background: black;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.jifen_huiyuan {
+  display: flex;
+  height: 75px;
+  /* 内容居中 */
+  justify-content: center;
+  margin-top: 13px;
+}
+
+.jifen_huiyuan_content {
+  display: flex;
+  width: 90%;
+  /* 两端对齐 */
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #888888;
+  line-height: 28px;
+  border-radius: 4px;
+  box-shadow: 3px 4px 4px #888888;
+  background: white;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+
+.jifen_top {
+  display: flex;
+  align-items: center;
+
+  font-size: 14px;
+  color: black;
+}
+
+.jifen_top>text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.huiyuan {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #adb838;
+}
+
+.huiyuan_ico {
+  width: 30px;
+  height: 30px;
+}
+
+.shangcheng{
+  display: flex;
+  justify-content: center;
+  margin-top: 40rpx;
+}
+
+.shangchen_content{
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 18rpx 0rpx;
+  background: white; 
+}
+.content_left{
+  display: flex;
+  background:rgb(242, 242, 230);
+  height: 130px;
+  width: 46%;
+  flex-direction: column;
+}
+.left_top{
+  display: flex;
+  height: 50%;
+  align-items: center;
+}
+.left_top_one{
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+}
+.one_text{
+  font-size: 22rpx;
+  color: #888888;
+  margin-left: 30px;
+}
+.left_top image{
+  width: 36rpx;
+  height: 36rpx;
+  margin-left: 10px;
+  margin-right: 3px;
+}
+.left_bottom{
+  height: 50%;
+}
+.left_bottom>image{
+  width: 90px;
+  margin-top: 14px;
+  margin-left: 45px;
+}
+.content_right{
+  display: flex;
+  width: 46%;
+  flex-direction: column;
+  font-size: 12px;
+}
+.right_top{
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #888888;
+  background: rgb(253, 243, 242);
+  height: 46%;
+  margin-bottom: 35rpx;
+}
+.min_ico{
+  margin-left: 5px;
+  width: 18px;
+  height: 18px;
+}
+.max_ico{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  top: 4px;
+  right: -17px;
+}
+.right_bottom{
+  display: flex;
+  align-items: center;
+  color: #888888;
+  background: rgb(256, 242, 212);
+  height: 46%;
+}
+.bottom{
+
+}
+.bottom_top{
+  display: flex;
+  padding: 0px 16px;
+  justify-content: space-between;
+}
+.bottom_top>text{
+  font-weight: 600;
+}
+.bottom_top>image{
+  width: 18px;
+}
+.bottom_bottom{
+  display: flex;
+  justify-content: center;
+  padding: 6px 16px;
+}
+.bottom_bottom>image{
+  width:100% ;
+  position: relative;
+}
+.bottom_bottom>text{
+  position: absolute;
+  bottom: -120px;
+  left: 25px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgb(251, 252, 253);
+}

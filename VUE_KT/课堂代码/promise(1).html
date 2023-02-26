@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>promise用法示例</title>
+</head>
+<body>
+<script type="text/javascript">
+    
+    //第二种定义方式 
+    function runAsync(){
+        var p = new Promise(function(resolve, reject){
+            //做一些异步操作
+            setTimeout(function(){
+                console.log('执行完成');
+                resolve('随便什么数据');
+            }, 2000);
+        });
+        //console.log(p)//查看Promise对象的结构
+        return p;            
+    }
+    runAsync().then(function(data){
+        console.log(data);
+        //后面可以用传过来的数据做些其他操作
+        //......
+    }); 
+
+
+
+//   第一种定义方式
+//   let myfun = function(flag){    
+//     let val = 'hello' 
+//     return new Promise(function(resolve, reject){
+//       if(flag) {
+//         resolve(val)   //回调函数
+//       }else{
+//         reject('fail')  //回调函数
+//       }
+//     })
+//   }
+  
+//   myfun(true)
+//   .then(function(value){//接受执行成功返回的结果
+//     alert(value)
+//   })
+//   .catch(function(error){
+//     alert(error)
+//   })
+
+//   另一种写法
+//   myfun(true)
+//   .then(function(value){
+//     alert(value)
+//   },function(error){
+//     alert(error)
+//   })
+  
+
+  
+</script>
+</body>
+</html>

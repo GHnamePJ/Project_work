@@ -1,0 +1,41 @@
+<!--pages/teabar/teabar.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="content_container">
+      <!-- one -->
+      <view class="content_one">
+        <view class="one1">
+          <text>0</text><text>/</text><text>3</text>
+        </view>
+        <view class="one2">
+          <progress class="jidutiao" percent="33.33" stroke-width="30" color="#fedc5f" border-radius="15" backgroundColor="#feebd5"></progress>
+        </view>
+        <view class="one3">
+          <text>每3位新用户点亮，得买茶送包券1张</text>
+          <text>新用户可得30元权益券包</text>
+        </view>
+        <view class="one4">
+          <image class="one4_image" src="/static/image/teabar/yellowBackground.png" mode="widthFix"></image>
+          <text class="one4_text">立即找好友助力 ></text>
+        </view>
+      </view>
+      <!-- two -->
+      <view class="content_two">
+        <image class="two_image" src="/static/image/teabar/myjiangli.png" mode="widthFix"></image>
+        <view class="two_left">
+          <text>0</text>
+          <tetx class="left_text2">已成功邀请(位)</tetx>
+        </view>
+        <view class="two_right">
+          <text>0</text>
+          <text class="left_text2">已获得奖励(次)</text>
+        </view>
+      </view>
+      <!-- three -->
+      <view class="content_three">
+        <image src="/static/image/teabar/hyjiangli.png" mode="widthFix"></image>
+      </view>
+    </view>
+
+  </view>
+</view>

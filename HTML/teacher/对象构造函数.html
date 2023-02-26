@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var stu=new Object();
+			stu.name='张三';
+			var stu2={name:'张三'};
+			
+			
+			//对象构造函数,name,age,no是构造参数
+			function Student(name,age,no){
+				this.name=name;
+				this.age=age;
+				this.no=no;
+				this.showName=function(){
+					document.write('my name is '+this.name);
+				}
+			}
+			
+			//使用构造函数来构造构造对象
+			var stu3=new Student('李四',18,'2001121');
+			stu3.showName();
+			
+			//根据下面的数组中的数据，构造一个学生对象，把10个学生用对象的方式存储
+			var stus = [
+		['小A', '女', 21, '大一'],  
+		['小B', '男', 23, '大三'],     
+		['小C', '男', 24, '大四'],   
+		['小D', '女', 21, '大一'],     
+		['小E', '女', 22, '大四'],  
+		['小F', '男', 21, '大一'],     
+		['小G', '女', 22, '大二'],  
+		['小H', '女', 20, '大三'],
+		['小I', '女', 20, '大一'],  
+		['小J', '男', 20, '大三']
+	];
+        //定义构造函数
+        function Stu(name,sex,age,grade){
+        	    this.name=name;
+        	    this.sex=sex;
+				this.age=age;
+				this.grade=grade;
+			//增加打印成表格的方法	
+				
+        }
+		//数组中的学生用对象存储	
+		var s=[];
+		for(var i=0;i<stus.length;i++){
+		s[i]=new Stu(stus[i][0],stus[i][1],stus[i][2],stus[i][3])
+		}
+		console.log(s);
+		</script>
+	</body>
+</html>

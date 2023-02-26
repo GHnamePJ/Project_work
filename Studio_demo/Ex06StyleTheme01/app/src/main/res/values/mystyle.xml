@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyButton">
+        <item name="android:background">#148ABE</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:color">#00080808</item>
+    </style>
+    <style name="MyButton1" parent="MyButton">
+        <item name="android:background">#8BC34A</item>
+    </style>
+    <style name="MyText">
+        <item name="android:background">#F7FAFA</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:color">#8BC34A</item>
+    </style>
+    <style name="MyTheme" parent="AppTheme">
+        <item name="android:windowBackground">@color/colorPrimaryDark</item>
+        <item name="android:colorBackground">#CDDC39</item>
+    </style>
+</resources>

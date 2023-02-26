@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0px;
+			}
+
+			.container {
+				width: 1050px;
+				/* height: 1300px; */
+				margin: auto;
+				/* background:lightcoral; */
+			}
+
+			header {
+				height: 100px;
+				/* background:black; */
+			}
+
+			header>p {
+				color: black;
+				font-size: 40px;
+				text-align: center;
+				line-height: 85px;
+			}
+			.content {
+				/* height: 1800px; */
+				/* background: lightblue; */
+				padding-top: 20px;
+			}
+			.Sky {
+				border: 2px solid gray;/* 边框 */
+				border-radius: 20px;/* 圆角 */
+				width: 800px;
+				height: 300px;
+				margin: auto;
+				margin-bottom: 50px;
+				background: #87CEEB;
+			}
+			.Sky .left {
+				width: 300px;
+				height: 300px;
+				float: left;
+				background: lavender;
+				overflow: hidden;
+			}
+
+			.Sky .left img {
+				border-radius: 17px;
+			}
+
+			.Sky .right {
+				width: 500px;
+				height: 300px;
+				float: left;
+				/* background:lightcoral; */
+			}
+
+			.Sky .right>ul {
+				list-style: none;
+				padding-left: 15px;
+				padding-right: 10px;
+				padding-top: 100px;
+			}
+
+			.Sky .right>ul li {
+				margin-top: 10px;
+			}
+
+			.Sky .right>ul li #xx {
+				font-size: 20px;
+				font-weight: bold;
+			}
+
+			.Sky .right>ul li #yy {
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+
+			<header>
+				<p>光遇花名册</p>
+			</header>
+			
+			<div class="content">
+				
+				<div class="Sky">
+
+					<div class="left">
+						<img src="img/公主.jpg" />
+					</div>
+
+					<div class="right">
+						<ul>
+							<li>
+								<a id="xx">姓名：</a><a id="yy">公主</a>
+							</li>
+							<li><a id="xx">姓别：</a><a id="yy">女孩子</a></li>
+							<li><a id="xx">班级：</a><a id="yy">二年级一班</a></li>
+							<li><a id="xx">性格描述：</a><a id="yy">傲娇、淘气、大大咧咧</a></li>
+						</ul>
+					</div>
+
+				</div>
+				
+			</div>
+			
+		</div>
+		<script type="text/javascript">
+			var infos=[["img/揪揪.jpg","揪揪","女孩子","二年级三班","可爱、直来直去、常常因为说话太直白而被嫌弃"],["img/渔夫.jpg","渔夫","男孩子","一年级一班","呆萌、爱哭鬼、喜欢吃糖果"],["img/雨妈.jpg","雨妈","女孩子","三年级二班","懂事大姐姐、会照顾人、遇事沉着冷静、话比较少"],["img/正太.jpg","正太","女孩子","二年级一班","喜欢酷酷的男装，但人却很温柔"]];
+			//找到想要克隆的板块
+			var Skydiv=document.getElementsByClassName('Sky')[0];
+			//通过循环拷贝节点products4次
+			for(var i=0;i<4;i++){
+			//深度克隆
+			var Skydivclone=Skydiv.cloneNode(true);
+			//添加节点到网页
+			var content=document.childNodes[1].childNodes[2].childNodes[1].childNodes[3];//找到content节点
+			// var content1=document.childNodes[1];//查找html节点
+			// var content2=document.childNodes[1].childNodes[2];//找到body节点
+			// var content3=document.childNodes[1].childNodes[2].childNodes[1];//找到container节点
+			content.appendChild(Skydivclone);
+			//修改节点中的数据
+			//找到ul
+			var ul=Skydivclone.childNodes[3].childNodes[1];
+			// 找到li1
+			var a1=ul.childNodes[1].childNodes[2];
+			a1.innerText=infos[i][1];
+			var a2=ul.childNodes[3].childNodes[1];
+			a2.innerText=infos[i][2];
+			var a3=ul.childNodes[5].childNodes[1];
+			a3.innerText=infos[i][3];
+			var a4=ul.childNodes[7].childNodes[1];
+			a4.innerText=infos[i][4];
+			//找到节点
+			var leftdiv=Skydivclone.childNodes[1];
+			//修改图片
+			leftdiv.innerHTML="<img src='"+infos[i][0]+"'>";
+			}
+			//删除模板
+			//找到模板的父节点
+			var contentdiv=document.childNodes[1].childNodes[2].childNodes[1].childNodes[3];
+			contentdiv.removeChild(Skydiv);
+		</script>
+	</body>
+</html>

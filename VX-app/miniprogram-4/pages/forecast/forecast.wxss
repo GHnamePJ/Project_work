@@ -1,0 +1,445 @@
+/* pages/statistics/statistics.wxss */
+.page {
+  width: 100vw;
+  /* background-color: rgba(196, 210, 240, 0.5); */
+}
+
+/* top按钮 */
+.topBtn {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: rgba(204, 240, 196, 0.5); */
+}
+
+.forecastBtn {
+  width: 45%;
+  padding-left: 2%;
+}
+
+.l-button-forecast {
+  width: 100%;
+}
+
+.forecastTitle {
+  font-size: 35rpx;
+}
+
+.changeStations {
+  width: 50%;
+}
+
+.changeStationBtn {
+  width: 100%;
+}
+
+/* 弹窗 */
+.popup {
+  width: 100vw;
+  height: 100vh;
+}
+
+.condition {
+  width: 80vw;
+  height: 48vh;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  color: #666666;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.condition-title {
+  width: 100%;
+  flex: 0.5;
+  font-size: 35rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background-color: rgba(146, 121, 121, 0.5); */
+}
+
+.tongjiicon {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.condition-data {
+  width: 100%;
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* background-color: rgba(223, 53, 53, 0.5); */
+}
+
+/* 分割线 */
+.hr {
+  width: 100%;
+  height: 2rpx;
+  background-color: rgba(121, 113, 113, 0.55);
+}
+
+.start,
+.end {
+  width: 100%;
+  height: 40%;
+  font-size: 38rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  /* background-color: rgba(223, 53, 53, 0.5); */
+}
+
+.dright {
+  padding-right: 25rpx;
+}
+
+.condition-factor {
+  width: 100%;
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  /* background-color: rgba(99, 124, 194, 0.5); */
+}
+
+.condition-factor-title {
+  font-size: 38rpx;
+  flex: 1;
+  
+}
+.factorcard-text{
+  text-shadow: #c4cfe7a6 2rpx 2rpx;
+  border-bottom: 5rpx solid rgba(51, 62, 165, 0.459);
+}
+
+.condition-factor-content {
+  width: 100%;
+  height: 75%;
+  font-size: 30rpx;
+  display: flex;
+  overflow: hidden;
+  /* background-color: saddlebrown; */
+  /* flex-direction: row; */
+}
+
+.group{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  /* background-color: rgba(59, 105, 222, 0.07); */
+}
+
+.radio{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+
+
+
+.condition-btn {
+  width: 100%;
+  flex: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* background-color: rgba(43, 11, 11, 0.5); */
+}
+
+
+
+/* 内容 */
+.content {
+  width: 100%;
+  /* height: 91vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.card {
+  width: 88%;
+  height: 23vh;
+  border-radius: 30rpx;
+  margin-bottom: 50rpx;
+  padding: 25rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(59, 105, 222, 0.7);
+  box-shadow: rgba(59, 105, 222, 0.07) 0px 1px 2px, rgba(59, 105, 222, 0.07) 0px 2px 4px, rgba(59, 105, 222, 0.07) 0px 4px 8px, rgba(59, 105, 222, 0.07) 0px 8px 16px, rgba(59, 105, 222, 0.07) 0px 16px 32px, rgba(59, 105, 222, 0.07) 0px 32px 64px;
+}
+
+.data-time {
+  flex: 0.5;
+  padding-left: 20rpx;
+  font-size: 30rpx;
+  color: white;
+  display: flex;
+  align-items: center;
+  /* background-color: rgba(240, 236, 196, 0.5); */
+}
+
+.templement {
+  flex: 2;
+  display: flex;
+  /* background-color: rgba(163, 156, 75, 0.5); */
+}
+
+.templement-photo {
+  width: 30%;
+  display: flex;
+  align-items: center;
+
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+}
+
+.templement-date {
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.templement-name {
+  flex: 0.5;
+  padding-left: 20rpx;
+  color: white;
+  display: flex;
+  align-items: center;
+  /* background-color: rgba(10, 10, 6, 0.5); */
+}
+
+.factorcard {
+  width: 95%;
+  /* height: 50vh; */
+  /* background-color: rgba(240, 236, 196, 0.5); */
+}
+
+.factorcard-title {
+  color: #666666;
+  font-size: 40rpx;
+}
+
+.tip{
+  margin-top: 60rpx;
+  width: 100%;
+  height: 300rpx;
+  display: flex;
+  flex-direction: row;
+  border-radius: 20rpx;
+  /* background-color: #666666; */
+  background: url(https://gd-hbimg.huaban.com/a02f445804618fe9f54cf7c7ec6a6aefee615f79ad0-SLzjz7_fw658);
+  background-size: cover;
+  box-shadow: rgba(223, 102, 65, 0.07) 0px 1px 2px, rgba(223, 102, 65, 0.07) 0px 2px 4px, rgba(223, 102, 65, 0.07) 0px 4px 8px, rgba(223, 102, 65, 0.07) 0px 8px 16px, rgba(223, 102, 65, 0.07) 0px 16px 32px, rgba(223, 102, 65, 0.07) 0px 32px 64px;
+}
+
+.tip-left{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #666666; */
+  
+}
+
+
+.tip-ltop {
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45rpx;
+  color: #666666;
+  /* padding-left: 25rpx; */
+  /* background-color: antiquewhite; */
+}
+
+.text{
+  text-shadow: rgba(132, 119, 189, 0.699) 2rpx 4rpx;
+}
+
+/* 温馨提示右边部分 */
+.tip-right{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* background-color: #b097d8; */
+}
+/* 圆心进度条显示 */
+.my-chart{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+
+.echart{
+  width: 100%;
+  height: 100%;
+}
+
+.bpm {
+  color: #999;
+  font-size: 8pt;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.bpm1 {
+  color: black;
+  font-size: 23pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.bpm2 {
+  color: #333;
+  font-size: 11pt;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 27%;
+  left: 0;
+  right: 0;
+}
+.tip-rtop-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60rpx;
+}
+
+.tip-rtop-text1{
+  display: flex;
+  justify-content: center;
+}
+
+.factor {
+  width: 100%;
+  /* height: 80%; */
+}
+
+.factor-view{
+  margin-top: 40rpx;
+  width: 93%;
+  height: 130rpx;
+  padding-left: 40rpx;
+  border-radius: 35rpx;
+  display: flex;
+  flex-direction: row;
+  /* background-color: antiquewhite; */
+  border: 1rpx solid rgba(102, 98, 98, 0.2);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 1px 2px, rgba(99, 99, 99, 0.2) 0px 2px 4px, rgba(99, 99, 99, 0.2) 0px 16px 32px;
+}
+.factor-left{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  color: #666666;
+  flex-direction: row;
+  align-items: center;
+}
+.factor-right{
+  color: #666666;
+  display: flex;
+  align-items: center;
+  margin-right:25rpx;
+}
+
+.factorS {
+  width: 100%;
+  /* height: 80%; */
+}
+
+.factor-viewS{
+  margin-top: 40rpx;
+  width: 93%;
+  /* height: ; */
+  padding-left: 40rpx;
+  border-radius: 35rpx;
+  display: flex;
+  flex-direction: column;
+  /* background-color: antiquewhite; */
+  border: 1rpx solid rgba(102, 98, 98, 0.2);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 1px 2px, rgba(99, 99, 99, 0.2) 0px 2px 4px, rgba(99, 99, 99, 0.2) 0px 16px 32px;
+}
+
+.factor-top{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  color: #666666;
+  flex-direction: row;
+  align-items: center;
+  /* background-color: rgba(223, 102, 65, 0.07); */
+}
+
+.my-chart-tip{
+  width: 100%;
+  height: 450rpx;
+  /* background-color: #666666; */
+}
+.echart-tip{
+  width: 100%;
+  height: 100%;
+}
+.factor-bottom{
+  width: 100%;
+  /* height: 450rpx; */
+  display: flex;
+  /* padding-left:50rpx; */
+  /* margin-top: rpx; */
+  margin-bottom: 30rpx;
+  color: #666666;
+  /* justify-content: center; */
+}
+
+.judge{
+  width: 100%;
+  height: 50rpx;
+  display: flex;
+  font-size: 35rpx;
+  justify-content: center;
+  /* background-color: rgba(102, 98, 98, 0.2); */
+}

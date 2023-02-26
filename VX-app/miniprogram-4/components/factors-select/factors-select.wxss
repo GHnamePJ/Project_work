@@ -1,0 +1,76 @@
+/* components/select/select.wxss */
+@import "/style/iconcss.wxss";
+.com-selectBox{
+  /* width: 210rpx; */
+  /* background-color: rgb(241, 241, 229); */
+}
+.com-sContent{
+  width: 280rpx;
+  /* border: 1.5px solid rgba(0, 29, 250,0.4); */
+  border-radius: 20rpx;
+  font-size: 32rpx;
+  position: relative;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-bottom: 3rpx;
+  padding-left: 10rpx;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 6px;
+}
+/* 图片 */
+.com-sImg{
+  position: absolute;
+  right: 24rpx;
+  top: 18rpx;
+  width: 42rpx;
+  height: 42rpx;
+  transition: all .3s ease;
+}
+.com-sTxt{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding:0 40rpx 0 12rpx;
+  font-size: 30rpx;
+  color: #383838;
+  text-align:left;
+}
+.com-sTxt>text{
+  font-size: 30rpx;
+}
+.com-sTxt>text:nth-child(2){
+  display: inline-block;
+  width: 50rpx;
+  text-align: center;
+  /* background-color: lightblue; */
+}
+.com-sList{
+  position: absolute;
+  width: 180rpx;
+  padding-left: 10rpx;
+  margin-left: 105rpx;
+  /* width: inherit; */
+  /* 下拉框距离显示框的距离 */
+  /* top: 7px; */
+  border: 3rpx solid #ffffff;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  z-index: 3;
+  max-height: 240rpx;
+  overflow: auto;
+  background: white;
+  box-shadow: rgba(60, 64, 67, 0.3) 0rpx 2rpx 4rpx 0rpx, rgba(60, 64, 67, 0.15) 0rpx 2rpx 6rpx 2rpx;
+}
+.com-sItem{
+  height: 70rpx;
+  line-height: 70rpx;
+  border-top: 2rpx solid #e2e2e2;
+  padding: 0 12rpx;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 28rpx;
+}
+.com-sItem:first-child{
+  border-top: none;
+}

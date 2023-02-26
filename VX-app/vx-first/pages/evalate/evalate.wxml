@@ -1,0 +1,63 @@
+<view class="container">
+  <view class="content">
+    <view class="content_top">
+      <text>福永同泰时代城店</text>
+      <text>2020-05-08堂食</text>
+    </view>
+    <view class="content_mid">
+      <view class="mid">
+        <view class="mid_left">服务</view>
+        <view class="mid_right">
+          <view>
+            🌟 🌟 🌟 🌟 🌟 🌟
+          </view>
+          <text>能感受到良好的服务态度吗?</text>
+        </view>
+      </view>
+      <view class="mid">
+        <view class="mid_left">点单</view>
+        <view class="mid_right">
+          <view>
+            🌟 🌟 🌟 🌟 🌟 🌟
+          </view>
+          <text>点单有恰当的介绍，快速准确地下单吗？</text>
+        </view>
+      </view>
+      <view class="mid">
+        <view class="mid_left">速度</view>
+        <view class="mid_right">
+          <view>
+            🌟 🌟 🌟 🌟 🌟 🌟
+          </view>
+          <text>出品的速度您认为可以接受吗?</text>
+        </view>
+      </view>
+      <view class="mid">
+        <view class="mid_left">产品</view>
+        <view class="mid_right">
+          <view>
+            🌟 🌟 🌟 🌟 🌟 🌟
+          </view>
+          <text>您享用的茶饮或面包，如您所期待吗?</text>
+        </view>
+      </view>
+      <view class="mid">
+        <view class="mid_left">环境</view>
+        <view class="mid_right">
+          <view>
+            🌟 🌟 🌟 🌟 🌟 🌟
+          </view>
+          <text>门店环境和清洁卫生，您满意吗?</text>
+        </view>
+      </view>
+    </view>
+    <view class="content_bottom">
+      <textarea placeholder="如果您有什么意见和建议请告诉我们，我们会认真聆听">
+      </textarea>
+      <view>/500</view>
+      <view>
+        提交评论
+      </view>
+    </view>
+  </view>
+</view>

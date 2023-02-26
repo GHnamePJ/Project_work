@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>使用.sync修饰符，实现父子组件属性双向绑定</title>
+  <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+  <div id="app" > 
+    <!--:show.sync绑定父组件 valueChild  -->
+    <my-component :show.sync='valueChild' ></my-component>
+    <span>父组件的show: {{valueChild}}</span>
+    <button @click="changeValue">toggle</button>     
+  </div>
+  <script>
+  //子组件：定义全局组件，注意命名以‘-’分隔 
+  Vue.component('my-component',{
+      template: ` <div v-if="show" class="comp">
+                    <p>子组件的show初始值是{{show}}，所以是显示的</p>
+                    <button @click.stop="closeDiv">关闭</button>
+                 </div>`,
+      props:{ //绑定到子组件
+        show: {
+          type: Boolean,
+          default: false
+        }
+      },
+      methods: {
+        closeDiv() {
+          //触发 update 事件，并向父组件传入新值show=false
+          this.$emit('update:show', false); 
+          //下面这样写无法更新父组件中的show值
+          //this.show = false
+        }
+      }      
+  });
+  new Vue({
+    el: "#app", 
+    data: {
+      valueChild:true, //默认值 为true,将向子组件传送该初始值show=true        
+    },
+    // watch:{
+    //   valueChild (oldVal, newVal){
+    //       alert('old:' + oldVal + ',new:' +newVal)
+    //   }
+    // },
+    methods:{
+      changeValue(){
+        //改变属性值，同时传送到子组件
+        this.valueChild = !this.valueChild
+      }
+    }
+  });  
+  </script>
+  <style type="text/css">    
+    .comp{
+      background: pink; 
+      width: 200px; 
+      height: 100px;
+    }
+  </style>
+</body>
+</html>

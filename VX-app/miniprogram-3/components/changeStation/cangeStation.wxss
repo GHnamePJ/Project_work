@@ -1,0 +1,79 @@
+/* components/changeStation/cangeStation.wxss */
+@import "/style/iconcss.wxss";
+.station {
+  width: 100%;
+  height: 80rpx;
+  border-radius: 40rpx 0 0 40rpx;
+  border: 1rpx solid rgba(41, 51, 61, 0.2);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0rpx 4rpx 8rpx 0rpx rgba(0, 0, 0, 0.25);
+}
+
+.text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "幼圆";
+  font-weight: 700;
+  font-size: 38rpx;
+}
+
+.l-popup {
+  width: 100vw;
+  height: 100vh;
+}
+
+.botton {
+  width: 92%;
+  height: 50vh;
+  padding: 30rpx;
+  border-radius: 15rpx 15rpx 0 0;
+  background-color: white;
+}
+
+.botton-title {
+  font-size: 45rpx;
+  color: rgba(107, 79, 207, 0.9);
+  text-shadow: rgba(30, 31, 34, 0.4) 0px 3px 8px;
+}
+
+.botton-content {
+  width: 100%;
+  height: 90%;
+  /* background-color: rosybrown; */
+}
+
+.station-view {
+  width: 100%;
+  height: 125rpx;
+  border-radius: 15rpx;
+  margin-top: 25rpx;
+  display: flex;
+  background-color: rgba(117, 150, 232, 0.7);
+}
+
+.station-name {
+  width: 50%;
+  padding-left: 25rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background-color: saddlebrown; */
+}
+
+.img {
+  width: 20%;
+}
+
+.station-num {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  font-size: 35rpx;
+  padding-right: 25rpx;
+  justify-content: flex-end;
+  align-items: flex-end;
+  /* background-color: rgb(192, 145, 112); */
+}

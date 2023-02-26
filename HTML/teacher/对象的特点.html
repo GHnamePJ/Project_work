@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>函数中能通过传递对象来改变值</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//对象构造函数,name,age,no是构造参数
+			function Student(name,age,no){
+				this.name=name;
+				this.age=age;
+				this.no=no;
+				this.showName=function(){
+					document.write('my name is '+this.name);
+				}
+			}
+			
+			
+			
+			//函数中参数实行的是值传递
+			// function change(x){
+			// 	x=10;
+			// 	console.log(x);
+			// }
+			
+			// function test(){
+			// 	var num=5;
+			// 	change(num);
+			// 	console.log(num);
+			// }
+			// test();
+			// change();
+			
+			//如果希望函数在运行时能修改参数，可以使用对象进行传递
+			
+			function change2(obj){
+				obj.age++;
+			}
+			
+			function test2(){
+			//使用构造函数来构造构造对象
+			var stu3=new Student('李四',18,'2001121');
+			change2(stu3);
+			console.log(stu3);
+			}
+			test2();
+		</script>
+	</body>
+</html>

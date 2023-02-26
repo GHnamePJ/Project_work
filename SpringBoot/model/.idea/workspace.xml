@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7c9f8bbf-205e-4cd7-aa50-a29b1545a7a9" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2FvNvQRUppJumP4sNRuUfKcvbdX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Project_work\SpringBoot\model\src\main\java\com\yu\model\vo\request" />
+      <recent name="E:\IDEAProduct\SpringBootProduct\model\src\main\java\com\yu\model\utils" />
+      <recent name="E:\IDEAProduct\SpringBootProduct\model\src\main\java\com\yu\model\exception" />
+      <recent name="E:\IDEAProduct\SpringBootProduct\model\src\main\java\com\yu\model\service\impl" />
+      <recent name="E:\IDEAProduct\SpringBootProduct\model\src\main\java\com\yu\model\service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IDEAProduct\SpringBootProduct\model\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yu.model.common" />
+      <recent name="com.yu.model.exception.handler" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ModelApplication">
+    <configuration name="ModelApplicationTests.getTokenPayload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="model" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yu.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yu.model" />
+      <option name="MAIN_CLASS_NAME" value="com.yu.model.ModelApplicationTests" />
+      <option name="METHOD_NAME" value="getTokenPayload" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test.setPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="model" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yu.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yu.model" />
+      <option name="MAIN_CLASS_NAME" value="com.yu.model.Test" />
+      <option name="METHOD_NAME" value="setPassword" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="model" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yu.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yu.model" />
+      <option name="MAIN_CLASS_NAME" value="com.yu.model.UserTest" />
+      <option name="METHOD_NAME" value="get" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.getT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="model" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yu.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yu.model" />
+      <option name="MAIN_CLASS_NAME" value="com.yu.model.UserTest" />
+      <option name="METHOD_NAME" value="getT" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.getUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="model" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yu.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yu.model" />
+      <option name="MAIN_CLASS_NAME" value="com.yu.model.UserTest" />
+      <option name="METHOD_NAME" value="getUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModelApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="model" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yu.model.ModelApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.Test.setPassword" />
+        <item itemvalue="JUnit.ModelApplicationTests.getTokenPayload" />
+        <item itemvalue="JUnit.UserTest.getT" />
+        <item itemvalue="JUnit.UserTest.get" />
+        <item itemvalue="JUnit.UserTest.getUser" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringBootOptions">
+    <option name="showAdditionalConfigNotification" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7c9f8bbf-205e-4cd7-aa50-a29b1545a7a9" name="Changes" comment="" />
+      <created>1665368827596</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1665368827596</updated>
+      <workItem from="1665368829264" duration="105000" />
+      <workItem from="1665369033358" duration="2740000" />
+      <workItem from="1665404113597" duration="13067000" />
+      <workItem from="1665447404882" duration="7926000" />
+      <workItem from="1665658844764" duration="726000" />
+      <workItem from="1665659634106" duration="655000" />
+      <workItem from="1665744256912" duration="602000" />
+      <workItem from="1665842845573" duration="4426000" />
+      <workItem from="1665894478838" duration="3032000" />
+      <workItem from="1665906053484" duration="20512000" />
+      <workItem from="1665986903474" duration="2874000" />
+      <workItem from="1666018533414" duration="742000" />
+      <workItem from="1666063051153" duration="971000" />
+      <workItem from="1666074196835" duration="2168000" />
+      <workItem from="1666413703555" duration="2001000" />
+      <workItem from="1666426998197" duration="145000" />
+      <workItem from="1666444062431" duration="3271000" />
+      <workItem from="1666507164245" duration="3002000" />
+      <workItem from="1666533189993" duration="1354000" />
+      <workItem from="1666578150084" duration="1237000" />
+      <workItem from="1666593340603" duration="4600000" />
+      <workItem from="1666657275432" duration="3903000" />
+      <workItem from="1666747008734" duration="1318000" />
+      <workItem from="1666833128108" duration="708000" />
+      <workItem from="1666861936488" duration="2234000" />
+      <workItem from="1666922917589" duration="3643000" />
+      <workItem from="1666941431876" duration="7430000" />
+      <workItem from="1667007160744" duration="8222000" />
+      <workItem from="1667094083625" duration="2953000" />
+      <workItem from="1667113242762" duration="1812000" />
+      <workItem from="1667135430514" duration="625000" />
+      <workItem from="1667179627235" duration="1869000" />
+      <workItem from="1667203430350" duration="817000" />
+      <workItem from="1667227410474" duration="624000" />
+      <workItem from="1667263223223" duration="9217000" />
+      <workItem from="1667479797039" duration="3534000" />
+      <workItem from="1667526154857" duration="1006000" />
+      <workItem from="1667612875886" duration="3271000" />
+      <workItem from="1667869553997" duration="614000" />
+      <workItem from="1668049799832" duration="1188000" />
+      <workItem from="1668073697154" duration="1983000" />
+      <workItem from="1668218553211" duration="903000" />
+      <workItem from="1668247678552" duration="1824000" />
+      <workItem from="1668314124843" duration="3547000" />
+      <workItem from="1668390645316" duration="1802000" />
+      <workItem from="1668412447640" duration="349000" />
+      <workItem from="1668433638388" duration="600000" />
+      <workItem from="1668473428686" duration="3649000" />
+      <workItem from="1668602445587" duration="1229000" />
+      <workItem from="1668670335074" duration="3183000" />
+      <workItem from="1668764145336" duration="2476000" />
+      <workItem from="1668830188329" duration="697000" />
+      <workItem from="1668842351711" duration="657000" />
+      <workItem from="1668856480947" duration="1019000" />
+      <workItem from="1668907033367" duration="2119000" />
+      <workItem from="1668929019557" duration="2050000" />
+      <workItem from="1668994669100" duration="5971000" />
+      <workItem from="1669018808785" duration="4188000" />
+      <workItem from="1669077188463" duration="4073000" />
+      <workItem from="1669087882805" duration="10694000" />
+      <workItem from="1669166928027" duration="10641000" />
+      <workItem from="1669251792793" duration="1283000" />
+      <workItem from="1669253104463" duration="1213000" />
+      <workItem from="1669256216885" duration="1749000" />
+      <workItem from="1669260868097" duration="1261000" />
+      <workItem from="1669266732805" duration="4335000" />
+      <workItem from="1669287966124" duration="1491000" />
+      <workItem from="1669361398594" duration="1174000" />
+      <workItem from="1669427453263" duration="26000" />
+      <workItem from="1676598287270" duration="271000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yu/model/utils/RedisCache.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yu/model/utils/RedisCache.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yu/model/utils/RedisCache.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.auth0.jwt.JWTDecoder" memberName="payload" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>

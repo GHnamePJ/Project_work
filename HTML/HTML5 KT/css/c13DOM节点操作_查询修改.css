@@ -1,0 +1,13 @@
+#nav{
+	/* background: lightcoral; */
+	margin: auto;
+	width: 1000px;
+	height: 100px;
+	list-style:none;
+}
+li{
+	margin: 0px;
+	margin:20px 56px;
+	float:left;
+	
+}

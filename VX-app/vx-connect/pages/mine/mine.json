@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "l-list":"../../miniprogram_npm/lin-ui/list/index",
+    "l-button":"../../miniprogram_npm/lin-ui/button/index"
+  },
+  "navigationBarTitleText": "我的",
+  "navigationBarBackgroundColor":"#599BFE"
+}

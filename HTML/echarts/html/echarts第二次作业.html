@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>echarts_domeo2</title>
+		<script src="../js/echarts.js"></script>
+		<style>
+			#panel1{
+				width: 100%;
+				height: 600px;
+				margin: auto;
+			}
+			#panel2{
+				width: 800px;
+				height: 600px;
+				margin: auto;
+				margin-top: 80px;
+			}
+			#panel3{
+				width: 700px;
+				height: 600px;
+				margin: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="panel1"></div>
+		<div id="panel2"></div>
+		<div id="panel3"></div>	
+		<script>
+		// 请选择一种你最喜欢的图表，展示你上个学期各门课的成绩
+		// 请选择一种你最喜欢的图表，展示我们班的男女比例；
+		// 请选择一种你最喜欢的图表，展示你每周的消费金额（多少钱）
+			var panel1=echarts.init(document.getElementById("panel1"));
+			var option1={
+				title:{
+					text:'2021-2022-1各科成绩',
+					left:'center'
+				},
+				tooltip:{
+					
+				},
+				legend:{
+					left:"left"
+				},
+				xAxis:{
+					data:['艺术欣赏','科学启蒙','女子礼仪','形式政策','劳动','毛概','大数据','数据结构','HTML5','JavaWeb','机器人技术'],
+					animationDuration:3,
+					animationDurationUpdate:3
+				},
+				yAxis:{
+					
+				},
+				series:[
+					{
+						name:'成绩',
+						type:'bar',
+						data:[87,100,100,100,89,86,76,69,94,84,87],
+						label:{
+							show: true,
+						    position: 'top'	
+						},
+						color : [ '#61a0a8', '#91c7ae'],
+					},
+				],
+				animationDuration: 3000,
+				animationDurationUpdate: 3000,
+				animationEasing: 'linear',
+				animationEasingUpdate: 'linear',
+			};
+			panel1.setOption(option1);
+			var panel2=echarts.init(document.getElementById("panel2"));
+			var option2={
+				title:{
+					text:'201班男女比例',
+					left:'center'
+				},
+				tooltip:{
+					
+				},
+				legend: {
+					left:'left'
+				  },
+				xAxis:{
+					data:['人数']
+				},
+				yAxis:{
+					
+				},
+				series:[
+ 				  {
+ 					name: '男生',
+ 					type: 'bar',
+					barWidth:90,
+ 					data: [32],
+ 					label: {
+ 						show: true,
+ 						position: 'top'
+ 					  },
+ 					stack: 'x'
+ 				  },
+ 				  {
+ 					name: '女生',
+ 					type: 'bar',
+					barWidth:90,
+ 					data: [9],
+ 					label: {
+ 						show: true,
+ 						position: 'top'
+ 					  },
+ 					stack: 'x'
+ 				  }
+ 				],
+				
+			};
+			panel2.setOption(option2);
+			var panel3=echarts.init(document.getElementById("panel3"));
+			var option3={
+				title:{
+					text:'一周消费',
+					left:'center'
+				},
+				tooltip:{
+					
+				},
+				xAxis:{
+					data:['星期一','星期二','星期三','星期四','星期五','星期六','星期日'],
+					animationDuration:30,
+					animationDurationUpdate:30
+				},
+				yAxis:{
+					
+				},
+				series:[
+					{
+					name:'消费',
+					type:'bar',
+					data:[30,36,33,34,38,27,39,],
+					label:{
+						show: true,
+					    position: 'top'	
+					},
+					color:'#6ccd67'
+				}
+				],
+				animationDuration: 3000,
+				animationDurationUpdate: 3000,
+				animationEasing: 'linear',
+				animationEasingUpdate: 'linear',
+			};
+			panel3.setOption(option3);
+		</script>
+		</div>
+	</body>
+</html>

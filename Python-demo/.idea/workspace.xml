@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f33b35ab-3bd5-40f8-b2a1-f278ac441a82" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2ApnJCExudOZUQLTGcdc4DiSpLm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/reptile" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Project_work\Python-demo\Face_demo\HAAR_Face_Detection" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.CopyQdPhoto (1)">
+    <configuration name="CopyFacePhoto" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Python-demo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Face_demo/HAAR_Face_Detection" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Face_demo/HAAR_Face_Detection/CopyFacePhoto.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CopyQdPhoto (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Python-demo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Face_demo/PythonMysql" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Face_demo/PythonMysql/CopyQdPhoto.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CopyQdPhoto" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Python-demo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Face_demo/PythonMysql" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="E:\Project_work\Python-demo\Face_demo\PythonMysql\CopyQdPhoto.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Face_detection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Python-demo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Face_demo/HAAR_Face_Detection" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Face_demo/HAAR_Face_Detection/Face_detection.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Savepkl" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Python-demo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Face_demo/HAAR_Face_Detection" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Face_demo/HAAR_Face_Detection/Savepkl.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.CopyQdPhoto (1)" />
+        <item itemvalue="Python.CopyQdPhoto" />
+        <item itemvalue="Python.CopyFacePhoto" />
+        <item itemvalue="Python.Face_detection" />
+        <item itemvalue="Python.Savepkl" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f33b35ab-3bd5-40f8-b2a1-f278ac441a82" name="Default Changelist" comment="" />
+      <created>1655715319927</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1655715319927</updated>
+      <workItem from="1655715321220" duration="5000" />
+      <workItem from="1657807809010" duration="1377000" />
+      <workItem from="1657887624905" duration="1668000" />
+      <workItem from="1658365900982" duration="7013000" />
+      <workItem from="1658455315812" duration="8225000" />
+      <workItem from="1658624481529" duration="609000" />
+      <workItem from="1658663336616" duration="276000" />
+      <workItem from="1658917729277" duration="576000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="420" y="115" key="FileChooserDialogImpl" timestamp="1658918972678">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="420" y="115" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1658918972678" />
+    <state width="1237" height="186" key="GridCell.Tab.0.bottom" timestamp="1658590470424">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="186" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1658590470424" />
+    <state width="1237" height="186" key="GridCell.Tab.0.center" timestamp="1658590470424">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="186" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1658590470424" />
+    <state width="1237" height="186" key="GridCell.Tab.0.left" timestamp="1658590470424">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="186" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1658590470424" />
+    <state width="1237" height="186" key="GridCell.Tab.0.right" timestamp="1658590470424">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="186" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1658590470424" />
+    <state width="1237" height="220" key="GridCell.Tab.1.bottom" timestamp="1657971261994">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="220" key="GridCell.Tab.1.bottom/0.0.1280.720@0.0.1280.720" timestamp="1657971261994" />
+    <state width="1237" height="220" key="GridCell.Tab.1.center" timestamp="1657971261992">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="220" key="GridCell.Tab.1.center/0.0.1280.720@0.0.1280.720" timestamp="1657971261992" />
+    <state width="1237" height="220" key="GridCell.Tab.1.left" timestamp="1657971261992">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="220" key="GridCell.Tab.1.left/0.0.1280.720@0.0.1280.720" timestamp="1657971261992" />
+    <state width="1237" height="220" key="GridCell.Tab.1.right" timestamp="1657971261994">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="220" key="GridCell.Tab.1.right/0.0.1280.720@0.0.1280.720" timestamp="1657971261994" />
+    <state x="142" y="5" key="SettingsEditor" timestamp="1657808045564">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="142" y="5" key="SettingsEditor/0.0.1280.720@0.0.1280.720" timestamp="1657808045564" />
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1658586829936">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1658586829936" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Python_demo$CopyFacePhoto.coverage" NAME="CopyFacePhoto Coverage Results" MODIFIED="1658543350474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Face_demo/HAAR_Face_Detection" />
+    <SUITE FILE_PATH="coverage/Python_demo$.coverage" NAME="新建文本文档 Coverage Results" MODIFIED="1658586565262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Face_demo/PythonMysql" />
+    <SUITE FILE_PATH="coverage/Python_demo$Face_detection.coverage" NAME="Face_detection Coverage Results" MODIFIED="1658458642405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Face_demo/HAAR_Face_Detection" />
+    <SUITE FILE_PATH="coverage/Python_demo$CopyQdPhoto__1_.coverage" NAME="CopyQdPhoto (1) Coverage Results" MODIFIED="1658589230725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Face_demo/PythonMysql" />
+    <SUITE FILE_PATH="coverage/Python_demo$Savepkl.coverage" NAME="Savepkl Coverage Results" MODIFIED="1658408576973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Face_demo/HAAR_Face_Detection" />
+  </component>
+</project>

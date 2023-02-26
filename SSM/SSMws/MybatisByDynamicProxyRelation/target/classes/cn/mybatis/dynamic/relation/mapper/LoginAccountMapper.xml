@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 使用mapper接口编程，namespace的值一定与mapper接口类一致 -->
+<mapper namespace="cn.mybatis.dynamic.relation.mapper.LoginAccountMapper">
+	<!-- 字段列表要与select中字段列表一一对应 -->
+	<!-- one to one  -->
+	<resultMap type="cn.mybatis.dynamic.relation.po.LoginAccount" id="loginAccount_result">
+		<id property="id" column="id"/>
+		<result property="loginName" column="loginName"/>
+		<result property="password" column="password" />
+		<association property="emp_id" javaType="cn.mybatis.dynamic.relation.po.EmployeeInfo">
+			<id property="id" column="eid"/> <!-- 定义别名 -->
+			<result property="empName" column="empName"/>
+		</association>		
+	</resultMap>
+	<!-- 查询所有帐号及对应的员工信息 -->
+	<select id="getAccount" resultMap="loginAccount_result">
+		SELECT
+		a.id,
+		a.loginName,
+		a.password,
+		e.id eid, <!-- 使用别名 -->
+		e.empName			
+		FROM 
+		t_account a
+    	LEFT JOIN t_employee e ON a.emp_id = e.id
+	</select>	
+</mapper>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SsmForRight:war">
+    <output-path>$PROJECT_DIR$/SsmForRight/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>SsmForRight</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="SsmForRight.war">
+      <element id="artifact" artifact-name="SsmForRight:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MybatisByDao/MybatisByDao.iml" filepath="$PROJECT_DIR$/MybatisByDao/MybatisByDao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MybatisByDynamicProxy/MybatisByDynamicProxy.iml" filepath="$PROJECT_DIR$/MybatisByDynamicProxy/MybatisByDynamicProxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MybatisByDynamicProxyAnnoSql/MybatisByDynamicProxyAnnoSql.iml" filepath="$PROJECT_DIR$/MybatisByDynamicProxyAnnoSql/MybatisByDynamicProxyAnnoSql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MybatisByDynamicProxySql/MybatisByDynamicProxySql.iml" filepath="$PROJECT_DIR$/MybatisByDynamicProxySql/MybatisByDynamicProxySql.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-icon":"/miniprogram_npm/lin-ui/icon",
+    "l-calendar":"/miniprogram_npm/lin-ui/calendar/index"
+  }
+}

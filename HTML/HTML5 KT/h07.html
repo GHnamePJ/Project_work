@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script typr="text/javascript">
+		function printSmile(rows){
+			for(var i=1;i<=rows;i++){
+				for(var j=1;j<=rows-i;j++){
+					document.write("&nbsp&nbsp&nbsp");
+				}
+				for(var k=1;k<=2*i-1;k++){
+					document.write('\u263a');
+				}
+				document.write("<br/>");
+			}
+		}
+		var n=prompt("请输入要打印几行金字塔：");
+		printSmile(n);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!--components/query-data/query-data.wxml-->
+<!-- 分页、下拉 -->
+<view class="query-container">
+  <!-- top -->
+  <view class="top">
+    <view class="top-content">
+    </view>
+  </view>
+  <!-- mid -->
+  <view class="mid">
+    <view class="mid-content">
+      <!-- 气象因素 -->
+      <view>
+        <button bindtap="query">查询</button>
+        <button bindtap="advancedQuery">高级查询</button>
+      </view>
+    </view>
+  </view>
+  <!-- bottom -->
+  <view class="bottom">
+    <view class="table">
+      <view class="table" >
+        <view class="tr bg-w">
+          <view class="th">温度</view>
+          <view class="th">湿度</view>
+          <view class="th">风速</view>
+          <view class="th">风向</view>
+          <view class="th">降雨量</view>
+          <view class="th">光照</view>
+          <view class="th">PM2.5</view>
+          <view class="th">PM10</view>
+        </view>
+        <block wx:for="{{pageWeather}}" wx:key="index" wx:if="{{data}}">
+          <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+            <view class="td">{{item.temperature}}</view>
+            <view class="td">{{item.humidity}}</view>
+            <view class="td">{{item.windSpeed}}</view>
+            <view class="td">{{item.windDirection}}</view>
+            <view class="td">{{item.precipitation}}</view>
+            <view class="td">{{item.illumination}}</view>
+            <view class="td">{{item.pm25}}</view>
+            <view class="td">{{item.pm10}}</view>
+          </view>
+          <view class="tr" wx:else>
+            <view class="td">{{item.temperature}}</view>
+            <view class="td">{{item.humidity}}</view>
+            <view class="td">{{item.windSpeed}}</view>
+            <view class="td">{{item.windDirection}}</view>
+            <view class="td">{{item.precipitation}}</view>
+            <view class="td">{{item.illumination}}</view>
+            <view class="td">{{item.pm25}}</view>
+            <view class="td">{{item.pm10}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <!-- 分页 -->
+    <view class="paging">
+      <!-- ,每页{{pageCount}}条 -->
+      <view class="paging-top">
+        <text class="text1">共{{allPages}}页</text>
+        <l-icon name="left" bindtap="previous" wx:if="{{data}}"></l-icon>
+        <text wx:if="{{data}}">{{page}}</text>
+        <l-icon name="right" bindtap="nextPage" wx:if="{{data}}"></l-icon>
+      </view>
+      <!-- 下拉选择页数进行跳转 -->
+      <view class="paging-bottom">
+        <text class="text2">跳转至</text>
+        <pj-selectPage prop-array='{{selectArray}}' bind:myget='getDate' class="select_k"></pj-selectPage>
+        <text class="text2">页</text>
+      </view>
+    </view>
+
+  </view>
+</view>

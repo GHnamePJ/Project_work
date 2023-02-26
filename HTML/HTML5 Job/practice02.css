@@ -1,0 +1,29 @@
+/* *{
+	margin:0;
+	padding:0;
+} */
+.box{
+	
+	white:800px;
+	height:320px;
+	background-color:black;
+	/* 圆角 */
+	/* border-radius:30px; */
+	margin:0 auto;
+	overflow:hidden;
+}
+.tp_title a{
+	position:absolute;
+	color:white;
+	text-decoration:none;
+}
+.box div{
+	
+	
+	
+	
+	position:relative;
+	float:left;
+	 /* white:640px; */
+	 margin-right: -450px;
+}

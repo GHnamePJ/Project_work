@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>消消乐</title>
+	</head>
+	<body>
+		<script type='text/javascript'>
+		var first=null;
+		//打印表格
+		var table=document.createElement('table');
+		document.body.appendChild(table);
+		for(i=0;i<6;i++){
+			var tr=document.createElement('tr');
+			table.appendChild(tr);
+			for(j=0;j<6;j++){
+				var td=document.createElement('td');
+				tr.appendChild(td);
+				var img=document.createElement('img');
+				td.appendChild(img);
+				//创建一个1-6的随机数,插入随机图片
+				var num=Math.floor(Math.random()*6)+1;
+				img.src="smile/p"+num+".jpg";
+				//判断
+				img.onclick=function(){
+					if(first==null){//第一次点击
+						first=this;
+					}else{//不是第一次点击
+						if(first!=this){//不是同一张图片
+							if(first.src==this.src){//判断颜色是否相同
+								first.src='';
+								this.src='';
+								first=null;
+							}else{
+								first=this;
+							}
+						}else{
+							alert("请勿重复点击同一张图片");
+						}
+					}
+				}
+			}
+		}
+		</script>
+	</body>
+</html>

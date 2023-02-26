@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+    <file type="web" url="jar://$PROJECT_DIR$/aip-java-sdk-4.15.1/gson-2.8.8.jar!/" />
+    <file type="web" url="jar://J:/aip-java-sdk-4.15.1/aip-java-sdk-4.15.1.jar!/" />
+    <file type="web" url="jar://J:/aip-java-sdk-4.15.1/json-20160810.jar!/" />
+    <file type="web" url="jar://J:/aip-java-sdk-4.15.1/slf4j-api-1.7.25.jar!/" />
+    <file type="web" url="jar://J:/aip-java-sdk-4.15.1/slf4j-simple-1.7.25.jar!/" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

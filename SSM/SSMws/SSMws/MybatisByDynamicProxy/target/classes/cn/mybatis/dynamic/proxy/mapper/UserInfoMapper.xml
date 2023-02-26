@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.mybatis.dynamic.proxy.mapper.UserInfoMapper">
+
+    <select id="getUserById" parameterType="java.lang.Integer" resultType="cn.mybatis.dynamic.proxy.po.UserInfo">
+        select * from t_user where id=#{id}
+<!--            select *from  t_user-->
+<!--            <where>-->
+<!--                <if test="id!=null">-->
+<!--                    and id=#{id}-->
+<!--                </if>-->
+<!--            </where>-->
+    </select>
+
+    <select id="getUserByName" parameterType="string" resultType="cn.mybatis.dynamic.proxy.po.UserInfo">
+        <!-- select * from t_user where loginName=#{loginName}  -->
+--         SELECT  *  FROM  t_user  WHERE  realName like
+<!--            select *from  t_user -->
+<!--                <where>-->
+<!--                    <if test="loginName!=null and loginName!=''">-->
+<!--                        and loginName=#{loginName}-->
+<!--                    </if>-->
+<!--                    <if test="realName!=null and realName!=''">-->
+<!--                        and realName like concat ('%',#{realName},'%')-->
+<!--                    </if>-->
+<!--                </where>-->
+                 select *from  t_user
+                    <where>
+                        <choose>
+                            <when test="loginName!=null and loginName!=''">
+                                and loginName=#{loginName}
+                            </when>
+                            <when test="realName!=null and realName!=''">
+                                and realName like concat ('%',#{realName},'%')
+                            </when>
+                        </choose>
+                    </where>
+    </select>
+
+    <select id="getUserByids" parameterType="list" resultType="cn.mybatis.dynamic.proxy.po.UserInfo">
+--         select *from t_user where id in(1,2,3)
+            select *from t_user
+                 <where>
+                       <foreach collection="list" item="id" open="id in (" close=")" separator=",">#{id}</foreach>
+                 </where>
+
+    </select>
+
+    <insert id="insertUser" parameterType="cn.mybatis.dynamic.proxy.po.UserInfo"
+            useGeneratedKeys="true" keyProperty="id">
+--         insert into t_user (loginName, password, realName) values (#{loginName}, #{password}, #{realName})
+            insert  into t_user (
+                <if test="loginName!=null and loginName!=''">loginName,</if>
+                <if test="password!=null and password!=''">password,</if>
+                <if test="realName!=null and realName!=''">realName,</if>
+                )
+                values(
+                <if test="loginName!=null and loginName!=''">#{loginName},</if>
+                <if test="password!=null and password!=''">#{password},</if>
+                <if test="realName!=null and realName!=''">#{realName},</if>
+                 )
+    </insert>
+
+    <update id="updateUser" parameterType="cn.mybatis.dynamic.proxy.po.UserInfo">
+--       update t_user set loginName=#{loginName},password=#{password},realName=#{realName} where id=#{id}
+        update t_user
+            <set>
+                <if test="loginName!=null and loginName!=''">loginName=#{loginName},</if>
+                <if test="password!=null and password!=''">password=#{password},</if>
+                <if test="realName!=null and realName!=''">realName=#{realName},</if>
+            </set>
+            <where>
+                <if test="id!=null">and id=#{id}</if>
+            </where>
+    </update>
+
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+--         delete from t_user where id=#{id}
+            delete from t_user
+                <where>
+                    <if test="id!=null">and id=#{id}</if>
+                </where>
+    </delete>
+</mapper>
+<!--aliases-->
+<!--<mapper namespace="cn.mybatis.dynamic.proxy.mapper.UserInfoMapper">-->
+<!--    &lt;!&ndash; select one  aliases name&ndash;&gt;-->
+<!--    <select id="getUserById" parameterType="int" resultType="userInfo">-->
+<!--        select * from t_user where id=#{id}-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash;select list  class aliases&ndash;&gt;-->
+<!--    <select id="getUserByName" parameterType="string" resultType="userInfo">-->
+<!--        &lt;!&ndash; select * from t_user where realName like '%${value}%' &ndash;&gt;-->
+<!--        SELECT  *  FROM  t_user  WHERE  realName like CONCAT('%',#{realName},'%')-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash;insert   class aliases&ndash;&gt;-->
+<!--    <insert id="insertUser" parameterType="userInfo"-->
+<!--            useGeneratedKeys="true" keyProperty="id">-->
+<!--        insert into t_user (loginName, password, realName) values (#{loginName}, #{password}, #{realName})-->
+<!--    </insert>-->
+
+<!--    &lt;!&ndash;update     class aliases&ndash;&gt;-->
+<!--    <update id="updateUser" parameterType="userInfo">-->
+<!--        update t_user set loginName=#{loginName},password=#{password},realName=#{realName} where id=#{id}-->
+<!--    </update>-->
+
+<!--    &lt;!&ndash; delete aliases name &ndash;&gt;-->
+<!--    <delete id="deleteUser" parameterType="int">-->
+<!--        delete from t_user where id=#{id}-->
+<!--    </delete>-->
+<!--</mapper>-->

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.ry{
+				color:red ;
+				background:yellow ;
+			}
+			.bw{
+				color: white;
+				background:blue ;
+			}
+		</style>
+	</head>
+	<body>
+		<p  >段落文本</p>
+		<select name="bg" >
+			<option value="ry">红底黄字</option>
+			<option value="bw">蓝底白字</option>
+		</select>
+		
+		<script type="text/javascript">
+			var selectBg=document.getElementsByName('bg')[0];
+			
+			selectBg.onchange=function(){
+				//两种方法
+			//	alert(this.value);
+			//1.通过加载不同的class
+			var p=this.previousSibling.previousSibling;
+			p.setAttribute('class',this.value);
+			p.className=this.value;
+			//2.通过修改 p中的属性
+			
+			if(this.value=="ry"){
+			p.style.color="red";
+			p.style.background="yellow"}
+			//...
+			}
+			
+			
+		</script>
+	</body>
+</html>

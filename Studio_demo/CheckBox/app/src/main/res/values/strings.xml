@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CheckBox</string>
+    <string name="title1">请选择兴趣爱好：</string>
+    <string name="one">羽毛球</string>
+    <string name="two">篮球</string>
+    <string name="three">乒乓球</string>
+    <string name="title2">您选择的是：</string>
+</resources>

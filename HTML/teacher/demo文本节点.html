@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div></div>
+		<p></p>
+		
+		
+		
+		
+		<!--脚本放在页脚执行-->
+		<script type="text/javascript">
+			var str='hello world';
+			
+			var div=document.getElementsByTagName('div')[0];
+		//	div.innerText=str;  //innerText是EL元素的属性
+			
+			div.innerHTML=str;//innerHTML是EL元素的属性
+			div.innerHTML+='<img src="img/HBuilder.png"/>';//innerHTML是EL元素的属性
+		</script>		
+	</body>
+</html>

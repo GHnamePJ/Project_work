@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mapper.BookInfoMapper">
+    <select id="getBookById" parameterType="int" resultType="BookInfo">
+        select * from t_book
+        <trim prefix="where">
+            <if test="id!=null and id!=''" >id=#{id}</if>
+        </trim>
+    </select>
+    <insert id="insertBook" parameterType="BookInfo">
+            insert into t_book
+            <trim prefix="(" suffix=")values" suffixOverrides=",">
+                <if test="id!=null and id!=''">id,</if>
+                <if test="bookName!=null and bookName!=''">bookName,</if>
+                <if test="price!=null and price!=''">price,</if>
+                <if test="publisher!=null and publisher!=''">publisher,</if>
+            </trim>
+            <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="id!=null and id!=''">#{id},</if>
+                <if test="bookName!=null and bookName!=''">#{bookName},</if>
+                <if test="price!=null and price!=''">#{price},</if>
+                <if test="publisher!=null and publisher!=''">#{publisher},</if>
+            </trim>
+    </insert>
+    <update id="updateBook" parameterType="BookInfo">
+        update t_book
+        <trim prefix="set" >
+            <if test="bookName!=null and bookName!=''">bookName=#{bookName}</if>
+        </trim>
+        <where> bookName="设计模式"</where>
+    </update>
+    <delete id="deleteBook" parameterType="int">
+        delete from t_book
+        <trim prefix="where">
+            <if test="id!=null and id!=''">id=#{id}</if>
+        </trim>
+    </delete>
+</mapper>

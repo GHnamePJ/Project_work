@@ -1,0 +1,18 @@
+# datasource配置
+spring:
+  datasource:
+#    连接本地数据库 /// 可以代替用户名、ip和端口
+    url: jdbc:mysql:///springboot
+    username: root
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+## mybatis配置
+#mybatis:
+#  # mapper映射文件
+#  mapper-locations: classpath:mapper/*Mapper.xml
+#  # 给包取别名
+#  type-aliases-package: com.pj.springbootmybatis.domain
+##  config-location: # 指定mybatis核心配置文件
+
+

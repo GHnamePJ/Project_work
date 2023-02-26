@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 使用mapper接口编程，namespace的值一定与mapper接口类一致 -->
+<mapper namespace="cn.mybatis.dynamic.relation.mapper.CourseMapper">
+	<!-- 字段列表要与select中字段列表一一对应 -->
+	<!-- many to many -->
+	<resultMap type="cn.mybatis.dynamic.relation.po.Course" id="base_course_resultMap">
+		<id property="id" column="id"/>
+		<result property="cname" column="cname"/>
+		<result property="credit" column="credit" />
+		<collection property="students" javaType="ArrayList" ofType="cn.mybatis.dynamic.relation.po.StudentInfo">
+			<id property="id" column="sid"/>
+        	<result property="sno" column="sno"/>
+        	<result property="sname" column="sname"/>
+		</collection>
+	</resultMap>
+	
+	<!-- 查询所有帐号及对应的员工信息 -->
+	<select id="getCourseInfo" resultMap="base_course_resultMap">
+		SELECT
+		c.id,
+		c.cname,
+		c.credit,
+		s.id sid, <!-- 使用别名 -->
+		s.sno,
+		s.sname			
+		FROM 
+		t_course c
+		LEFT JOIN t_student_course sc On c.id=sc.course_id
+    	LEFT JOIN t_student s ON s.id=sc.student_id 		
+	</select>	
+</mapper>

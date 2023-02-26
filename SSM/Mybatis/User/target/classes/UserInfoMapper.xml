@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="forCurd1">
+    <select id="getUserbyloginName" parameterType="java.lang.String" resultType="org.example.pojo.UserInfo">
+        select * from t_user where loginName like concat("%",#{loginName},"%")
+    </select>
+    <select id="getUserbyid" parameterType="java.lang.Integer" resultType="org.example.pojo.UserInfo">
+        select * from t_user  where id=#{id}
+    </select>
+    <insert id="insertUser" parameterType="org.example.pojo.UserInfo">
+    insert into t_user (loginName,password,realName) values (#{loginName},#{password},#{realName})
+    </insert>
+    <update id="updateUser" parameterType="org.example.pojo.UserInfo">
+        update t_user set loginName=#{loginName},password=#{password},realName=#{realName} where id=#{id}
+    </update>
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        delete from t_user where id=#{id}
+    </delete>
+</mapper>

@@ -1,0 +1,18 @@
+<view id="container">
+  <!-- 头部 -->
+  <view id="top">
+    <image id="photo" src="{{photo}}" bindtap="photo"></image>
+    <text>Pj-Xk</text>
+  </view>
+  <!-- 中间 -->
+  <view id="mid">
+    <view id="mid-content">
+      <l-list icon="password" icon-size="120rpx" title="修改密码" l-content-class="content-text" gap="10" l-class="l-list"  bind:lintap="password"  />
+      <l-list icon="warning" icon-size="120rpx" title="关于我们" l-content-class="content-text" gap="10" l-class="l-list" bind:lintap="about"  />
+    </view>
+  </view>
+  <!-- 底部 -->
+  <view id="bottom">
+    <l-button type="error" shape="semicircle" plain="{{true}}"  bg-color="transparent" l-hover-class="" width="500" height="100" bind:lintap="exit">退出登录</l-button>
+  </view>
+</view>

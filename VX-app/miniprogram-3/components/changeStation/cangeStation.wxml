@@ -1,0 +1,28 @@
+<!--components/changeStation/cangeStation.wxml-->
+<view class="station">
+  <text class="text" decode="{{true}}" bindtap="onChangeStation" style="letter-spacing: 8rpx;">{{station}}</text>
+</view>
+
+<l-toast id="toast"/>
+<!-- 弹框 -->
+<l-popup show="{{isShow}}" l-class="l-popup" content-align="bottom">
+  <view class="botton">
+    <view class="botton-title">
+      <text decode="{{true}}" >切&nbsp;换&nbsp;气&nbsp;象&nbsp;站</text>
+    </view>
+    <scroll-view scroll-y="{{true}}" class="botton-content">
+      <block wx:for="{{stationdata}}" wx:key="index" >
+      <view class="station-view" data-index="{{index}}" bindtap="onClickStation">
+        <view class="station-name">
+          <l-icon name="station" size="65" l-class="iconfont"></l-icon>
+          <text>{{item.name}}</text>
+        </view>
+        <view class="station-num">
+          <l-icon name="num" size="45" l-class="iconfont"></l-icon>
+        <text>{{item.station}}</text>
+        </view>
+      </view>
+      </block>
+    </scroll-view>
+  </view>
+</l-popup>

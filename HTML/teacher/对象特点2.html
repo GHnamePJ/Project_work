@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function test(){
+				var x=1;
+				var y=2;
+				return x,y;
+			}
+			
+			function test2(){
+				var obj=new Object();
+				obj.x=1;
+				obj.y=2;
+				return obj;
+			}
+			var result1=test();//只带回最后一个返回值
+			var result2=test2();//带回所有的值
+			console.log(result2)
+		</script>
+	</body>
+</html>

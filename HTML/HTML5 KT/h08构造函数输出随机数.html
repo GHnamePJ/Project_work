@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>获取4位验证码的函数，调用十次</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		function verification(){
+			var n=Math.floor(Math.random()*9000+1000)
+			document.write(n);
+		}
+		for(i=0;i<10;i++){
+			verification();
+			document.write("<br/>");
+		}
+		</script>
+	</body>
+</html>

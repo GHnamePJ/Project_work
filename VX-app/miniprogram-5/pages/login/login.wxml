@@ -1,0 +1,51 @@
+<!--pages/login/login.wxml-->
+<view class="login-all">
+  <view class="loginTitle">
+    <text class="title" style="font-family: '幼圆';">气象</text>
+    <text class="iconfont icon-31wode"></text>
+  </view>
+  <view class="loginForm">
+    <view class="loginForm-top"></view>
+    <view class="loginForm-buttom">
+      <view class="glass"></view>
+      <!-- 登录表单 start -->
+      <view id="loginforms" style="display:{{display}}">
+
+        <view class="loginstitle"><text decode="{{true}}">登&nbsp;录</text></view>
+        <view class="login-content">
+          <!-- form表单 -->
+          <form class="login-form" catchsubmit="formSubmit" catchreset="formReset">
+            <view class="login-userName">
+              <l-icon name="user"></l-icon>
+              <input class="userName" name='name' value='{{loginForm.name}}' placeholder="请输入用户名" />
+            </view>
+
+            <view class="login-password">
+              <l-icon name="password"></l-icon>
+              <input class="password" name='password' type='password' value='{{loginForm.password}}'
+                placeholder="请输入密码" />
+            </view>
+            <l-form-item class="login-no-password">
+              <navigator>忘记密码</navigator>
+            </l-form-item>
+            <view class="btn-area">
+              <button form-type="submit" class="login-btn">登 录</button>
+            </view>
+          </form>
+        </view>
+        <l-toast id="my-toast" />
+        <!-- 注册切换 -->
+        <!-- <view class="login-register">
+          <view class="registerstitle"><text decode="{{true}}"  style="color: rgba(10, 10, 10, 0.5);">注&nbsp;册</text></view>
+          <view class="toregister">
+            <block>
+              <l-icon name="more" size="70" color="#3963bc" bindtap="toRegisterHtml"/>
+            </block>
+          </view>
+        </view> -->
+      </view>
+      <!-- 登录表单 end -->
+      
+    </view>
+  </view>
+</view>

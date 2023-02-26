@@ -1,0 +1,158 @@
+body{
+	margin:0;/* 去除默认边距 */
+}
+.container{
+	height: 830px;
+	width:800px;
+	/* background:black; */
+	margin:auto;/* 整体居中 */
+	overflow: hidden;/* 超出部分隐藏 */
+}
+header{
+	height:100px;
+	/* background:pink; */
+}
+nav{
+	/* height:100px; */
+	width: ;
+	float:left;
+	margin-top: 32px;
+	margin-left:-40px;
+	/* background:lightblue; */
+	/* width:30px; */
+}
+ul{
+	/* weight:500px; */
+	list-style:none;/* 去圆点 */
+	
+}
+ul li{
+	float:left;/* 排成一行//设置高,宽 */
+	display:block;
+	/* width:150px;
+	height:30px; */
+	/* background: pink; */
+	
+}
+.one{
+	color:sandybrown;
+}
+.one:active{
+	color:white;
+}
+.one:hover{
+	background:black;
+}
+.two{
+	color:lightgreen;
+	text-align: center;
+}
+.two:active{
+	color:white;
+}
+.two:hover{
+	background:black;
+}
+.three{
+	color:skyblue;
+}
+.three:active{
+	color:white;
+}
+.three:hover{
+	background:black;
+}
+.four{
+	color:sandybrown;
+	}
+.four:active{
+	color:white;
+}
+.four:hover{
+	background: black;
+}
+ul>li>a{
+	display:block; 
+	width: 120px;
+	height: 52px;
+	text-align: center;/* 文本横向居中 */
+	/* background:hotpink; */
+	text-decoration: none;/* 文本去下划线 */
+	line-height: 50px;/* 文本纵向居中 */
+}
+.content{
+	height:630px;
+	/* background:yellow; */
+}
+.banner{
+	height:200px;
+	background:url(../img/banner.jpg)/* 设置背景 */
+}
+.banner p{
+	margin:auto;
+	font-size: 30px;
+	float:left;
+	font-weight: bold;
+}
+.bannerfront{
+	margin-top:100px;
+	float:right;
+	margin-right: -30px;
+}
+.left{
+	width:410px;
+	height:430px;
+	/* background:gray; */
+	float:left;
+	padding-left:20px;
+	padding-right:20px;
+}
+.left>h5{
+	margin:auto;
+	display:inline-block;
+}
+.right{
+	width:310px;
+	height:430px;
+	/* background:lightskyblue; */
+	float:left;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.footer{
+	height:100px;
+	/* background:skyblue; */
+}
+
+.footer h5{
+	margin:auto;
+	/* color:green; */
+	display: inline-block;
+}
+.zuo{
+	width:410px;
+	height:100px;
+	/* background:lightskyblue; */
+	float:left;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.zuo p{
+	margin:auto;
+	display: inline-block;
+}
+.footer h5{
+	display: inline-block;
+	color:green;
+}
+.you{
+	width:310px;
+	height:100px;
+	/* background:gray; */
+	float:left;
+	padding-left:20px;
+	padding-right:20px;
+}
+.you h5{
+	float:right;
+}

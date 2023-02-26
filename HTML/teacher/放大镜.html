@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div.ads{
+				width:300px;
+				border: 2px solid red;
+				position: relative;
+				margin: auto;
+				overflow: hidden;
+			}
+			div.ads>img{
+				width: 100%;
+			}
+			/*span是inline*/
+			div.ads>span{
+				display: block;
+				width:80px;
+				height: 80px;
+				background:red;
+				position: absolute;
+				left:100px;
+				top:150px;
+				opacity: 0.8;
+			}
+			div.mask{
+				width:200px;
+				height: 200px;
+				border: 1px solid yellow;
+				overflow: hidden;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="height: 800px;background:gold">
+			<!-- 无用板块 -->
+		</div>
+		<div class="ads"><!-- 装图片板块 -->
+			<img src="img/si.jpg"/><!-- 大图 -->
+			<span ><!-- 放大镜 -->				
+			</span>
+		</div>
+		<div class="mask"><!-- 放大显示 -->
+			<img src="img/si.jpg" /><!-- 放大显示图 -->
+		</div>
+		<script type="text/javascript">
+			var ads=document.getElementsByClassName("ads")[0];//放 大图 的板块
+			var span=ads.getElementsByTagName("span")[0];//放大图片 的板块
+			var smallImg=ads.getElementsByTagName("img")[0];//放 大图 板块 的 大图
+			var mask=document.getElementsByClassName("mask")[0];//放大显示板块
+			var bigImg=mask.getElementsByTagName("img")[0];//放大显示板块的图片
+			var scale=1;
+			ads.onmousemove=function(event){
+				console.log(event)
+				var px=event.clientX-this.offsetLeft-span.offsetWidth/2; 
+				var py=event.clientY+scrollHeight-this.offsetTop-span.offsetHeight/2;
+				//控制px的坐标范围
+				console.log(event.clientY+','+this.offsetTop+","+span.offsetHeight)
+			   if(	px<=0){
+			   	px=0
+			   }else if(px>=this.offsetWidth-span.offsetWidth){
+			   	px=this.offsetWidth-span.offsetWidth
+			   }
+				
+				 if(	py<=0){
+			   	py=0
+			   }else if(py>=this.offsetHeight-span.offsetHeight){
+			   	py=this.offsetHeight-span.offsetHeight;
+			   }
+				span.style.left=px+"px";
+				span.style.top=py+"px";
+				
+				// 测试mask板块内容发生变化
+				 var scale=bigImg.offsetWidth/smallImg.offsetWidth;
+ 				 console.log(scale)
+				 mask.scrollLeft=px*scale;
+				  mask.scrollTop=py*scale;
+			}
+			
+			ads.onmouseover=function(){
+				span.style.display="block";
+				mask.style.display="block";
+				 scale=bigImg.offsetWidth/smallImg.offsetWidth;
+				
+				
+				mask.style.width=span.offsetWidth*scale+"px";
+				mask.style.height=span.offsetHeight*scale+"px";
+				
+				// 放大镜板块mask的位置
+				mask.style.left=this.offsetWidth+this.offsetLeft+50+"px";
+				mask.style.top=this.offsetTop+80+"px"
+			}
+			ads.onmouseout=function(){
+				span.style.display="none"
+				mask.style.display="none"
+			}
+			var scrollHeight=0;
+			window.onscroll=function(){
+				scrollHeight=document.body.scrollTop||document.documentElement.scrollTop;
+				console.log(scrollHeight);
+				
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JQuery菜单栏</title>
+		<link rel="stylesheet" href="../css/隐藏_显示-菜单栏(show,hide).css">
+		<!-- <script src="../jquery/jquery-3.6.0.js"></script> -->
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	</head>
+	<body>
+
+		<div id="container">
+			<header></header>
+			<div id="centent">
+				<div class="left">
+					<p>菜 单 栏</p>
+					<ul>
+						<li class="xuanxiang">
+							动 漫
+							<ul class="neirong">
+								<li>时光代理人</li>
+								<li>崛与宫村</li>
+								<li>喂，看见耳朵啦</li>
+								<li>咒术回战</li>
+							</ul>
+						</li>
+						<li class="xuanxiang">
+							美 食
+							<ul class="neirong">
+								<li>酸辣粉</li>
+								<li>肉蟹煲</li>
+								<li>麻辣香锅</li>
+								<li>奶茶</li>
+							</ul>
+						</li>
+						<li class="xuanxiang">
+							学 习
+							<ul class="neirong">
+								<li>Java web</li>
+								<li>Mysql</li>
+								<li>Android</li>
+								<li>C语言</li>
+							</ul>
+						</li>
+						<li class="xuanxiang">
+							游 戏
+							<ul class="neirong">
+								<li>光遇</li>
+								<li>三国杀</li>
+								<li>消消乐</li>
+								<li>王者荣耀</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="right">
+					右侧
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				//JQuery获取电脑屏幕高度 $(window).height()
+				$(".left").css("height", $(window).height());
+				$(".neirong").hide();
+				// 点击一次选项就显示
+				$(".xuanxiang").click(function() {
+					$(".neirong").hide();
+					$(this).children().show();
+				});
+				// 鼠标移入
+				// mouseenter只有在鼠标指针穿过被选元素时才会触发；
+				// mouseover是不论鼠标指针穿过被选元素还是其子元素都会触发
+				$(".neirong").mouseenter(function() {
+					// alert('移入')
+					$(".neirong").mouseleave(function() {
+						// alert('移出')
+						$(".neirong").hide();
+					});
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

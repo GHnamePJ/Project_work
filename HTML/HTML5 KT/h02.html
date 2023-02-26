@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var x=prompt("请输入学生分数：");
+			console.log(x);
+			if(x>=0&&x<=100){
+				var y=Math.floor(x/10);
+				switch(y){
+					case 10:
+					case 9:console.log("A");break;
+					case 8:console.log("B");break;
+					case 7:console.log("C");break;
+					case 6:console.log("D");break;
+					default:console.log("E");break;
+				}
+			}else{ 
+				document.write("非法分数");
+			}
+		</script>
+	</body>
+</html>

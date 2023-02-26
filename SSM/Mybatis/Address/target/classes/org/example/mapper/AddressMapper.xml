@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mapper.AddressMapper">
+    <resultMap id="AddressMapper" type="AddressInfo">
+        <id property="id" column="id"/>
+        <result property="streetName" column="streetName"/>
+        <result property="zipcode" column="zipcode"/>
+        <result property="userInfoId" column="userInfo_Id"/>
+    </resultMap>
+    <select id="getaddressList_choose" resultMap="AddressMapper">
+        select * from t_address where 1=1
+        <choose>
+            <when test="streetName!=null and streetName!=''">
+                and streetName like concat ('%',#{streetName},'%')
+            </when>
+            <when test="zipcode!=null and zipcode!=''">
+                and zipcode like concat ('%',#{zipcode},'%')
+            </when>
+        </choose>
+    </select>
+    <insert id="insertAddress">
+        insert into t_address (streetName,zipcode,userInfo_Id) values (#{streetName},#{zipcode},4)
+    </insert>
+</mapper>

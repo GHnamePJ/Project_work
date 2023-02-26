@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table{
+				width:300px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="smile">
+			<li><img src="img/p1.jpg"> </li>
+			<li><img src="img/p2.jpg"> </li>
+			<li><img src="img/p3.jpg"> </li>
+			<li><img src="img/p4.jpg"> </li>
+			<li><img src="img/p5.jpg"> </li>
+		</ul>
+		
+		<table border="1" ><!-- cellspacing="" cellpadding="" -->
+			 
+			<tr><td><img src="img/p1.jpg"/></td><td><img src="#"/></td><td><img src="#"/></td><td><img src="#"/></td></tr>
+			<tr><td><img src="#"/></td><td><img src="#"/></td><td><img src="#"/></td><td><img src="#"/></td></tr>
+			<tr><td><img src="#"/></td><td><img src="#"/></td><td><img src="#"/></td><td><img src="#"/></td></tr>
+			 
+			 
+			 <!--升级版的表格<tr><td> </td><td> </td><td> </td><td> </td></tr>
+			<tr><td> </td><td></td><td>  </td><td> </td></tr>
+			<tr><td> </td><td> </td><td> </td><td> </td></tr>-->
+		</table>
+		<script type="text/javascript">
+			//需求：点击上面的笑脸，再点击一下单元格，对应的笑脸就会进入表格
+			//1.点击笑脸，拿到被点击图片的路径
+			var ul=document.getElementsByClassName('smile')[0];
+			var smiles=ul.getElementsByTagName('img'); 
+			var source='';//全局变量是存储第一次点击图片的路径
+			console.log(smiles)
+			
+			for(var i=0;i<smiles.length;i++){
+				smiles[i].onclick=function(){
+					//console.log(this.getAttribute('src'))
+					source=this.getAttribute('src');
+				}
+			}
+			
+			
+			//2.为所有的单元格绑定点击事件
+			//通过节点的兄弟关系获取
+		  var table=	ul.nextSibling.nextSibling;
+		    //利用节点的孩子关系获取
+		    var tbody=table.childNodes[1];
+		//  console.log(  tbody.childNodes);
+		  for(var i=0;i<tbody.childNodes.length;i=i+2){
+		  	var tr=tbody.childNodes[i];
+		  	//console.log(tr);
+		  	   for( var j=0;j<tr.childNodes.length;j++){
+		  	   	var td=tr.childNodes[j];
+		  	   //console.log(td)	;
+		  	   td.onclick=function(){
+		  	   	console.log()
+		  	     var tdImg=this.childNodes[0];
+		  	     //第二次点击的表格图片，对这个图片赋路径值
+		  	     tdImg.setAttribute("src",source);
+		  	   }
+		  	   }
+		  	   
+		  }
+		  
+		  //课后作业：在6*6的表格中随机生成笑脸图片，点击两个不同的单元格，如果图片一致，就消失（清空该img的src），比对两次点击的图片的路径
+		  
+		  //升级：利用removeChild方法，如果相同的图片，可以删除掉两个相同的img元素，当我点击笑脸图片再点击表格，又会出现图片，这时需要插入img元素
+		</script>
+	</body>
+</html>

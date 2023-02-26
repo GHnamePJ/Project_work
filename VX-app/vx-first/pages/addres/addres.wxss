@@ -1,0 +1,56 @@
+/* pages/addres/addres.wxss */
+.top{
+  margin-bottom: 280px;
+}
+.addres_list{
+  display: flex;
+  justify-content: center;
+}
+.addres{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 80px;
+  background: white;
+  margin-bottom: 5px;
+}
+.addres_left{
+  display: block;
+}
+.addres_left>text{
+  font-size: 12px;
+  margin-right: 4px;
+  color: rgb(132, 143, 146);
+}
+.addres_left>text:first-child{
+  display: block;
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+}
+.addres_right>image{
+  width: 26px;
+  height: 26px;
+}
+.bottom{
+  display: flex;
+  height: 10%;
+  justify-content: center;
+
+}
+.addAddres_btn{
+  display: flex;
+  position: fixed;
+  bottom: 10px;
+  justify-content: center;
+  align-items: center;
+  height: 46px;
+  width: 90%;
+  border-radius: 25px;
+  background: #adb838;
+}
+.addAddres{
+  color: white;
+}
+

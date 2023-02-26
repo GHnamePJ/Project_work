@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>用对象构造函数进行构造</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		function student(name,sex,age,grade){
+			this.name=name;
+			this.sex=sex;
+			this.age=age;
+			this.grade=grade;
+			this.show=function(){
+			 document.write('姓名：'+this.name+"<br />"+'性别：'+this.sex+"<br />"+'年龄：'+this.age+"<br />"+'年级：'+this.grade+"<br />"+"<br />");
+			}
+		}
+		var stus = [
+				['小A', '女', 21, '大一'],  
+				['小B', '男', 23, '大三'],     
+				['小C', '男', 24, '大四'],   
+				['小D', '女', 21, '大一'],     
+				['小E', '女', 22, '大四'],  
+				['小F', '男', 21, '大一'],     
+				['小G', '女', 22, '大二'],  
+				['小H', '女', 20, '大三'],
+				['小I', '女', 20, '大一'],  
+				['小J', '男', 20, '大三']
+			];
+			for(i=0;i<10;i++){
+				var stu=Array(10);
+				stu[i]=new student(stus[i][0],stus[i][1],stus[i][2],stus[i][3]);
+				stu[i].show();
+			}
+		</script>
+	</body>
+</html>

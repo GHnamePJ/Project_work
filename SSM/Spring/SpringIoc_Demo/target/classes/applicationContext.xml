@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+       <bean id="departmentInfo_bean" class="org.example.XML_demo.DepartmentInfo">
+           <property name="departmentName" value="技术部门"/>
+           <property name="departmentNum" value="20901"/>
+       </bean>
+       <bean id="employeeInfo_bean" class="org.example.XML_demo.EmployeeInfo">
+           <property name="userName" value="PJ"/>
+           <property name="realName" value="胖橘"/>
+           <property name="password" value="12345678"/>
+           <property name="email" value="pj@qq.com"/>
+           <property name="departmentInfo" ref="departmentInfo_bean"/>
+       </bean>
+       <bean id="User_Bean" class="org.example.XML_demo.Use">
+           <property name="employeeInfo" ref="employeeInfo_bean"/>
+       </bean>
+</beans>

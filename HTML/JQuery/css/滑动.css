@@ -1,0 +1,21 @@
+body{
+    margin: 0px;
+}
+body>p{
+    width: 140px;
+    size: 30px;
+    margin: auto;
+    margin-top: 100px;
+    background-color: bisque;
+}
+body>span{
+    width: 140px;
+    height: 140px;
+    display: block;
+    margin: auto;
+    background-image: url(../img/tx.jpg);
+    background-size: 140px 140px;
+}
+
+
+

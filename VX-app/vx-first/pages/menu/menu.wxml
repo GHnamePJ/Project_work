@@ -1,0 +1,38 @@
+<view class="container">
+  <view class="content">
+    <view class="content_top">
+      <view class="top_left">
+        <view>{{addres}} ></view>
+        <view>
+          <image src="/static/image/menu/location.png" mode="widthFix"></image>
+          <text>{{peisong}}</text>
+        </view>
+      </view>
+      <view class="top_right">
+        <view bindtap="ziqu">自取</view>
+        <view bindtap="waimai">外卖</view>
+      </view>
+    </view>
+    <view class="content_mid">
+      <text>"霸气mini卡"超级券活动，赶紧去购买</text>
+      <text>></text>
+    </view>
+    <view class="content_bottom">
+      <view class="bottom_left">
+        <view class="left_text" >
+          <view wx:for="{{breakfast}}" wx:key="index">{{item}}</view>
+        </view>
+      </view>
+      <view class="bottom_right">
+        <view class="right_top"> 
+          <!-- <swiper style="height:{{swiperHei}};" class="container-swiper" indicator-dots="true" indicator-color="f00" autoplay="true" interval="3000" circular="true"> -->
+          
+          <!-- </swiper> -->
+        </view>
+        <view class="right_bottom">
+        
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

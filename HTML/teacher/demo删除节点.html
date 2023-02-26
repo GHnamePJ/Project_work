@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<p>段落1</p>
+			<p>段落2</p>
+			<p>段落3</p>
+		</div>
+		
+		<script type="text/javascript">
+			//要删除一个节点，可以用removeChild方法,必须已知父节点和被删除的子节点
+			var div=document.getElementsByTagName('div')[0];
+			var p1=div.childNodes[0];
+			div.removeChild(p1);
+			
+			//如果知道被删除节点
+			var paras=document.getElementsByTagName('p');
+			for( var i=0;i<paras.length;i++){
+				paras[i].onclick=function(){
+					//1确定被删除的元素通过this可以确定
+					console.log(this);
+					//2通过被删除的元素找父元素
+					var parent=this.parentNode;
+					console.log(parent);
+					//3.使用removeChild方法
+					parent.removeChild(this);
+				}
+			}
+			
+		</script>
+	</body>
+</html>

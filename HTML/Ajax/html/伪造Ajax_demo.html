@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>伪造Ajax</title>
+		<link href="../css/伪造Ajax_demo.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+		// 网页加载完毕后立刻执行的操作
+			window.onload=function p(){
+				var date=new Date();
+				document.getElementById("date").innerText=date.getTime();
+			}
+			// 点击提交执行加载页面函数
+			function lodPage(){
+				var Page_url=document.getElementById("put_url").value;
+				// console.log(Page_url);
+				// 加载到显示面板
+				document.getElementById("page_url").src=Page_url
+				console.log(document.getElementById("page_url").src)
+			}
+		</script>
+		<div class="container">
+			<p>请输入要加载的网址：<sapn id="date"></sapn></p>
+			<p>
+				<input type="text" id="put_url" value="https://www.canva.cn/">
+				<input type="button" value="提交" onclick="lodPage()" />
+			</p>
+			<div class="panel" >
+				<p>加载网页：</p>
+				<!-- 现在的网页已经很少给iframe把自身镶嵌在别的网页中 -->
+				<iframe class="show" id="page_url" src="Register.html"></iframe>
+			</div>
+		</div>
+	</body>
+</html>

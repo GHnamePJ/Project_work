@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>router 路由使用示例</title>
+	<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+	<script src="https://cdn.staticfile.org/vue-router/2.7.0/vue-router.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			// 组件
+			var Foo = {template: '<div>foo</div>'};
+			var Bar = {template:'<div>bar</div>'};
+			var Home = {template: '<div>home</div>'};
+			// 路由
+			var route1 = [
+				{path: '/foo', component: Foo},
+				{path: '/bar', component: Bar},
+				{path: '/home', name: 'home', component: Home}
+			];
+
+			var router1 = new VueRouter({
+				routes: route1 //routes为VueRouter属性
+			});
+					
+			var app = new Vue({
+				router: router1,  //router为Vue的路由属性  
+				methods: {
+					goPath: function(){
+						//this.$router.push({path: '/home'}) //方式一
+						this.$router.push({name: 'home'}) //方式二
+					}
+				}
+			}).$mount('#app');
+		};		
+		
+	</script>
+</head>
+<body>
+	<div id="app">		
+		<!-- <h1>Hello App!</h1> -->
+			<button id="btn" v-on:click="goPath">go home</button>
+	    <p>
+	    <!-- 使用 router-link 组件来导航. -->
+	    <!-- 通过传入 `to` 属性指定链接. -->
+	    <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+	    	<router-link to="/foo">Go to Foo</router-link>
+	    	<router-link to="/bar">Go to Bar</router-link>
+
+	    </p>
+	  	<!-- 路由出口 -->
+	  	<!-- 路由匹配到的组件将渲染在这里 -->
+	  	<router-view></router-view>
+	</div>
+	
+	
+</body>
+</html>

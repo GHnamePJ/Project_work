@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/maps/guangdong.js"></script>
+
+</head>
+<body>
+    <div id="edf9ec7d60f7487c8aa3a6d772013ce6" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_edf9ec7d60f7487c8aa3a6d772013ce6 = echarts.init(
+            document.getElementById('edf9ec7d60f7487c8aa3a6d772013ce6'), 'white', {renderer: 'canvas'});
+        var option_edf9ec7d60f7487c8aa3a6d772013ce6 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "scatter",
+            "name": "data from pm2.5",
+            "coordinateSystem": "geo",
+            "symbolSize": 12,
+            "data": [
+                {
+                    "name": "\u6c55\u5934\u5e02",
+                    "value": [
+                        116.68,
+                        23.35,
+                        20
+                    ]
+                },
+                {
+                    "name": "\u6c55\u5c3e\u5e02",
+                    "value": [
+                        115.37,
+                        22.78,
+                        190
+                    ]
+                },
+                {
+                    "name": "\u63ed\u9633\u5e02",
+                    "value": [
+                        116.37,
+                        23.55,
+                        253
+                    ]
+                },
+                {
+                    "name": "\u9633\u6c5f\u5e02",
+                    "value": [
+                        111.98,
+                        21.87,
+                        "77"
+                    ]
+                },
+                {
+                    "name": "\u8087\u5e86\u5e02",
+                    "value": [
+                        112.47,
+                        23.05,
+                        65
+                    ]
+                }
+            ],
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "data from pm2.5"
+            ],
+            "selected": {
+                "data from pm2.5": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "formatter": function (params) {        return params.name + ' : ' + params.value[2];    },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "\u5e7f\u4e1c\u90e8\u5206\u57ce\u5e02\u7a7a\u6c14\u8d28\u91cf",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "visualMap": {
+        "show": true,
+        "type": "continuous",
+        "min": 0,
+        "max": 100,
+        "inRange": {
+            "color": [
+                "#50a3ba",
+                "#eac763",
+                "#d94e5d"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "orient": "vertical",
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    },
+    "geo": {
+        "map": "\u5e7f\u4e1c",
+        "roam": true,
+        "aspectScale": 0.75,
+        "nameProperty": "name",
+        "selectedMode": false,
+        "emphasis": {}
+    }
+};
+        chart_edf9ec7d60f7487c8aa3a6d772013ce6.setOption(option_edf9ec7d60f7487c8aa3a6d772013ce6);
+    </script>
+</body>
+</html>

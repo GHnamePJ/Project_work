@@ -1,0 +1,20 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+<!--       https://www.springframework.org/schema/beans/spring-beans.xsd">-->
+<!--        <bean id="department_bean" class="org.example.Department">-->
+<!--            <property name="department_name" value="前端"/>-->
+<!--            <property name="department_num" value="123"/>-->
+<!--        </bean>-->
+<!--        <bean id="enployee_bean" class="org.example.Enployee">-->
+<!--            <property name="username" value="pj"/>-->
+<!--            <property name="realname" value="胖橘"/>-->
+<!--            <property name="password" value="12345678"/>-->
+<!--            <property name="email" value="@qq"/>-->
+<!--            <constructor-arg name="department" ref="department_bean"/>-->
+<!--        </bean>-->
+<!--        <bean id="Use_bean" class="org.example.Use">-->
+<!--            <property name="enployee" ref="enployee_bean"/>-->
+<!--        </bean>-->
+<!--</beans>-->

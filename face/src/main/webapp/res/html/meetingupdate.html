@@ -1,0 +1,99 @@
+<html>
+<head>
+    <title>修改会议</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script src="../js/setHeader.js"></script><!--设置请求头判断用户是否登录，每次写页面都需导入-->
+    <link rel="stylesheet" type="text/css" href="../css/meetingupdate.css"/>
+    <script>
+        $(function () {
+            if(sessionStorage.getItem("token")==null){
+                $(window).attr("location","../../index.jsp");
+            }else {
+            }
+            let meeting_num = decodeURI(document.URL);
+            meeting_num = meeting_num.slice(meeting_num.indexOf("=")+1)
+            $.ajax({
+                headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},<!--每次写页面都需导入-->
+                url: "../../meeting/meetdetails",
+                data:{"meeting_num":meeting_num},
+                type: "GET",
+                dataType:"json",
+                success: function (responseText) {//请求成功的回调函数
+                    console.log(responseText);
+                    for(let i=0;i<responseText.date.length;i++) {
+
+                        $("#meeting_name").val(responseText.date[i].meeting_name)
+                        $("#meeting_num").val(responseText.date[i].meeting_num)
+                        $("#apply_name").val(responseText.date[i].apply_name)
+                        $("#start_time").val(responseText.date[i].start_time)
+                        $("#end_time").val(responseText.date[i].end_time)
+                    }
+
+                },
+                error: function (responseText) {//请求失败的回调函数
+                    alert("请求失败！！！");
+                }
+            });
+            alert(meeting_num)
+            $("#verify").click(function (){
+                let json={"meeting_name":  $("#meeting_name").val(),"start_time":  $("#start_time").val(),"end_time":  $("#end_time").val(),"meeting_num":meeting_num};
+                const json_str=JSON.stringify(json);
+                alert(json_str);
+                $.ajax({
+                    headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},<!--每次写页面都需导入-->
+                    url: "../../meeting/updatemeet",
+                    data:json_str,
+                    type: "POST",
+                    contentType: "application/json",
+                    // dataType:"json",
+                    success: function (responseText) {//请求成功的回调函数
+                        console.log(responseText);
+                        $(window).attr("location","home_page.html");
+
+
+                        // for(let i=0;i<responseText.date.length;i++) {
+                        //
+                        //     $("#meeting_name").val(responseText.date[i].meeting_name)
+                        //     $("#meeting_num").val(responseText.date[i].meeting_num)
+                        //     $("#apply_name").val(responseText.date[i].apply_name)
+                        //     $("#start_time").val(responseText.date[i].start_time)
+                        //     $("#end_time").val(responseText.date[i].end_time)
+                        // }
+
+                    },
+                    error: function (responseText) {//请求失败的回调函数
+                        alert("请求失败！！！");
+                    }
+                });
+            })
+            $("#return").click(function (){
+                $(window).attr("location","home_page.html");
+
+            })
+        });
+
+    </script>
+</head>
+<body>
+<div id="meeting">
+    <label>修改会议</label>
+    <form id="meeting_update">
+        会&nbsp;&nbsp;&nbsp;议&nbsp;&nbsp;&nbsp;名：<input id="meeting_name" type="text" name="meeting_name" style="width: 214px;"/>
+        <br><br>
+        会&nbsp;&nbsp;&nbsp;议&nbsp;&nbsp;&nbsp;号：<input id="meeting_num" readonly="readonly"style="width: 214px;"/>
+        <br><br>
+        主&nbsp;&nbsp;&nbsp;持&nbsp;&nbsp;&nbsp;人：<input id="apply_name" readonly="readonly"style="width: 214px;"/>
+        <br><br>
+        会议开始时间：<input id="start_time" type="datetime-local" name="start_time" />
+        <br><br>
+        会议结束时间：<input id="end_time" type="datetime-local" name="end_time"/>
+        <br><br>
+        <button id="verify" type="button">确认修改</button>
+        <button id="return" type="button">返&nbsp;&nbsp;回</button>
+    </form>
+
+</div>
+
+
+</body>
+</html>

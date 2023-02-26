@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>智慧大屏</title>
+		<script src="../js/echarts.js"></script>
+		<style>
+			#panel1 {
+				width: 100%;
+				height: 600px;
+				display: inline-block;
+				margin-bottom: 100px;
+			}
+
+			#panel2 {
+				width: 100%;
+				height: 600px;
+				display: inline-block;
+				margin-bottom: 100px;
+			}
+
+			#panel3 {
+				width: 100%;
+				height: 600px;
+				display: inline-block;
+				margin-bottom: 100px;
+			}
+
+			#panel4 {
+				width: 100%;
+				height: 600px;
+				display: inline-block;
+				margin-bottom: 100px;
+			}
+			p{
+				width: 100%;
+				text-align: center;
+				margin-bottom: 30px;
+				font-size: 40px;
+			}
+			table{
+				/* border: 1;
+				font-size: 2px; */
+			}
+			tr{
+				
+			}
+			td{
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="panel1"></div>
+		<div id="panel2"></div>
+		<div id="panel3"></div>
+		<div id="panel4">
+			<p>成绩汇总</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// 图一
+		var panel1 = echarts.init(document.getElementById("panel1"));
+		var p1 = {
+			title: {
+				text: '2020-2021-1各科成绩',
+				left: 'center',
+			},
+			legend: {
+				left: '70%',
+				top: '4%'
+			},
+			tooltip: {},
+			yAxis: {
+
+			},
+			xAxis: {
+				data: ['程序设计', '军事理论', '数学', '军事技能', '入学教育', '心理健康', '形式与政策', '思修', '体育', '英语', '设计方法',
+					'设计创意思维'
+				],
+				// 让文字倾斜，显示出所有x轴内容
+				axisLabel: {
+					rotate: 30,
+				},
+			},
+			grid: {
+				top: '20%',
+				right: '15%',
+			},
+			series: {
+				name: "2020-2021-1各科成绩",
+				type: 'bar',
+				data: [85, 87, 95, 85, 100, 90, 97, 94, 84, 77, 66, 92],
+				label: {
+					show: true,
+					position: 'top',
+				},
+				itemStyle: {
+					color: 'rgb(150,90,150)',
+				},
+			},
+
+		};
+		panel1.setOption(p1);
+		// 图二
+		var panel2 = echarts.init(document.getElementById("panel2"));
+		var p2 = {
+			title: {
+				text: '2020-2021-2各科成绩',
+				left: 'center',
+			},
+			legend: {
+				left: '70%',
+				top: '4%'
+			},
+			tooltip: {},
+			yAxis: {
+
+			},
+			xAxis: {
+				data: ['社会心理', '形象管理', '职业生涯规划', '健康教育', '马克思', '心理健康教育', '形式与政策', '创新创业教育', '劳动教育', '思修', '体育', '英语',
+					'国学基础', '数据库应用技术', '交互界面设计', '创新项目专题', '面向对象程序设计', 'Linux系统应用', '职业沟通能力'
+				],
+				// 让文字倾斜，显示出所有x轴内容
+				axisLabel: {
+					rotate: 30,
+				},
+			},
+			grid: {
+				top: '20%',
+				right: '15%',
+			},
+			series: {
+				name: "2020-2021-2各科成绩",
+				type: 'bar',
+				data: [99, 99, 82, 76, 93, 92, 89, 79, 85, 91, 90, 97, 93, 91, 85, 80, 96, 87, 85],
+				label: {
+					show: true,
+					position: 'top',
+				},
+				itemStyle: {
+					color: 'rgb(150,90,150)',
+				},
+			},
+
+		};
+		panel2.setOption(p2);
+		// 图三
+		var panel3 = echarts.init(document.getElementById("panel3"));
+		var p3 = {
+			title: {
+				text: '2021-2022-1各科成绩',
+				left: 'center',
+			},
+			legend: {
+				left: '70%',
+				top: '4%'
+			},
+			tooltip: {},
+			yAxis: {
+
+			},
+			xAxis: {
+				data: ['艺术欣赏', '科学启蒙', '女子礼仪', '形式与政策', '劳动教育', '毛特论', '社会实践', '大数据与人工智能', '数据结构', 'HTML5应用',
+					'Java Web开发基础',
+					'机器人应用技术'
+				],
+				// 让文字倾斜，显示出所有x轴内容
+				axisLabel: {
+					rotate: 30,
+				},
+			},
+			grid: {
+				top: '20%',
+				right: '15%',
+			},
+			series: {
+				name: "2020-2021-1各科成绩",
+				type: 'bar',
+				data: [87, 100, 100, 100, 89, 86, 75, 76, 69, 94, 84, 85],
+				label: {
+					show: true,
+					position: 'top',
+				},
+				itemStyle: {
+					color: 'rgb(150,90,150)',
+				},
+			},
+
+		};
+		panel3.setOption(p3);
+		// 表格
+		lines=['社会心理', '形象管理', '职业生涯规划', '健康教育', '马克思', '心理健康', '形式', '创新创业教育', '劳动', '思修', '体育', '英语',
+					'国学基础', '数据库', '交互界面', '创新项目', 'java', 'Linux', '职业沟通能力',
+					'程序设计', '军事理论', '数学', '军事技能', '入学教育', '心理健康', '设计方法',
+						'设计创意思维',
+					'艺术欣赏', '科学启蒙', '女子礼仪','毛特论', '社会实践', '大数据与人工智能', '数据结构', 'H5',
+						'Java Web',
+						'机器人'
+					
+				]
+		grades=[85, 87, 95, 85, 100, 90, 97, 94, 84, 77, 66, 92]		
+		rows=['时间/课程','大一上','大一下','大二上'];
+		var panel4 = document.getElementById("panel4");
+		//创建表格
+		var table = document.createElement('table');
+		//添加到对应的div
+		panel4.appendChild(table);
+		
+		// 表格
+		for (var i = 0; i <=3 ;i++) {
+			//创建行tr标签
+			var tr = document.createElement('tr');
+			tr.innerText=rows[i];
+			table.appendChild(tr);
+			// if(i=0){
+			// 	for (var j = 0; j <= 36; j++) {
+			// 		var td = document.createElement('td');
+			// 		tr.appendChild(td);
+			// 		td.innerText=lines[j];
+			// 	}
+			// 	if(i=1){
+			// 		for (var j = 0; j <= 36; j++) {
+			// 			var td = document.createElement('td');
+			// 			tr.appendChild(td);
+			// 			td.innerText=lines[j];
+			// 		}
+			// 	if(i=2){
+			// 		for (var j = 0; j <= 36; j++) {
+			// 			var td = document.createElement('td');
+			// 			tr.appendChild(td);
+			// 			td.innerText=lines[j];
+			// 		}
+			// }
+			
+		}
+	</script>
+
+</html>

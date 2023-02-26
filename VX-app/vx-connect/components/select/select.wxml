@@ -1,0 +1,66 @@
+<view class="calendar">
+  <view class="left">
+    <!-- 左边标题 -->
+    <view class="leftTitle" bindtap='bindShowMsg' style="top: {{selectLeftTop}};">
+      <text style="font-size: 30rpx;">{{titleLeft}}</text>
+      <l-icon name="xiala" l-class="iconfont"></l-icon>
+    </view>
+    <!-- 左边下拉内容 -->
+    <view class="leftContent" wx:if="{{select}}">
+      <view class="leftItem" bindtap="mySelect" data-name="某分钟">某分钟</view>
+      <view class="leftItem" bindtap="mySelect" data-name="某小时">某小时</view>
+      <view class="leftItem" bindtap="mySelect" data-name="某天">某天</view>
+    </view>
+  </view>
+  <view class="right">
+    <!-- 右边标题 某分钟-->
+    <view class="minute" style="display: {{Mdisplay}};">
+      <view class="rightTitle_minute" bindtap='bindShowMsgRightMinute' style="top: {{selectLeftTop}};">
+        <text style="font-size: 30rpx;">{{titleRight_minute}}</text>
+        <l-icon name="xiala" l-class="iconfont"></l-icon>
+      </view>
+      <view class="rightTitle_minute_hour" bindtap='bindShowMsgRightMinuteHour' style="top: {{selectLeftTop}};">
+        <text style="font-size: 30rpx;">{{titleRight_minute_hour}}</text>
+        <l-icon name="xiala" l-class="iconfont"></l-icon>
+      </view>
+    </view>
+    <!-- 右边内容 某分钟 -->
+    <view class="rightContentMinute" wx:if="{{selectMinute}}">
+      <view><l-icon name="user"></l-icon></view>
+      <view><l-icon name="user"></l-icon></view>
+      <view><l-icon name="user"></l-icon></view>
+    </view>
+    <view class="rightContentMinuteHour" wx:if="{{selectMinuteHour}}">
+     <scroll-view class="SVrightContentMinuteHour" scroll-y="{{true}}" style="height: 180rpx;">
+     <block wx:for="{{24}}" wx:key="index">
+      <view class="leftItem" bindtap="mySelectMH" data-name="{{index}}">{{index}}</view>
+     </block>
+     </scroll-view>
+    </view>
+    <!--  右标题 某小时 -->
+    <view class="hour" style="display: {{Hdisplay}};">
+      <view class="rightTitle_hour" bindtap='bindShowMsgRightHour' style="top: {{selectLeftTop}};">
+        <text style="font-size: 30rpx;">{{titleRight_hour}}</text>
+        <l-icon name="xiala" l-class="iconfont"></l-icon>
+      </view>
+    </view>
+    <view class="rightContentHour" wx:if="{{selectHour}}">
+      <view><l-icon name="user"></l-icon></view>
+      <view><l-icon name="user"></l-icon></view>
+      <view><l-icon name="user"></l-icon></view>
+    </view>
+    <!--  右标题 某天 -->
+    <view class="day" style="display: {{Ddisplay}};">
+      <view class="rightTitle_day" bindtap='bindShowMsgRightDay' style="top: {{selectLeftTop}};">
+        <text style="font-size: 30rpx;">{{titleRight_day}}</text>
+        <l-icon name="xiala" l-class="iconfont"></l-icon>
+      </view>
+    </view>
+    <view class="rightContentDay" wx:if="{{selectDay}}">
+      <view><l-icon name="user"></l-icon></view>
+      <view><l-icon name="user"></l-icon></view>
+      <view><l-icon name="user"></l-icon></view>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>引用vue组件（未分模块）</title> 
+  <!-- <script src="https://unpkg.com/vue@next"></script> -->
+  <script src="./../../vue.global.js"></script>   
+</head>
+<body>
+  <div id="app">
+    html content
+  </div>  
+  <script type="text/javascript">
+    //定义组件对象
+    let App = {
+          template:`<div id='vue_id' class="app_class">
+            <h1>This is an home page</h1>
+          </div>`
+        }
+    //创建VUE应用实例
+    Vue.createApp({
+      //el:'#app',
+      components: {
+        App
+      },
+      template: '<App/>'   //用App替换html中id=app的节点内容
+    }).mount('#app')
+
+    // new Vue({
+    //   render: h=>h(App)
+    // }).$mount('#app');
+  </script>
+</body>
+</html>

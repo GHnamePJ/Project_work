@@ -1,0 +1,17 @@
+{
+  "usingComponents": {
+    "goBack":"/components/goback/goback",
+    "menu":"/components/menubar/menubar",
+    "pj-select":"/components/selectPage/selectPage",
+    "ec-canvas":"/components/ec-canvas/ec-canvas",
+    "l-icon":"/miniprogram_npm/lin-ui/icon/index",
+    "l-popup":"/miniprogram_npm/lin-ui/popup/index",
+    "data-select":"/components/data-select/data-select",
+    "factors-select":"/components/factors-select/factors-select",
+    "l-radio-group":"/miniprogram_npm/lin-ui/radio-group/index",
+    "l-radio":"/miniprogram_npm/lin-ui/radio/index",
+    "l-checkbox-group":"/miniprogram_npm/lin-ui/checkbox-group/index",
+    "l-checkbox":"/miniprogram_npm/lin-ui/checkbox/index",
+    "changeStation":"/components/changeStation/cangeStation"
+  }
+}

@@ -1,0 +1,172 @@
+<!--pages/forecast/forecast.wxml-->
+<!-- 返回前一页 -->
+<goBack></goBack>
+<!-- <menu></menu> -->
+<!-- 预测页面 start-->
+<scroll-view scroll-y="{{true}}" class="page" style="height: {{forecastHeight}}px;">
+  <!-- top按钮  start-->
+  <view class="topBtn">
+    <!-- 预测 -->
+    <view class="forecastBtn" bindtap="onClickForecast">
+      <l-button l-class="l-button-forecast"><text class="forecastTitle" decode="{{true}}">预&nbsp;&nbsp;测&nbsp;&nbsp;</text>
+        <l-icon name="edit" size="30" color="white" />
+      </l-button>
+    </view>
+    <!-- 切换气象站 -->
+    <view class="changeStations">
+      <changeStation class="changeStationBtn"></changeStation>
+    </view>
+  </view>
+  <!-- top按钮  end-->
+  <l-popup show="{{popupSelect}}" l-class="popup">
+    <view class="condition">
+      <view class="condition-title">
+        <l-icon name="yuce" size="55" l-class="iconfont tongjiicon"></l-icon>
+        <text decode="{{true}}">预&nbsp;&nbsp;测</text>
+      </view>
+      <view class="condition-data">
+        <picker class="picker" mode="date" start="{{startTime}}" header-text="选择时间" value="{{forecastTime}}" bindtap="onClickforecastTime" bindchange="bindStartDateChange">
+          <view class="start">
+            <view class="dleft"><text decode="{{true}}">预&nbsp;测&nbsp;时&nbsp;间&nbsp;:</text></view>
+            <view class="dright">
+              <text>{{forecastTime}}</text>
+            </view>
+          </view>
+          <view class="hr"></view>
+        </picker>
+
+      </view>
+      <view class="condition-factor">
+        <view class="condition-factor-title"><text class="condition-text" decode="{{true}}">气&nbsp;象&nbsp;因&nbsp;素&nbsp;:</text></view>
+        <view class="condition-factor-content">
+          <radio-group class="group" bindchange="radioChange">
+            <view class="radio" wx:for="{{radioItems}}" wx:key="index">
+              <radio color="rgb(57, 99, 188)" id="{{item.value}}" value="{{index+1}}" checked="{{item.isChecked}}"></radio>
+              <l-icon name='{{item.icon}}' size="35" l-class="iconfont" />
+              <label class="label" for="{{item.value}}"><text decode="{{true}}">&nbsp;{{item.value}}</text></label>
+            </view>
+          </radio-group>
+        </view>
+      </view>
+      <view class="condition-btn">
+        <l-button bind:lintap="confirm">确 认</l-button>
+        <l-button bg-color="rgba(102, 102, 102, 0.55)" bind:lintap="close">取 消</l-button>
+      </view>
+    </view>
+  </l-popup>
+
+  <l-toast id="my-toast" />
+
+  <!-- 展示内容 start-->
+  <view class="content">
+    <!-- 气温显示 start-->
+    <view class="card">
+      <view class="data-time">
+        <wxs src="../../utils/date.wxs" module="tools" />
+        {{forecastTime==="yyyy-mm-dd"?tools.subStrDate(startTime):tools.subStrDate(forecastTime)}}
+      </view>
+      <view class="templement">
+        <view class="templement-photo">
+          <!-- https://gd-hbimg.huaban.com/f789fd60b1fa753bbd0c66c835f48dafb83080a112328-DCYnoK_fw240webp -->
+          <image src="https://gd-hbimg.huaban.com/f789fd60b1fa753bbd0c66c835f48dafb83080a112328-DCYnoK_fw240webp" mode="widthFix" class="photo"></image>
+        </view>
+        <view class="templement-date">
+          <text style="color: white; font-size: 45rpx;">{{predict[0].values}} ℃</text>
+          <text style="color: white;font-size: 43rpx;letter-spacing:10rpx">{{station}}</text>
+        </view>
+      </view>
+      <view class="templement-name">Temperature</view>
+    </view>
+    <!-- 气温显示 end-->
+    <view class="factorcard">
+      <view class="factorcard-title">
+        <text class="factorcard-text" decode="{{true}}">气&nbsp;象&nbsp;因&nbsp;素</text>
+      </view>
+
+      <!-- 温馨提示 -->
+      <view class="tip" wx:for="{{factor}}" wx:key="index" wx:if="{{factor===1}}">
+        <!-- 左边部分 -->
+        <view class="tip-left">
+          <wxs src="../../utils/date.wxs" module="tools" />
+          <view class="tip-ltop"><text>{{tools.FactorChineseToEnglish(predict[index+1].name)}}</text></view>
+          <view class="tip-ricon">
+            <l-icon name="{{predict[index+1].icon}}" size="130" l-class="iconfont" style="padding-right: 40rpx;"></l-icon>
+          </view>
+        </view>
+        <!-- 💡根据情况而定 -->
+        <!-- 如果是PM2.5 或 pm10 用图像显示 -->
+        <view class="tip-right" wx:if="{{predict[index+1].icon===2 || predict[index+1].icon===7 ||predict[index+1].icon ===8 }}">
+          <view class="my-chart">
+            <ec-canvas type="2d" class="echart" id="mychart-dom" canvas-id="mychart" ec="{{ec}}"></ec-canvas>
+          </view>
+          <view class="bpm2">
+            <view class="bpm1">
+              <view>{{predict[index+1].values}}</view>
+              <view class="bpm">
+                <view>
+                  <image src="https://gd-hbimg.huaban.com/211987ac7716db139c7b309f41782e99d35929f91703-sU9Tmd_fw658" style="width:40rpx;height:40rpx"></image>
+                </view>
+                <view>{{predict[index+1].company}}</view>
+              </view>
+            </view>
+            <wxs src="../../utils/date.wxs" module="tools" />
+            <view class="judge">
+              {{tools.judge(predict[index+1].icon,predict[index+1].values)}}
+            </view>
+          </view>
+        </view>
+        <!-- 其他是文本 -->
+        <view class="tip-right" wx:else>
+          <!-- <wxs src="../../utils/date.wxs" module="tools" /> -->
+          <view class="tip-rtop">
+            <text class="tip-rtop-text" decode="{{true}}">{{predict[index+1].values}}&nbsp;{{predict[index+1].company}}</text>
+            <wxs src="../../utils/date.wxs" module="tools" /> 
+            <text class="tip-rtop-text1">{{tools.judge(predict[index+1].icon,predict[index+1].values)}}</text>
+
+          </view>
+        </view>
+      </view>
+
+
+      <!-- 因素气象 -->
+      <view class="factor" wx:if="{{factor===4}}">
+        <block wx:for="{{factor}}" wx:key="index">
+          <view class="factor-view">
+            <view class="factor-left">
+              <l-icon name="{{predict[index+1].icon}}" size="50" l-class="iconfont" style="padding-right: 40rpx;"></l-icon>
+              {{predict[index+1].name}}
+            </view>
+            <view class="factor-right">
+              <text>{{predict[index+1].values}}{{predict[index+1].company}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+
+      <!-- 选择以后的气象因素提醒 -->
+      <view class="factorS" wx:else="{{factor===1}}">
+        <block wx:for="{{factor}}" wx:key="index">
+          <view class="factor-viewS">
+            <view class="factor-top">
+              <l-icon name="{{predict[index+1].icon}}" size="50" l-class="iconfont" style="padding-right: 40rpx;"></l-icon>
+              {{predict[index+1].name}}
+            </view>
+            <view class="factor-bottom">
+              <wxs src="../../utils/date.wxs" module="tools" />
+              <image src="{{tools.FactorChineseToTip(predict[index+1].name)}}" mode="widthFix" wx:if="{{predict[index+1].icon===2 || predict[index+1].icon===4 || predict[index+1].icon===5 || predict[index+1].icon===6 || predict[index+1].icon===7 ||  predict[index+1].icon===8}}"></image>
+
+              <!-- <view class="my-chart-tip" wx:if="{{predict[index+1].icon===2}}">
+                <ec-canvas type="2d" class="echart-tip" id="mychart-dom-tip" canvas-id="mychart" ec="{{ectip}}"></ec-canvas>
+              </view> -->
+
+              <text decode="{{true}}" wx:else>{{tools.FactorChineseToTip(predict[index+1].name)}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+
+    </view>
+  </view>
+  <!-- 展示内容 end-->
+</scroll-view>
+<!-- 预测页面 end-->

@@ -1,0 +1,25 @@
+/* pages/scroll-view-demo/scroll-view-demo.wxss */
+.hotService {
+  /* width: 100%;
+  height: 300rpx; */
+  /* background-color: rgb(223, 45, 45);
+  padding: 0 26rpx;
+  box-sizing: border-box; */
+}
+
+scroll-view {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.block {
+  width: 158rpx;
+  height: 158rpx;
+  padding: 0 10rpx;
+  display: inline-block;
+  padding: 0 15rpx 0 0;
+  border: 2rpx solid black;
+  background-color: rgb(219, 159, 67);
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原生Ajax</title>
+</head>
+
+<body>
+    <button type="button">点击向后端请求数据</button>
+    <p id="text"></p>
+    <script>
+        var button = document.getElementsByTagName("button")[0];
+        button.onclick = function () {
+            var XHR = new XMLHttpRequest();//创建XMLHttpRequest的请求对象
+            XHR.onreadystatechange = function () {
+                if (XHR.readyState == 4 && XHR.status == 200) {//请求成功
+                    document.getElementById("text").innerHTML = XHR.responseText;//responseText响应文本
+                }
+            }
+            XHR.open("POST", "../ajax/demo01", true);
+            //请求类型，跳转路径（GET请求在路径中加入传输的的内容），是否异步（true/false）
+            XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            //像form表单传数据，参数：请求头名称，值
+            XHR.send("name=PJ");//将请求内容发送到服务器（POST请求独有）
+        }
+    </script>
+</body>
+
+</html>

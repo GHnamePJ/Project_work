@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "query-data":"../../components/query-data/query-data",
+    "l-icon":"../../miniprogram_npm/lin-ui/icon/index",
+    "pj-selectPage":"../../components/selectPage/selectPage",
+    "l-loading":"../../miniprogram_npm/lin-ui/loading/index",
+    "l-checkbox-group":"../../miniprogram_npm/lin-ui/checkbox-group/index",
+    "l-checkbox":"../../miniprogram_npm/lin-ui/checkbox/index",
+    "yu-select":"../../components/select/select"
+  },
+  "component": true,
+  "navigationBarTitleText": "查询",
+  "navigationBarBackgroundColor":"#599BFE"
+}

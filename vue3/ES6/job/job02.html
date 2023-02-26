@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios_job02</title>
+    <script src="./vue.global.js"></script>
+    <script src="./axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        用户名：<input v-model='data.username' placeholder="请输入用户名" type="text" />
+        <br /><br />
+        密&nbsp;&nbsp;码&nbsp;&nbsp;：<input v-model='data.password' placeholder="请输入密码" type="password" />
+        <button @click="toLogin">登录</button>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            setup() {
+                const data = Vue.reactive({
+                    username: '',
+                    password: ''
+                })
+                const toLogin = function () {
+                    if (data.username != "" && data.password != "") {
+                        console.log(data)
+                        axios.get("data.json", {}).then(function (res) {
+                            alert(res.data.name + "\n" + res.data.age);
+                        }).catch(function (error) {
+                            console.log(error);
+                        });
+                    }else{
+                        
+                    }
+                }
+                return {
+                    data,
+                    toLogin
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+
+</html>

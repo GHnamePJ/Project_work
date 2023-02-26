@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "pj-table":"../../pages/index/index"
+  },
+  "component": true
+}

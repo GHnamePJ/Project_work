@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:scaleType="fitXY"
+        android:src="@drawable/qx" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="易烊千玺，2000年11月28日生于湖南省怀化市洪江市，中国内地男演员、歌手、舞者，演唱组合TFBOYS成员，就读于中央戏剧学院。"
+        android:textSize="18sp"
+        />
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:text="返回主界面" />
+</LinearLayout>

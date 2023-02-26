@@ -1,0 +1,56 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: "楷体";
+}
+#meeting{
+	width: 450px;
+	height: 700px;
+	margin: auto;
+	margin-top: 10px;
+	border: 2px solid #dcdeff;
+}
+#meeting>label{
+	display: block;
+	width: 450px;
+	height: 70px;
+	background-color: rgba(4,153,253,0.5);
+	font-size: 30px;
+	text-align: center;
+	line-height: 70px;
+}
+#meeting_update{
+	width: 430px;
+	height: 450px;
+	/* background-color: #CAE2FF; */
+	font-size: 25px;
+	padding-left: 20px;
+	padding-top: 50px;
+}
+#meeting_update>input{
+	font-size: 20px;
+}
+#verify{
+	width: 300px;
+	height: 50px;
+	font-size: 27px;
+	color: #FFFFFF;
+	background-color: #5599ff;
+	border: none;
+	margin-left: 70px;
+	margin-top: 50px;
+}
+#return{
+	width: 300px;
+	height: 50px;
+	font-size: 27px;
+	color: #FFFFFF;
+	background-color: #a4cdff;
+	border: none;
+	margin-left: 70px;
+	margin-top: 30px;
+}
+#verify:hover,#return:hover{
+	color: #000000;
+	background-color: #5599ff;
+}

@@ -1,0 +1,68 @@
+1. 客户端发出请求
+请求方法：GET /POST
+请求URL： IP:PORT/PROJECTNAME/uri?parametername=parametervalue&.....
+请求参数的类型
+预期服务器端返回的结果类型
+
+$.ajax({
+	url:'http://localhost:8080/webproject/login?username=lisi&password=123456',
+	type:'',
+	data:'',
+	contentType:'' , //请求参数类型，可选
+	dataType:'', //返回结果数据类型，可选
+	success:function(result){},
+	error:function(err){} 
+
+})
+
+
+2. 服务器端接收请求、解析请求
+先行启动TOMCAT服务器（web容器）
+接着启动项目，web.xml文件被读取，加载DispatcherServlet, 
+DispatcherServlet开始工作
+拦截请求，在项目中查找controller类，是否有方法的requestMapping("/login")
+
+controller方法：
+接收请求参数
+解析请求参数
+
+
+3. 服务器端处理请求  Spring IOC Mybatis
+调用 service方法
+service方法再调用dao方法
+dao方法对于数据库表进行操作，从而得到结果
+将结果返回给controller方法
+
+4. 服务器端处理返回结果
+对于结果数据进行格式上处理，如 转为json对象
+将结果返回客户端
+
+controller方法： 
+返回类型为String 
+1）将结果转为json对象字符串，返回json字符串，  @ResponseBody
+2）直接返回页面"路径/jsp文件名"
+
+返回类型为JAVA对象   @ResponseBody
+
+
+5. 客户端接收返回结果
+客户端读取结果，解析结果，显示在页面上
+$.ajax({
+	url:'http://localhost:8080/webproject/login?username=lisi&password=123456',
+	type:'',
+	data:'',
+	contentType:'' , //请求参数类型，可选
+	dataType:'', //返回结果数据类型，可选
+	success:function(result){
+		1）json对象字符串
+		   JSON.parse(result)转为json对象
+		2) 对象
+           读取对象.属性
+        3）html字符串（页面）
+           写入当前页面
+
+	},
+	error:function(err){} 
+
+})
+

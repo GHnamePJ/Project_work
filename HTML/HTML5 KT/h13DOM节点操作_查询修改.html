@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>跳转本地文件</title>
+		<link type='text/css' href='../c13DOM节点操作_查询修改.css' rel='stylesheet' />
+	</head>
+	<body>
+		<ul id="nav">
+			<li><a href="#"><img src="#"></a></li>
+			<li><a href="#"><img src="#"></a></li>
+			<li><a href="#"><img src="#"></a></li>
+			<li><a href="#"><img src="#"></a></li>
+		</ul>
+		<script type="text/javascript">
+			var links=[['index.html','img/p1.png'],['products.html','img/p2.png'],['projects.html','img/p3.png'],['contact.html','img/p4.png']];//导航条链接
+			var ul=document.getElementById('nav');
+			var a=ul.getElementsByTagName('a');
+			var img=ul.getElementsByTagName('img');
+			for(i=0;i<a.length;i++){
+				a[i].setAttribute('href',links[i][0]);
+				a[i].innerHTML="<img src='"+links[i][1]+"'>"
+			}
+		</script>
+	</body>
+</html>

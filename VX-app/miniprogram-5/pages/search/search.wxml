@@ -1,0 +1,181 @@
+<!--pages/search/search.wxml-->
+<!-- 头部 -->
+<goBack></goBack>
+<scroll-view scroll-y="{{true}}" class="page" style="height: {{forecastHeight}}px;">
+  <!-- 查询方式 -->
+  <view id="select">
+    <view id="topbtn">
+      <search-select queryArray="{{queryArray}}" bindmyevent="myget" defaultText="{{defaultText}}"></search-select>
+      <changeStation class="changeStation"></changeStation>
+    </view>
+  </view>
+
+  <!-- 暂无数据 -->
+  <view hidden="{{showImg}}">
+    <view id="zhanWuShuJu">
+      <image src="http://m.qpic.cn/psc?/V52S6xw3495X9G2prYM72UKCZP0f7fs2/ruAMsa53pVQWN7FLK88i5rOjsM9qr5ZhbEMIeH8BBkQTD9hn5AdmO7AQbLQEjWGaJIiFhSa5ibynnW*nPN9VFsVu17402YsIEM1VCOdu4Yk!/mnull&bo=AAQABAAEAAQDByI!&rf=photolist&t=5" mode="widthFix"></image>
+      <text>暂无数据</text>
+    </view>
+  </view>
+
+  <!-- 普通弹框 -->
+  <l-popup show="{{commonPopup}}" l-class="commonPopup">
+    <view id="commonPopup-container">
+      <!-- 标题 -->
+      <view class="popup-title">
+        <l-icon name="search" l-class="menu iconfont" size="60"></l-icon>
+        <text>普通查询</text>
+      </view>
+      <!-- 内容 -->
+      <view id="commonPopup-content">
+        <!-- 时间下拉 -->
+        <view id="date-select">
+          <data-select dataArray="{{dataArray}}" bindmyevent="getData" dataText="{{dataText}}"></data-select>
+          <view class="date-picker">
+            <picker mode="date" start="{{startDate}}" end="{{endDate}}"bindchange="bindDateChange">
+              <text class="date-text" >{{showText}}</text>
+            </picker>
+            <picker mode="{{pickerModel}}" range="{{minuteArray}}" range-key="{{item}}" bindchange="bindPickerModelChange" start="{{showText}}" end="{{endDate}}">
+              <text class="date-text" decode="{{true}}">&ensp;{{showText1}}</text>
+            </picker>
+          </view>
+        </view>
+        <!-- 单选因素 -->
+        <view id="commonPopup-factors">
+          <text>气象因素:</text>
+          <radio-group bindchange="EventHandle">
+            <radio wx:for="{{items}}" wx:key="index" key="{{item}}" value="{{index+1}}" color="#2a82e4" checked="{{checked}}">
+              <l-icon name="{{item.icon}}" l-class="menu iconfont"></l-icon>
+              <text>{{item.value}}</text>
+            </radio>
+          </radio-group>
+        </view>
+      </view>
+      <!-- 提交按钮 -->
+      <view class="popup-button">
+        <button bindtap="commonAffirm">确认</button>
+        <button bindtap="commonCancel">取消</button>
+      </view>
+    </view>
+  </l-popup>
+
+  <!-- 高级查询弹框 -->
+  <l-popup show="{{advancedPopup}}" l-class="advancedPopup">
+    <view id="advancedPopup-container">
+      <!-- 弹框标题 -->
+      <view class="popup-title">
+        <l-icon name="search" l-class="menu iconfont" size="60"></l-icon>
+        <text>高级查询</text>
+      </view>
+      <!-- 内容 -->
+      <view id="advancedPopup-content">
+        <!-- 下拉 -->
+        <view id="date-text">
+          <view class="start-end">
+            <text>开始日期：</text>
+            <view class="start-end-picker">
+              <picker mode="date" bindchange="bindStartText" start="{{startDate}}" end="{{endDate}}">
+                <text class="start-end-text">{{startText}}</text>
+              </picker>
+            </view>
+          </view>
+          <view class="start-end">
+            <text>结束日期：</text>
+            <view class="start-end-picker">
+              <picker mode="date" bindchange="bindEndText" start="{{startText}}" end="{{endDate}}">
+                <text class="start-end-text">{{endText}}</text>
+              </picker>
+            </view>
+          </view>
+        </view>
+        <!-- 多选因素 -->
+          <view id="advancedPopup-factors">
+            <text>气象因素:</text>
+            <view id="factors-min-max">
+              <l-checkbox-group bind:linchange="onChangeTap">
+                <l-checkbox wx:for="{{items}}" wx:key="index" key="{{index+1}}" checked="{{item.isChecked}}" disabled="{{item.disabled}}">
+                  <view class="checkbox-view">
+                    <l-icon name="{{item.icon}}" l-class="iconfont" size="30"></l-icon>
+                    <text>{{item.value}}</text>
+                  </view>
+                </l-checkbox>
+              </l-checkbox-group>
+              <view>
+                <view class="min-max" wx:for="{{disabled_states}}" wx:key="index">
+                  <input id="min{{index}}" placeholder="min" name="min{{index}}" value="{{item[1]}}" disabled="{{item[0]}}" bindblur="inputBindblur"/>
+                  <hr />
+                  <input id="max{{index}}" placeholder="max" name="max{{index}}" value="{{item[3]}}" disabled="{{item[2]}}" bindblur="inputBindblur"/>
+                </view>
+              </view>
+            </view>
+          </view>
+          <!-- 按钮 -->
+          <view class="popup-button">
+            <button bindtap="advancedAffirm" form-type="submit">确认</button>
+            <button bindtap="advancedCancel">取消</button>
+          </view>
+      </view>
+    </view>
+  </l-popup>
+
+  <!-- 普通查询页面 -->
+  <view hidden="{{commonPage}}">
+    <!-- 折线图 -->
+    <view class="charts">
+      <view class="ec-container">
+        <ec-canvas id="commonEchart" ec="{{ec}}"></ec-canvas>
+      </view>
+    </view>
+    <!-- 总结因素 -->
+    <view id="summarize-factor">
+      <l-icon name="{{factorIcon}}" size="70" l-class="iconfont" color="#4172ef"></l-icon>
+      <view id="summarize-content">
+        <text>{{commonFactor}}</text>
+        <text>{{commonFactorText}}</text>
+      </view>
+    </view>
+    <!-- 因素具体内容 -->
+    <view class="factor-content" wx:for="{{maxMinMean}}" wx:key="index">
+      <text>{{item.text}}</text>
+      <text>{{item.value}}</text>
+    </view>
+  </view>
+
+  <!-- 高级查询页面 -->
+  <view hidden="{{advancedPage}}">
+    <!-- 因素下拉 -->
+    <view id="factors-select">
+      <factors-select factorsArray="{{factorsArray}}" bindmyevent="myfactors" factorsText="{{factorsText}}"></factors-select>
+    </view>
+    <view class="charts">
+      <!-- 折线图 -->
+      <view class="ec-container">
+        <ec-canvas id="echart-per" ec="{{ec}}"></ec-canvas>
+      </view>
+    </view>
+    <!-- 所有因素的图文滚动 -->
+    <view id="time-factors">
+      <!-- 时间 -->
+      <scroll-view id="data-scorll" scroll-x="true">
+        <view id="data-content" wx:for="{{times}}" wx:key="{{index}}">
+          <text bindtap="bindtapData" id="time{{index}}" style="color: {{item.color}}; font-size: {{item.fontSize}};">{{item.text}}</text>
+        </view>
+      </scroll-view>
+      <!-- 图文 -->
+      <scroll-view id="factor-scorll" scroll-x="true">
+        <view id="factors-content" wx:for="{{factorsArray}}" wx:key="{{index}}">
+          <text>{{item.text}}</text>
+          <l-icon name="{{item.icon}}" l-class="menu iconfont" size="60"></l-icon>
+          <text>{{item.value}}</text>
+        </view>
+      </scroll-view>
+    </view>
+    <!-- 每个因素 -->
+    <view class="factor" wx:for="{{dateArray}}">
+      <text>{{item.text}}</text>
+      <l-icon name="{{item.icon}}" l-class="menu iconfont" size="90"></l-icon>
+      <text>{{item.value}}</text>
+    </view>
+  </view>
+
+</scroll-view>

@@ -1,0 +1,65 @@
+/* components/select/select.wxss */
+.com-selectBox{
+  width: 320rpx;
+  /* background-color: rgb(241, 241, 229); */
+}
+.com-sContent{
+  border: 1.5px solid rgba(50, 69, 247, 0.6);
+  border-radius: 18rpx;
+  font-size: 32rpx;
+  position: relative;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin-bottom: 3rpx;
+  padding-left: 28rpx;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+/* 图片 */
+.com-sImg{
+  position: absolute;
+  right: 24rpx;
+  top: 24rpx;
+  width: 40rpx;
+  height: 40rpx;
+  transition: all .3s ease;
+}
+.com-sTxt{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding:0 40rpx 0 12rpx;
+  font-size: 36rpx;
+  color: #383838;
+  text-align:left;
+}
+.com-sList{
+  padding-left: 28rpx;
+  background: white;
+  width: inherit;
+  position: absolute;
+  /* 下拉框距离显示框的距离 */
+  /* top: 7px; */
+  border: 3rpx solid #ffffff;
+  border-radius: 28rpx;
+  /* border-top: none; */
+  /* border-bottom: none; */
+  box-sizing: border-box;
+  z-index: 3;
+  max-height: 240rpx;
+  overflow: auto;
+  box-shadow: rgba(60, 64, 67, 0.3) 0rpx 2rpx 4rpx 0rpx, rgba(60, 64, 67, 0.15) 0rpx 2rpx 6rpx 2rpx;
+}
+.com-sItem{
+  height: 88rpx;
+  line-height: 88rpx;
+  border-top: 2rpx solid #e2e2e2;
+  padding: 0 12rpx;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 28rpx;
+}
+.com-sItem:first-child{
+  border-top: none;
+}

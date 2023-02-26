@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div#show>img{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="show">
+			<img src="images/pi8.jpg" style="display: block;" /><img src="images/pi9.jpg" /><img src="images/pi10.jpg" />
+		</div>
+		<script type="text/javascript">
+			var show=document.getElementById("show");
+			
+			var num=0;
+			function move(){
+				var imgs=show.getElementsByTagName("img");
+				for(var i=0;i<imgs.length;i++)
+				imgs[i].style.display="none";
+				num=(num+1)%imgs.length;
+				imgs[num].style.display="block";
+				
+				t1=setTimeout(move,2000);
+			}
+			
+			var t1=setTimeout(move,2000);
+		</script>
+	</body>
+</html>

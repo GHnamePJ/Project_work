@@ -1,0 +1,18 @@
+<!--components/select/select.wxml-->
+<view class="container">
+  <view class='com-selectBox'>
+    <!-- 框框 -->
+    <view class='com-sContent' bindtap='selectToggle'>
+      <!-- 选择的内容 -->
+      <view class='com-sTxt'>{{dataText}}</view>
+      <!-- 下拉图标 -->
+      <!-- <l-icon name="down" l-class='com-sImg' animation="{{animationData}}"></l-icon> -->
+      <image src='{{imgsrc}}' class=' com-sImg' animation="{{animationData}}"></image>
+      <!-- <l-icon name="xiala" l-class="menu iconfont" animation="{{animationData}}"></l-icon> -->
+    </view>
+    <!-- 下拉框 -->
+    <view class='com-sList' wx:if="{{selectShow}}">
+      <view wx:for="{{dataArray}}" data-index="{{index}}" wx:key='index' class='com-sItem' bindtap="setText">{{item.text}}</view>
+    </view>
+  </view>
+</view>

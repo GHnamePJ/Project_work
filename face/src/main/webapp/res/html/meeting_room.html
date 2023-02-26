@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/meeting_room.css"/>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		$(function () {
+			if(sessionStorage.getItem("token")==null){
+				$(window).attr("location","../../index.jsp");
+			}else {
+			}
+			//签到部分
+			// 拍照
+			// 画布
+			var constraints = {
+				// 摄像头像素
+				audio: true,
+				video: {
+					width: { min: 1280 },
+					height: { min: 720 }
+				}
+			};
+			$("#sign").click(function(){
+				// 开启视频
+				// navigator.mediaDevices.getUserMedia调用摄像头
+				navigator.mediaDevices.getUserMedia(constraints).then(function (mediaStream) {
+					// console.log('getUserMedia', mediaStream);
+					var video = document.querySelector('video');
+					video.srcObject = mediaStream;
+					//onloadedmetadata 事件在指定视频/音频（audio/video）的元数据加载后触发。
+					video.onloadedmetadata = function (e) {
+						//带有播放和暂停按钮的一段视频：
+						video.play();
+					};
+					// 使用canvas进行拍照
+					var canvas = document.getElementById('canvas')
+					$('#paizhao').click(function () {
+						//canvas.getContext('2d')创建 context 对象;
+						//drawImage把一幅图像放置到画布上
+						canvas.getContext('2d').drawImage(video, 0, 0, 300, 300);
+						//   返回捕捉图片的url一个字符串
+						console.log(canvas.toDataURL('image/png'));
+					})
+					// //关闭摄像头
+					$("#notarize").click(function (){
+						video.srcObject = null;
+					});
+				}).catch(function (err) {
+					console.log(err.name + ": " + err.message);
+				});
+
+			});
+			//签到
+			$("#notarize").click(function (){
+				const url=canvas.toDataURL('image/png');
+				//去除图片首端的一些说明信息
+				var imageB64=url.substring(22);
+				alert("去除多余信息的base64图片"+imageB64);
+				let json = {"url":imageB64};
+				const json_str=JSON.stringify(json);
+				$.ajax({//1.判断人脸库是否有签到人的人脸
+					headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},
+					url: "../../user/signIn",
+					type: "post",
+					data:json_str,
+					contentType: "application/json",
+					success: function (results) {//请求成功的回调函数
+						if(results.success==true){
+							// alert(results.message);
+							//在事物表更改签到状态
+							//获取上一个页面的会议号
+							let meeting_num=decodeURI(document.URL);
+							meeting_num=meeting_num.slice(meeting_num.indexOf("=")+1);
+							// let meeting_num="7453899718";
+							$.get({
+								headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},
+								url: "../../Affair/signInState?meeting_num="+meeting_num,
+								success:function (results) {
+									if(results.success==true){
+										alert(results.message);
+										//隐藏签到
+										$("#sign").hide();
+									}else {
+										alert(results.message);
+									}
+								},
+								error:function () {
+
+								},
+							});
+						}else{
+							alert(results.message);
+						}
+					},
+					error: function (responseText) {//请求失败的回调函数
+						alert("请求失败！！！");
+					}
+				});
+			});
+			//点击返回按钮，返回首页
+			$("#exit").click(function (){
+				$(window).attr("location","home_page.html");//首页html
+
+			});
+			//隐藏结束会议按钮
+			$("#finish").hide();
+			// $("#finish").show();
+
+		//	导出签到名单
+			$("#export").click(function (){
+			//获取url上的会议号
+				let meeting_num = decodeURI(document.URL);
+				meeting_num = meeting_num.slice(meeting_num.indexOf("=") + 1)
+				let json = {"meeting_num":meeting_num};
+				$.post({
+					headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},
+					url: "../../Affair/selectaffairbyphone",
+					data:json,
+					dataType: "json",
+					success:function (results) {
+						console.log(results)
+						window.location.href = "../../../signExcel/"+results.date;
+					},
+					error:function () {
+
+					},
+				});
+
+				
+		});
+		});
+	</script>
+</head>
+<body>
+<div id="container">
+	<div id="header">
+		<a>会议名</a>
+	</div>
+	<div id="content">
+		<div id="content_left">
+			<div id="room"></div>
+			<button id="exit">离开会议</button>
+			<!--导出签到名单-->
+			<button class="btn btn-primary btn-sm" id="export">
+				导出签到名单
+			</button>
+			<!-- bootstrap按钮触发模态框拍照 -->
+			<button class="btn btn-primary btn-sm" id="sign" data-toggle="modal" data-target="#myModal2">
+				签&nbsp;到
+			</button>
+			<button id="finish">结束会议</button>
+			<!-- 模态框（Modal） -->
+			<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+				 aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title" id="myModalLabel">
+								人脸拍照签到
+							</h4>
+						</div>
+						<!-- 拍照 -->
+						<div class="modal-body">
+							<!-- 摄像头框  -->
+							<video src="" id="video" width="50%" height="100%"></video>
+							<!-- <video> 播放录像 -->
+							<canvas id="canvas" width="200" height="200"></canvas>
+							<!-- <canvas> 标签用于绘制图像,拍照框位置 -->
+						</div>
+
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" id="notarize" data-dismiss="modal">确认</button>
+							<button type="button" class="btn btn-primary" id="paizhao">拍照</button>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal -->
+			</div>
+		</div>
+
+
+		<div id="content_right">
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

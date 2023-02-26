@@ -1,0 +1,88 @@
+/* pages/mine/mine.wxss */ 
+#container{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  /* 主轴 */
+  flex-direction: column;
+  /* background-color: transparent; */
+}
+/* 初始化所有图片大小 */
+image{
+  width: 30px;
+  height: 30px;
+  background-color: rgb(198, 204, 224);
+}
+/* 头部 */
+#top{
+  display: flex;
+  width: 100%;
+  /* 侧轴 */
+  flex-direction: column; 
+  /* 侧轴方向对齐 */
+  align-items: center;
+  /* 主轴方向对齐 */
+  justify-content:center;
+  flex: 3;
+  background-image:url(http://m.qpic.cn/psc?/V54NOYW73dqLX62u51390hfTtC1B0M27/ruAMsa53pVQWN7FLK88i5qO9PBlN9rG36mPtP9td6wpF1euY*1X4POxfSFrGnnm0wNbjrsBZ.PRhwkW1Su38f*rMYEjyJVtpap4CIWlR5SU!/b&bo=OAQzBQAAAAABByo!&rf=viewer_4);
+  background-repeat:no-repeat;
+  background-size: 100% 100%;
+}
+#photo{
+  width: 100px;
+  height: 100px;
+  margin-top: 10rpx;
+  border-radius: 80px;
+  box-shadow: 3px 4px 8px 0.5px #1a1919;
+}
+#top>text{
+  margin-top: 8px;
+  font-size: 18px;
+}
+/* 中间 */
+#mid{
+  display: flex;
+  width: 100%;
+  flex: 4;
+  justify-content: center;
+  border-radius:22px 22px 0px 0px;
+  margin-top: -30px;
+  background: rgba(255, 255, 255);
+}
+#mid-content{
+  width: 100%;
+  border-radius:22px 22px 0px 0px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+#mid-content{
+  width: 100%;
+  height: 44%;
+  margin: auto;
+  margin-top: 24rpx;
+  padding-top: 3%;
+  border-radius:18px;
+  background-color: rgb(255, 255, 255);
+}
+
+.l-list{
+  height: 60px;
+  background-color: transparent;
+}
+.l-right-class{
+  font-size: 26rpx;
+  color: gray;
+  user-select: all;
+}
+/* 列表字体 */
+.content-text{
+  font-size: 32rpx;
+}
+/* 底部 */
+#bottom{
+  display: flex;
+  width: 100%;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  /* background: rgb(243, 243, 243); */
+}

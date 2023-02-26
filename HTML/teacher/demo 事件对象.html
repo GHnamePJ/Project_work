@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				
+			width:500px;
+			height: 300px;
+			margin: auto;
+			border: 1px solid red ;
+			/*父元素是坐标系*/
+			position:relative ;
+		}
+		div img{
+			width:20px;
+			height: 20px;
+			/*子元素是坐标点*/
+			position: absolute;
+			/*具体的坐标*/
+			left:150px;
+			top:50px;
+		}
+		/*局部定位*/
+		</style>
+		
+	</head>
+	<body>
+		<p>h</p><p>h</p><p>h</p><p>h</p>
+		<div id="d1">
+			<!--父元素-->
+		<img src="img/HBuilder.png"/>
+		<!--子元素-->
+		</div>
+		
+		<script type="text/javascript">
+			var d1=document.getElementById('d1');
+			var img=d1.childNodes[3];
+			d1.onmousemove=function(event){
+				//已知鼠标在body坐标系下的坐标，一直div元素在body坐标系下的位置
+ 				console.log(event.clientX)
+            console.log(this.offsetTop);
+              //求鼠标在div中的坐标
+              var px=event.clientX-this.offsetLeft;
+				var py=event.clientY-this.offsetTop;
+
+				img.style.left=px+"px";
+				img.style.top=py+"px"
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!--pages/vip/vip.wxml-->
+<view class="container">
+  <view class="content">
+    <!-- 头部 -->
+    <view class="vip_top">
+      <image class="vip_top_ico" src="{{url}}" bindtap="photo"></image>
+      <view class="vip_live">
+        <image class="vip_top_ico1" src="/static/image/vip/live.png"></image>
+        <text>2</text>
+      </view>
+      <view class="username">{{name}}</view>
+    </view>
+    <!-- 头部end -->
+    <!-- 中间 -->
+    <view class="vip_mid">
+      <view class="mid_one">
+        <view class="mid_text">
+            <text>6</text>
+            <text>奈雪券</text>
+        </view>
+        <view class="mid_text">
+            <text>413</text>
+            <text>积分</text>
+        </view>
+        <view class="mid_text">
+            <text>0</text>
+            <text>余额</text>
+        </view>
+        <view class="mid_text">
+            <text>0</text>
+            <text>礼品卡</text>
+        </view>
+      </view> 
+      <view class="mid_two">
+        <image  src="/static/image/vip/ewm.png"></image>
+      </view>
+        <view class="mid_three">
+          <text>支付前出示可累计积分，会员码每30s更新</text>
+        </view>
+        <view class="mid_four">
+          <view class="mid_four_content">
+            <image src="/static/image/login/wechat.png"></image>
+            <text>使用微信支付</text>
+          </view>
+        </view>
+    </view>
+    <!-- 中间end -->
+    <!-- 尾部 -->
+    <view class="vip_button">
+        <image src="/static/image/vip/dibu.png"></image>
+    </view>
+    <!-- 尾部end -->
+  </view> 
+</view>

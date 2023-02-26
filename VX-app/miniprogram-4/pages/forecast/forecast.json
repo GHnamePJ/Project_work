@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "goBack":"/components/goback/goback",
+    "menu":"/components/menubar/menubar",
+    "changeStation":"/components/changeStation/cangeStation",
+    "l-button":"/miniprogram_npm/lin-ui/button/index",
+    "l-popup":"/miniprogram_npm/lin-ui/popup/index",
+    "l-radio-group":"/miniprogram_npm/lin-ui/radio-group/index",
+    "l-radio":"/miniprogram_npm/lin-ui/radio/index",
+    "l-toast":"/miniprogram_npm/lin-ui/toast/index",
+    "ec-canvas":"/components/ec-canvas/ec-canvas"
+  }
+}

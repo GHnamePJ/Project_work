@@ -1,0 +1,41 @@
+{
+  "pages": [    
+    "pages/login/login",
+    "pages/mdata/mdata",
+    "pages/mine/mine",
+    "pages/search/search",
+    "pages/statistics/statistics",
+    "pages/forecast/forecast",
+    "pages/about-us/about-us"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "#68a2fd",
+    "list": [{
+      "pagePath": "pages/mdata/mdata",
+      "text": "首页",
+      "iconPath": "images/taber/index.png",
+      "selectedIconPath": "images/taber/clickindex.png"
+    },
+    {
+      "pagePath": "pages/mine/mine",
+      "text": "我的",
+      "iconPath": "images/taber/user.png",
+      "selectedIconPath": "images/taber/clickuser.png"
+    }
+  ]
+  },
+  "usingComponents": {
+    "l-icon":"/miniprogram_npm/lin-ui/icon"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

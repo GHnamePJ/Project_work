@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <TableRow>
+        <Button
+            android:id="@+id/b1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/xx"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 发 消 息 "
+            android:textSize="20dp"
+            />
+    </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/b2"
+                android:layout_width="50dp"
+                android:layout_height="55dp"
+                android:background="@drawable/phone"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 打 电 话 "
+                android:textSize="20dp"
+                />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/b3"
+                android:layout_width="50dp"
+                android:layout_height="55dp"
+                android:background="@drawable/email"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 发 邮 件 "
+                android:textSize="20dp"
+                />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/b4"
+                android:layout_width="50dp"
+                android:layout_height="55dp"
+                android:background="@drawable/dt"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 打 开 地 图 "
+                android:textSize="20dp"
+                />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/b5"
+                android:layout_width="50dp"
+                android:layout_height="55dp"
+                android:background="@drawable/bd"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 打 开 百 度 "
+                android:textSize="20dp"
+                />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/b6"
+                android:layout_width="50dp"
+                android:layout_height="55dp"
+                android:background="@drawable/tk"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 打 开 图 库 "
+                android:textSize="20dp"
+                />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/b7"
+                android:layout_width="50dp"
+                android:layout_height="55dp"
+                android:background="@drawable/lxr"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 打 开 联 系 人 "
+                android:textSize="20dp"
+                />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/b8"
+                android:layout_width="50dp"
+                android:layout_height="55dp"
+                android:background="@drawable/xj"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 打 开 相 机 "
+                android:textSize="20dp"
+                />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/b9"
+                android:layout_width="50dp"
+                android:layout_height="55dp"
+                android:background="@drawable/jsj"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 打 开 计 算 机 "
+                android:textSize="20dp"
+                />
+        </TableRow>
+
+    </TableLayout>
+</ScrollView>

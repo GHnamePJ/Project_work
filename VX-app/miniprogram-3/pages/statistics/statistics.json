@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "goBack":"/components/goback/goback",
+    "menu":"/components/menubar/menubar",
+    "ec-canvas":"/components/ec-canvas/ec-canvas",
+    "changeStation":"/components/changeStation/cangeStation",
+    "l-button":"/miniprogram_npm/lin-ui/button/index",
+    "l-popup":"/miniprogram_npm/lin-ui/popup/index",
+    "l-checkbox-group":"/miniprogram_npm/lin-ui/checkbox-group/index",
+    "l-checkbox":"/miniprogram_npm/lin-ui/checkbox/index",
+    "l-loading":"/miniprogram_npm/lin-ui/loading/index",
+    "l-toast":"/miniprogram_npm/lin-ui/toast/index"
+  }
+}

@@ -1,0 +1,292 @@
+2022-12-26 15:31:06,326 INFO Starting Nacos v1.4.1 on Pj with PID 19532 (E:\Project_work\nacos\target\nacos-server.jar started by iamat in E:\Project_work\nacos\bin)
+
+2022-12-26 15:31:06,327 INFO The following profiles are active: standalone
+
+2022-12-26 15:31:11,323 INFO Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@737edcfa' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+2022-12-26 15:31:11,334 INFO Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+2022-12-26 15:31:12,294 INFO Tomcat initialized with port(s): 8848 (http)
+
+2022-12-26 15:31:12,362 INFO Starting service [Tomcat]
+
+2022-12-26 15:31:12,363 INFO Starting Servlet engine: [Apache Tomcat/9.0.38]
+
+2022-12-26 15:31:12,912 INFO At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+
+2022-12-26 15:31:12,987 INFO Initializing Spring embedded WebApplicationContext
+
+2022-12-26 15:31:12,987 INFO Root WebApplicationContext: initialization completed in 6570 ms
+
+2022-12-26 15:31:13,811 INFO HikariPool-1 - Starting...
+
+2022-12-26 15:31:13,821 WARN Registered driver with driverClassName=org.apache.derby.jdbc.EmbeddedDriver was not found, trying direct instantiation.
+
+2022-12-26 15:31:14,257 INFO HikariPool-1 - Driver does not support get/set network timeout for connections. (Feature not implemented: No details.)
+
+2022-12-26 15:31:14,265 INFO HikariPool-1 - Start completed.
+
+2022-12-26 15:31:15,545 INFO Nacos-related cluster resource initialization
+
+2022-12-26 15:31:15,561 INFO The cluster resource is initialized
+
+2022-12-26 15:31:16,215 INFO Reflections took 63 ms to scan 1 urls, producing 4 keys and 6 values 
+
+2022-12-26 15:31:16,258 INFO Reflections took 8 ms to scan 1 urls, producing 6 keys and 26 values 
+
+2022-12-26 15:31:16,277 INFO Reflections took 5 ms to scan 1 urls, producing 3 keys and 15 values 
+
+2022-12-26 15:31:16,290 INFO Reflections took 3 ms to scan 1 urls, producing 2 keys and 12 values 
+
+2022-12-26 15:31:17,350 INFO Initializing ExecutorService 'applicationTaskExecutor'
+
+2022-12-26 15:31:17,627 INFO Adding welcome page: class path resource [static/index.html]
+
+2022-12-26 15:31:18,217 INFO Creating filter chain: Ant [pattern='/**'], []
+
+2022-12-26 15:31:18,277 INFO Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@47248a48, org.springframework.security.web.context.SecurityContextPersistenceFilter@1084ac45, org.springframework.security.web.header.HeaderWriterFilter@115ca7de, org.springframework.security.web.csrf.CsrfFilter@33e434c8, org.springframework.security.web.authentication.logout.LogoutFilter@75b38c36, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6ea246af, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4978777f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2349f14d, org.springframework.security.web.session.SessionManagementFilter@553da911, org.springframework.security.web.access.ExceptionTranslationFilter@63f6bed1]
+
+2022-12-26 15:31:18,419 INFO Initializing ExecutorService 'taskScheduler'
+
+2022-12-26 15:31:18,461 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+
+2022-12-26 15:31:18,619 INFO Tomcat started on port(s): 8848 (http) with context path '/nacos'
+
+2022-12-26 15:31:18,624 INFO Started Nacos in 14.705 seconds (JVM running for 15.643)
+
+2022-12-26 15:31:18,625 INFO Nacos started successfully in stand alone mode. use embedded storage
+
+2022-12-26 15:41:16,527 INFO [capacityManagement] start correct usage
+
+2022-12-26 15:41:16,588 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 15:41:16,765 WARN clearConfigHistory start
+
+2022-12-26 15:41:22,943 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+
+2022-12-26 15:41:22,943 INFO Initializing Servlet 'dispatcherServlet'
+
+2022-12-26 15:41:22,952 INFO Completed initialization in 9 ms
+
+2022-12-26 15:51:16,589 INFO [capacityManagement] start correct usage
+
+2022-12-26 15:51:16,589 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 15:51:16,794 WARN clearConfigHistory start
+
+2022-12-26 16:01:16,604 INFO [capacityManagement] start correct usage
+
+2022-12-26 16:01:16,605 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 16:01:16,807 WARN clearConfigHistory start
+
+2022-12-26 16:11:16,618 INFO [capacityManagement] start correct usage
+
+2022-12-26 16:11:16,620 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 16:11:16,821 WARN clearConfigHistory start
+
+2022-12-26 16:21:16,629 INFO [capacityManagement] start correct usage
+
+2022-12-26 16:21:16,629 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 16:21:16,832 WARN clearConfigHistory start
+
+2022-12-26 16:31:16,635 INFO [capacityManagement] start correct usage
+
+2022-12-26 16:31:16,635 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 16:31:16,839 WARN clearConfigHistory start
+
+2022-12-26 16:44:15,200 WARN clearConfigHistory start
+
+2022-12-26 16:44:30,821 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m45s372ms426µs300ns).
+
+2022-12-26 16:47:32,016 INFO [capacityManagement] start correct usage
+
+2022-12-26 16:47:32,016 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 16:54:15,202 WARN clearConfigHistory start
+
+2022-12-26 16:57:32,030 INFO [capacityManagement] start correct usage
+
+2022-12-26 16:57:32,032 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 17:04:15,214 WARN clearConfigHistory start
+
+2022-12-26 17:07:32,035 INFO [capacityManagement] start correct usage
+
+2022-12-26 17:07:32,036 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 17:14:15,224 WARN clearConfigHistory start
+
+2022-12-26 17:17:32,037 INFO [capacityManagement] start correct usage
+
+2022-12-26 17:17:32,037 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 17:24:15,235 WARN clearConfigHistory start
+
+2022-12-26 17:27:32,044 INFO [capacityManagement] start correct usage
+
+2022-12-26 17:27:32,044 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 17:34:15,249 WARN clearConfigHistory start
+
+2022-12-26 17:37:32,058 INFO [capacityManagement] start correct usage
+
+2022-12-26 17:37:32,058 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 17:44:15,257 WARN clearConfigHistory start
+
+2022-12-26 17:47:32,072 INFO [capacityManagement] start correct usage
+
+2022-12-26 17:47:32,072 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 17:54:15,272 WARN clearConfigHistory start
+
+2022-12-26 17:57:32,084 INFO [capacityManagement] start correct usage
+
+2022-12-26 17:57:32,084 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 18:04:15,282 WARN clearConfigHistory start
+
+2022-12-26 18:07:32,090 INFO [capacityManagement] start correct usage
+
+2022-12-26 18:07:32,090 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 18:14:15,295 WARN clearConfigHistory start
+
+2022-12-26 18:17:32,104 INFO [capacityManagement] start correct usage
+
+2022-12-26 18:17:32,105 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 18:24:15,299 WARN clearConfigHistory start
+
+2022-12-26 18:27:32,115 INFO [capacityManagement] start correct usage
+
+2022-12-26 18:27:32,115 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 18:34:15,309 WARN clearConfigHistory start
+
+2022-12-26 18:37:32,124 INFO [capacityManagement] start correct usage
+
+2022-12-26 18:37:32,124 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 18:44:15,322 WARN clearConfigHistory start
+
+2022-12-26 18:47:32,134 INFO [capacityManagement] start correct usage
+
+2022-12-26 18:47:32,134 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 18:54:15,337 WARN clearConfigHistory start
+
+2022-12-26 18:57:32,149 INFO [capacityManagement] start correct usage
+
+2022-12-26 18:57:32,149 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 19:04:15,339 WARN clearConfigHistory start
+
+2022-12-26 19:07:32,155 INFO [capacityManagement] start correct usage
+
+2022-12-26 19:07:32,155 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 19:14:15,341 WARN clearConfigHistory start
+
+2022-12-26 19:17:32,162 INFO [capacityManagement] start correct usage
+
+2022-12-26 19:17:32,162 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 19:24:15,343 WARN clearConfigHistory start
+
+2022-12-26 19:27:32,169 INFO [capacityManagement] start correct usage
+
+2022-12-26 19:27:32,169 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 19:34:15,348 WARN clearConfigHistory start
+
+2022-12-26 19:37:32,170 INFO [capacityManagement] start correct usage
+
+2022-12-26 19:37:32,171 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 19:44:15,363 WARN clearConfigHistory start
+
+2022-12-26 19:47:32,173 INFO [capacityManagement] start correct usage
+
+2022-12-26 19:47:32,173 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 19:54:15,367 WARN clearConfigHistory start
+
+2022-12-26 19:57:32,188 INFO [capacityManagement] start correct usage
+
+2022-12-26 19:57:32,189 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 20:04:15,368 WARN clearConfigHistory start
+
+2022-12-26 20:07:32,196 INFO [capacityManagement] start correct usage
+
+2022-12-26 20:07:32,196 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 20:14:15,383 WARN clearConfigHistory start
+
+2022-12-26 20:17:32,206 INFO [capacityManagement] start correct usage
+
+2022-12-26 20:17:32,206 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 20:24:15,394 WARN clearConfigHistory start
+
+2022-12-26 20:27:32,208 INFO [capacityManagement] start correct usage
+
+2022-12-26 20:27:32,209 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 20:34:15,402 WARN clearConfigHistory start
+
+2022-12-26 20:37:32,222 INFO [capacityManagement] start correct usage
+
+2022-12-26 20:37:32,222 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 20:44:15,408 WARN clearConfigHistory start
+
+2022-12-26 20:47:32,233 INFO [capacityManagement] start correct usage
+
+2022-12-26 20:47:32,233 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 20:54:15,410 WARN clearConfigHistory start
+
+2022-12-26 20:57:32,235 INFO [capacityManagement] start correct usage
+
+2022-12-26 20:57:32,235 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 22:17:12,406 WARN clearConfigHistory start
+
+2022-12-26 22:17:39,359 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h17m4s445ms847µs600ns).
+
+2022-12-26 22:24:06,691 INFO [capacityManagement] start correct usage
+
+2022-12-26 22:24:06,691 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 22:27:12,416 WARN clearConfigHistory start
+
+2022-12-26 22:34:06,707 INFO [capacityManagement] start correct usage
+
+2022-12-26 22:34:06,707 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 22:37:12,420 WARN clearConfigHistory start
+
+2022-12-26 22:44:06,719 INFO [capacityManagement] start correct usage
+
+2022-12-26 22:44:06,719 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 22:47:12,434 WARN clearConfigHistory start
+
+2022-12-26 22:54:06,724 INFO [capacityManagement] start correct usage
+
+2022-12-26 22:54:06,724 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 22:57:12,446 WARN clearConfigHistory start
+
+2022-12-26 23:04:06,729 INFO [capacityManagement] start correct usage
+
+2022-12-26 23:04:06,729 INFO [capacityManagement] end correct usage, cost: 0s
+
+2022-12-26 23:07:12,452 WARN clearConfigHistory start
+

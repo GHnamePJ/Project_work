@@ -1,0 +1,14 @@
+#数据库信息
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///springboot
+    username: root
+    password: 12345678
+#MyBatisPlus
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #开启sql日志
+    map-underscore-to-camel-case: true
+    #将带有下划线的表字段映射为驼峰格式的实体属性
+

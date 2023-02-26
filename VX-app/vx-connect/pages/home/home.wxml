@@ -1,0 +1,4 @@
+<view class="ec-container">
+  <ec-canvas canvas-id="echart-pie" ec="{{ec}}"></ec-canvas>
+</view>
+<!-- <pj-table></pj-table> -->

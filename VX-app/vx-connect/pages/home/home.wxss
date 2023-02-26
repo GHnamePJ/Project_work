@@ -1,0 +1,15 @@
+/* pages/tubiao/tubiao.wxss */
+.ec-container {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center;
+  justify-content: center; */
+  /* 必须有宽度和高度 */
+  /* width: 100%; */
+  height: 350px;
+}
+
+ec-canvas {
+  /* width: 100%; */
+  height: 100%;
+}

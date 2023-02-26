@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="db.properties"/>  <!--定义配置外在化-->
+<!--    <settings>-->   <!--定义Mybatis的一些全局属性-->
+<!--        <setting name="" value=""/>-->
+<!--    </settings>-->
+<!--    <typeAliases></typeAliases>-->  <!--类型名称：为一些类定义别名-->
+<!--    <typeHandlers></typeHandlers>-->    <!--类型处理器：定义java类型与数据库中的数据类型之间的转换关系-->
+<!--    <objectFactory type=""></objectFactory>-->
+<!--    <plugins>-->    <!--插件：mybatis的插件，可以更改mabatis的内部运行规则-->
+<!--        <plugin interceptor=""></plugin>-->
+<!--    </plugins>-->
+    <environments default="developer">  <!--环境：配置mybatis的环境-->
+        <environment id="developer">    <!--环境变量：当使用的数据源多的时候可以配置多个环境变量-->
+            <transactionManager type="JDBC"></transactionManager>   <!--事务管理器-->
+            <dataSource type="POOLED">  <!--数据源-->
+                <property name="driver" value="${db.driver}"/>
+                <property name="url" value="${db.url}"/>
+                <property name="username" value="${db.username}"/>
+                <property name="password" value="${db.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+<!--    <databaseIdProvider type=""></databaseIdProvider>-->    <!--数据库厂商标识-->
+    <mappers>   <!-- 映射器：指定映射文件或映射类   -->
+        <mapper resource="BookInfoMapper.xml"/>
+    </mappers>
+</configuration>

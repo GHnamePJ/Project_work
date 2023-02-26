@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace不能乱写，一定要和BookInfoMapper.xml路径相对应-->
+<mapper namespace="org.example.mapper.BookInfoMapper">
+    <select id="getBookByName" parameterType="string" resultType="BookInfo">
+        select * from t_book
+        <trim prefix="where" >
+            <if test="bookName!=null and bookName!=''"> bookName like '%${bookName}%'</if>
+        </trim>
+    </select>
+    <select id="getBookById" parameterType="int" resultType="BookInfo">
+        select * from t_book
+        <trim prefix="where">
+            <if test="id!=null and id!=''">id=#{id}</if>
+        </trim>
+    </select>
+    <insert id="insertBook" parameterType="BookInfo" >
+        insert into t_book
+        <trim prefix="(" suffixOverrides="," suffix=")values">
+            <if test="id!=null and id!=''">id,</if>
+            <if test="bookName!=null and bookName!=''">bookName,</if>
+            <if test="price!=null and price!=''">price,</if>
+            <if test="publisher!=null and publisher!=''">publisher,</if>
+        </trim>
+        <trim prefix="(" suffixOverrides="," suffix=")">
+            <if test="id!=null and id!=''">#{id},</if>
+            <if test="bookName!=null and bookName!=''">#{bookName},</if>
+            <if test="price!=null and price!=''">#{price},</if>
+            <if test="publisher!=null and publisher!=''">#{publisher}</if>
+        </trim>
+    </insert>
+    <update id="updateBook" parameterType="BookInfo" >
+        update t_book
+        <trim prefix="set" suffixOverrides=",">
+            <if test="bookName!=null and bookName!=''">bookName=#{bookName},</if>
+            <if test="price!=null and price!=''">price=#{price},</if>
+            <if test="publisher!=null and publisher!=''">publisher=#{publisher},</if>
+        </trim>
+        <trim prefix="where">
+            <if test="id!=null and id!=''">id=#{id}</if>
+        </trim>
+    </update>
+    <delete id="deleteBook" parameterType="int">
+        delete from t_book
+        <trim prefix="where">
+            <if test="id!=null and id!=''">id=#{id}</if>
+        </trim>
+    </delete>
+</mapper>

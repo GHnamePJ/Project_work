@@ -1,0 +1,169 @@
+<!--pages/statistics/statistics.wxml-->
+<!-- 返回前一页 -->
+<goBack></goBack>
+<!-- <menu></menu> -->
+<!-- 统计页面 start-->
+<scroll-view scroll-y="{{true}}" class="page" style="height: {{scrollHeight}}px;">
+  <!-- top按钮  start-->
+  <view class="topBtn">
+    <!-- 统计 -->
+    <view class="statisticsBtn" bindtap="onClickStation">
+      <l-button l-class="l-button-statistics"><text class="statisticsTitle" decode="{{true}}">统&nbsp;&nbsp;计&nbsp;&nbsp;</text>
+        <l-icon name="edit" size="30" color="white" />
+      </l-button>
+    </view>
+    <!-- 切换气象站 -->
+    <view class="changeStations">
+      <changeStation class="changeStationBtn"></changeStation>
+    </view>
+  </view>
+  <!-- top按钮  end-->
+  <!-- 统计条件弹窗 start-->
+  <l-popup show="{{popupSelect}}" l-class="popup">
+    <view class="condition">
+      <view class="condition-title">
+        <l-icon name="tongji" size="55" l-class="iconfont tongjiicon"></l-icon>
+        <text decode="{{true}}">统&nbsp;&nbsp;计</text>
+      </view>
+      <view class="condition-data">
+        <picker class="picker" mode="date" start="{{start}}" end="{{end}}" header-text="选择时间" value="{{startTime}}" bindchange="bindStartDateChange">
+          <view class="start">
+            <view class="dleft"><text decode="{{true}}">开&nbsp;始&nbsp;时&nbsp;间&nbsp;:</text></view>
+            <view class="dright">
+              <text>{{startTime}}</text>
+            </view>
+          </view>
+          <view class="hr"></view>
+        </picker>
+
+        <picker mode="date" start="{{start}}" end="{{end}}" class="picker" header-text="选择时间" value="{{endTime}}" bindchange="bindDateChange">
+          <view class="end">
+            <view class="dleft">
+              <text decode="{{true}}">结&nbsp;束&nbsp;时&nbsp;间&nbsp;:</text>
+            </view>
+            <view class="dright">
+              <text>{{endTime}}</text>
+            </view>
+          </view>
+          <view class="hr"></view>
+        </picker>
+
+      </view>
+      <view class="condition-factor">
+        <view class="condition-factor-title"><text decode="{{true}}">气&nbsp;象&nbsp;因&nbsp;素&nbsp;:</text></view>
+        <view class="condition-factor-content">
+          <l-checkbox-group bind:linchange="onChangeTap" placement="row" l-class="l-checkbox-group">
+            <l-checkbox l-class="checkbox" wx:for="{{items}}" wx:key="index" key="{{index+1}}" checked="{{item.isChecked}}" disabled="{{item.disabled}}">
+              <l-icon name='{{item.icon}}' size="30" l-class="iconfont" /><text decode="{{true}}">&nbsp;</text>{{item.value}}
+            </l-checkbox>
+          </l-checkbox-group>
+        </view>
+      </view>
+      <view class="condition-btn">
+        <l-button bind:lintap="confirm">确 认</l-button>
+        <l-button bg-color="rgba(102, 102, 102, 0.55)" bind:lintap="close">取 消</l-button>
+      </view>
+    </view>
+  </l-popup>
+  <!-- 统计条件弹窗 end-->
+
+  <l-toast id="my-toast" />
+
+  <!-- 展示内容 start-->
+  <view class="content" wx:if="{{statistics.length!==0}}">
+    <!-- 相关矩阵图表 start-->
+    <view class="chart">
+      <view class="check">
+        <view class="empty"></view>
+        <!-- 因素 -->
+        <view class="factor">
+          <view class="factorcard">
+            <!-- 左 -->
+            <view class="left">
+              <text style="color:#666666">因素</text>
+            </view>
+            <!-- 右 -->
+            <view class="right" id="right" bindtap="bindShowFactor">
+              <text decode="{{true}}">{{rightContent}}&nbsp;</text>
+              <l-icon name="xiala" l-class="iconfont"></l-icon>
+            </view>
+            <!-- 右下拉内容 -->
+            <view class="rightContent" style="width: {{rightContentWidth}}px;left:{{rightContentleft}}px;top:{{rightContentTop}}px" wx:if="{{select}}">
+              <block wx:for="{{statistics}}" wx:key="index">
+                <view class="rightItem" bindtap="mySelect" data-index="{{index}}" data-name="{{item}}">{{item}}</view>
+              </block>
+            </view>
+          </view>
+        </view>
+        <!-- 图表切换 -->
+        <view class="type">
+          <view class="typecard">
+            <view class="bar {{typeselect?'':'clicktypeBar'}}" bindtap="onClickBar">Bar</view>
+            <view class="line {{typeselect?'clicktypeLine':''}}" bindtap="onClickLine">Line</view>
+          </view>
+        </view>
+      </view>
+      <view class="chart-content">
+        <ec-canvas type="2d" id="mychart-dom" ec="{{ ec }}"></ec-canvas>
+      </view>
+
+    </view>
+    <!-- 相关矩阵图表 end-->
+    <!-- 相关性大小比较 start -->
+    <view class="correlationComparison">
+      <view class="comparisonTitle">
+        <text decode="{{true}}">相&nbsp;关&nbsp;性</text>
+      </view>
+      <view class="correlationComparison-content">
+        <view class="correlaton-left">
+          <l-icon name="correlation" size="55" color="white" l-class="iconfont"></l-icon>
+        </view>
+        <view class="correlaton-right">
+          <scroll-view scroll-x="{{true}}" class="scroll">
+          
+              <view class="scrolltext">
+                <block wx:for="{{sizeSort}}" wx:key="index">
+              {{item}}
+              <text wx:if="{{index === sizeSort.length-1}}"></text>
+              <text wx:else> {{xiaoyu}} </text>
+            </block>
+              </view>
+           
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+    <!-- 相关性大小比较 end -->
+    <!-- 相关性最大最小 start -->
+    <view class="extremum">
+      <!-- <view class="extremumTitle"></view> -->
+      <view class="extremum-content">
+        <view class="max">
+          <text style="position: relative; left: 10rpx; top: 34rpx">{{indexName}}与</text>
+          <view class="max-content">
+            <text class="text">{{max}}</text>
+            <text class="max-text">的<text style="color: rgb(104, 142, 242);">相关性最大</text>（除它本身）</text>
+          </view>
+        </view>
+
+        <view class="min">
+          <text style="position: relative; left: 10rpx; top: 34rpx">{{indexName}}与</text>
+          <view class="min-content">
+            <text class="text">{{min}}</text>
+            <text class="min-text">的<text style="color: rgb(104, 142, 242);">相关性最小</text></text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 相关性最大最小 end -->
+  </view>
+  <!-- 展示内容 end-->
+
+  <l-loading l-class="loading" wx:else="{{statistics.length===0}}" l-container-class="l-container" bg-color="#f3f3f3" z-index="776" opacity="1" show="{{true}}" full-screen="{{false}}" custom="{{true}}">
+    <view class="contentloading">
+      <image class="loading-img" mode="widthFix" src="https://img01.fs.yiban.cn/pic/46079052/web/thumb/221100222207278142.png"></image>
+      <view slot="content" class="loadingtext"><text decode="{{true}}" style="letter-spacing: 2rpx;">暂无数据</text></view>
+    </view>
+  </l-loading>
+</scroll-view>
+<!-- 统计页面 end-->

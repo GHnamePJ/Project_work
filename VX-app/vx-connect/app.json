@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/lunbotu/lunbotu",
+    "pages/home/home",
+    "pages/mine/mine",
+    "pages/change-password/change-password",
+    "pages/mdata/mdata",
+    "components/selectPage/selectPage",
+    "components/query-data/query-data",
+    "components/head/head",
+    "pages/scroll-view-demo/scroll-view-demo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "pink",
+    "list": [
+      {
+        "pagePath": "pages/mdata/mdata",
+        "text": "气象数据"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  }
+}

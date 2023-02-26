@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>index</title>
+    <link rel="stylesheet" type="text/css" href="../css/home_page.css"/>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <!--设置请求头判断用户是否登录-->
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(function(){
+            if(sessionStorage.getItem("token")==null){
+                $(window).attr("location","../../index.jsp");
+            }else {
+            }
+            function new_home(){
+                $.ajax({
+                    headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},<!--每次写页面都需导入-->
+                    url: "../../meeting/lookmeet",
+                    type: "POST",
+                    dataType:"json",
+                    success: function (responseText) {//请求成功的回调函数
+                        console.log(responseText);
+                        for(let i=0;i<responseText.date.length;i++) {
+                            $("#applied_list_tbody").append(' <tr>\n' +
+                                '        <td><a id="meeting_name">'+responseText.date[i].meeting_name+'</a></td>\n'+
+                                '        <td><a id="meeting_num">'+responseText.date[i].meeting_num+'</a></td>\n' +
+                                '        <td><button class="look" type="button"><svg class="bi me-2" width="25" height="25" role="img"><use xlink:href="#check_picture"/></svg></button></td>'+
+                                '        <td><button class="alter" type="button"><svg class="bi me-2" width="25" height="25" role="img"><use xlink:href="#change_picture"/></svg></button></td>' +
+                                '        <td><button class="delete" type="button"><svg class="bi me-2" width="25" height="25" role="img"><use xlink:href="#delete_picture"/></svg></button> </td>'+
+                                '        </tr>')
+
+                            $(".look").eq(i).click(function (){
+                                // alert(responseText.date[i].meeting_num);
+                                $(window).attr("location","details.html?meeting_num="+responseText.date[i].meeting_num);
+
+                            })
+
+                            $(".alter").eq(i).click(function (){
+                                // alert(responseText.date[i].meeting_num);
+                                $(window).attr("location","meetingupdate.html?meeting_num="+responseText.date[i].meeting_num);
+                            })
+
+                            $(".delete").eq(i).click(function (){
+                                $.ajax({
+                                    headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},
+                                    url:"../../meeting/deleteMeet",
+                                    data:{"meeting_num":responseText.date[i].meeting_num},
+                                    dataType:"json",
+                                    type:"POST",
+                                    success: function(responseText){
+                                        alert("删除成功");
+                                        $("#applied_list_tbody").empty();
+                                        new_home();
+                                    },
+                                    error: function (responseText) {//请求失败的回调函数
+                                        alert("删除失败！！！");
+                                    }
+
+                                });
+                            })
+
+                        }
+
+                    },
+                    error: function (responseText) {//请求失败的回调函数
+                        alert("请求失败！！！");
+                    }
+                });
+            }
+            new_home();
+            //我加入的列表
+            function join_home(){
+                $.ajax({
+                    headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},<!--每次写页面都需导入-->
+                    url: "../../Affair/lookaffair",
+                    type: "POST",
+                    dataType:"json",
+                    success: function (responseText) {//请求成功的回调函数
+                        console.log(responseText);
+                        for(let i=0;i<responseText.date.length;i++) {
+                            $("#joined_list_tbody").append(' <tr>\n' +
+                                '        <td><a id="meeting_name">'+responseText.date[i].meeting_name+'</a></td>\n'+
+                                '        <td><a id="meeting_num">'+responseText.date[i].meeting_num+'</a></td>\n' +
+                                '        <td><button class="look" type="button"><svg class="bi me-2" width="25" height="25" role="img"><use xlink:href="#check_picture"/></svg></button></td>'+
+                                '        </tr>')
+
+                            $(".look").eq(i).click(function (){
+                                // alert(responseText.date[i].meeting_num);
+                                $(window).attr("location","details.html?meeting_num="+responseText.date[i].meeting_num);
+
+                            })
+
+                        }
+
+                    },
+                    error: function (responseText) {//请求失败的回调函数
+                        alert("请求失败！！！");
+                    }
+                });
+            }
+            join_home();
+
+            $("#exit").click(function(){//点击退出登录
+                sessionStorage.clear();
+                $(window).attr("location","../../index.jsp");
+            });
+            $(".num").html(sessionStorage.getItem("name"));
+            $("#apply").click(function (){//点击申请会议弹窗
+                // alert("1");
+                $.ajax({
+                    headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},
+                    url: "../../Random/Meet",
+                    type: "GET",
+                    success: function (results) {//请求成功的回调函数
+                        if(results.success==true){
+                            $("#meetingNum").val(results.date);
+                            $("#applyName").val(sessionStorage.getItem("name"));
+                        }else{
+
+                        }
+                    },
+                    error: function (results) {
+                        alert("请求失败");
+                    }
+                });
+            });
+            //提交会议申请
+            $("#apply_meeting").click(function (results) {
+                let param_array = $("#meeting_form").serializeArray();
+                let json = {};
+                for (i in param_array) {
+                    json[param_array[i].name] = param_array[i].value;
+                }
+                const json_str = JSON.stringify(json);
+                alert(json_str);
+                if ($("#meeting_form input").val()>0){
+                    $.ajax({
+                        headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},
+                        url: "../../meeting/apply",
+                        type: "POST",
+                        data:json_str,
+                        contentType: "application/json",
+                        success: function (results) {//请求成功的回调函数
+                            let meeting_num = $("#meetingNum").val();
+                            // alert(meeting_num)
+                            $.ajax({
+                                headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},<!--每次写页面都需导入-->
+                                url: "../../Affair/insertByApply",
+                                data:{"meeting_num":meeting_num,"name":sessionStorage.getItem("name")},
+                                type: "GET",
+                                dataType:"json",
+                                success: function (results) {//请求成功的回调函数
+                                    // $("#joined_list_tbody").empty();
+                                    // join_home();
+
+                                },
+                                error: function (results) {
+                                    alert("请求失败");
+                                }
+                            });
+                            if(results.success==true){
+                                $("#applied_list_tbody").empty();
+                                new_home();
+                                $("#meeting_form input" ).val("");
+                            }else {
+                                alert("申请失败");
+                            }
+                        },
+                        error: function (results) {
+                            alert("请求失败");
+
+                        }
+                    });
+                }else {
+                    alert("请填写完整信息");
+                }
+            });
+
+            //默认显示我申请的会议
+            $("#applied_btn").css({backgroundColor:"#5599FF"});
+            $("#applied_btn_meeting").show();
+            $("#joined_btn_meeting").hide();
+
+            //点击加入会议
+
+            $("#join_meeting").click(function(results){
+                if(isNaN($("#meeting_num").val())==false&&$("#meeting_num").val()!=null&&$("#meeting_num").val().length==8){//会议号不为空且等于八位数
+                    let meeting_num = $("#meeting_num").val()
+                    // alert(meeting_num)
+                    alert(sessionStorage.getItem("name"))
+                    $.ajax({
+                        headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},<!--每次写页面都需导入-->
+                        type: "POST",
+                        url: "../../Affair/insertAffair",
+                        data:{"meeting_num":meeting_num,"name":sessionStorage.getItem("name")},
+                        dataType:"json",
+                        success: function (results) {//请求成功的回调函数
+                            $(window).attr("location","meeting_room.html?meeting_num="+meeting_num);
+
+                        },
+                        error: function (results) {
+                            alert("请求失败");
+                        }
+                    });
+                }else{
+                    alert("会议号输入错误！");
+                }
+            });
+            //点击加入列表
+            $("#join_list").click(function(){
+                if(isNaN($("#meeting_num").val())==false&&$("#meeting_num").val()!=null&&$("#meeting_num").val().length==8){//会议号不为空且等于八位数
+                    let meeting_num = $("#meeting_num").val()
+                    // alert(meeting_num)
+                    $.ajax({
+                        headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},<!--每次写页面都需导入-->
+                        url: "../../Affair/insertAffair",
+                        data:{"meeting_num":meeting_num,"name":sessionStorage.getItem("name")},
+                        type: "GET",
+                        dataType:"json",
+                        success: function (results) {//请求成功的回调函数
+                            $("#joined_list_tbody").empty();
+                            join_home();
+
+                        },
+                        error: function (results) {
+                            alert("请求失败");
+                        }
+                    });
+                }else{
+                    alert("会议号输入错误！");
+                }
+            });
+            //点击“我申请的”按钮
+            $("#applied_btn").click(function(){
+                $(this).css({backgroundColor:"#5599FF"});
+                $("#joined_btn").css({backgroundColor:"#ffffff"});
+                $("#applied_btn_meeting").show();
+                $("#joined_btn_meeting").hide();
+            });
+            //点击“我加入的”按钮
+            $("#joined_btn").click(function(){
+                $(this).css({backgroundColor:"#5599FF"});
+                $("#applied_btn").css({backgroundColor:"#ffffff"});
+                $("#joined_btn_meeting").show();
+                $("#applied_btn_meeting").hide();
+            });
+            //点击头像跳转到个人信息界面
+            $("#head_photo").click(function (){
+                $.ajax({
+                    headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},
+                    url: "../../user/verifyPhone",
+                    type: "GET",
+                    success: function (responseText) {//请求成功的回调函数
+                        console.log(responseText);
+                        if(responseText.success==true){
+                            $(window).attr("location","person.html");
+                        }else{
+                            alert("未登录");
+                        }
+                    },
+                    error: function (responseText) {//请求失败的回调函数
+                        alert("请求失败！！！");
+                    }
+                });
+
+            });
+            //头像
+            $.ajax({
+                headers:{"token":sessionStorage.getItem("token"),"phone":sessionStorage.getItem("phone")},
+                url: "../../user/name",
+                type: "POST",
+                success: function (responseText) {//请求成功的回调函数
+                    console.log(responseText);
+                    if(responseText.success==true){
+                        sessionStorage.setItem("facePhoto",responseText.date.face_photo)
+                        sessionStorage.setItem("headPhoto",responseText.date.head_photo)
+                        //头像判断是否设置
+                        let headphotopath = responseText.date.head_photo
+                        if (headphotopath == null){
+                            // alert("没设置头像")
+                            $("#head_photo").attr("src","../img/any.jpeg")
+                        }
+                        else {
+                            // alert("设置了头像")
+                            $("#head_photo").attr("src","../../.."+headphotopath)
+                        }
+
+
+                    }else{
+                        alert("未登录");
+                    }
+                },
+                error: function (responseText) {//请求失败的回调函数
+                    alert("请求失败！！！");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<!--图标svg-->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <!-- 查看图标 -->
+    <symbol id="check_picture" viewBox="0 0 1024 1024">
+        <path d="M1024.007782 34.863813v631.533074c0 19.224903-15.638911 34.863813-34.863813 34.863813s-34.863813-15.638911-34.863813-34.863813V69.727626H69.735409v884.544748h596.66926c19.224903 0 34.863813 15.638911 34.863813 34.863813s-15.638911 34.863813-34.863813 34.863813H34.871595c-19.224903 0-34.863813-15.638911-34.863813-34.863813V34.863813C0.007782 15.638911 15.646693 0 34.871595 0h954.272374c19.224903 0 34.863813 15.638911 34.863813 34.863813z" p-id="3366" fill="#5599FF"></path><path d="M555.836576 340.669261c29.086381 0 57.176654 5.677821 83.772763 16.933852 25.6 10.857588 48.610117 26.297276 68.333073 46.119844 19.822568 19.822568 35.262257 42.832685 46.119845 68.333074 11.256031 26.496498 16.933852 54.686381 16.933852 83.772763 0 29.086381-5.677821 57.176654-16.933852 83.772762-10.857588 25.6-26.297276 48.610117-46.119845 68.333074-19.822568 19.822568-42.832685 35.262257-68.333073 46.119845-26.496498 11.256031-54.686381 16.933852-83.772763 16.933852s-57.176654-5.677821-83.772763-16.933852c-25.6-10.857588-48.610117-26.297276-68.333074-46.119845-19.722957-19.822568-35.262257-42.832685-46.119844-68.333074-11.256031-26.496498-16.933852-54.686381-16.933852-83.772762s5.677821-57.176654 16.933852-83.772763c10.857588-25.6 26.297276-48.610117 46.119844-68.333074 19.822568-19.822568 42.832685-35.262257 68.333074-46.119844 26.596109-11.256031 54.686381-16.933852 83.772763-16.933852m0-49.108172c-145.929961 0-264.267704 118.337743-264.267704 264.267705S409.906615 820.196109 555.836576 820.196109 820.10428 701.858366 820.10428 555.828794 701.766537 291.561089 555.836576 291.561089z" p-id="3367" fill="#5599FF"></path><path d="M484.216342 387.087938c6.175875-6.175875 12.650584-11.953307 19.324514-17.232685-26.197665 9.562646-50.701946 24.803113-71.719844 45.821012-76.999222 76.999222-76.999222 202.010895 0 279.010116 23.308949 23.308949 51.000778 39.545525 80.286381 48.709728-9.761868-7.072374-19.125292-15.140856-27.891051-23.906615-91.741634-91.841245-91.741634-240.659922 0-332.401556zM992.331518 992.423346c-24.006226 24.006226-63.352529 24.006226-87.358755 0L728.362646 815.713619c-24.006226-24.006226-24.006226-63.352529 0-87.358755s63.352529-24.006226 87.358755 0l176.709727 176.709727c24.006226 24.006226 24.006226 63.352529-0.09961 87.358755z" p-id="3368" fill="#5599FF"></path>
+    </symbol>
+    <!-- 修改图标 -->
+    <symbol id="change_picture" viewBox="0 0 1024 1024">
+        <path d="M932.981 644.538c-16.379 0-35.29 13.401-35.29 29.78v120.165c0 57.030-46.011 103.189-102.594 103.189h-569.106c-56.732 0-102.594-46.159-102.594-103.189v-567.914c0-57.030 45.862-103.189 102.594-103.189h252.091c16.379 0 29.632 1.489 29.632-14.89s-13.252-44.67-29.632-44.67h-295.87c-65.368 0-118.377 53.307-118.377 119.122v655.171c0 65.815 53.009 119.122 118.377 119.122h656.66c65.368 0 118.377-53.307 118.377-119.122v-163.793c0.001-16.379-7.891-29.78-24.27-29.78zM247.731 742.963c-4.765 32.46 17.422 54.2 49.584 48.245l188.808-34.099-209.208-210.549-29.185 196.403zM639.643 280.024c23.229-23.377 60.603-23.377 83.832 0l41.842 41.99c23.080 23.377 23.080 61.050 0 84.278l-188.363 189.554c-23.080 23.229-60.603 23.229-83.683 0l-41.842-42.14c-23.080-23.229-23.080-60.901 0-84.278l188.214-189.405zM535.113 722.264l355.728-358.11-209.208-210.548-355.728 357.962 209.208 210.697zM935.809 304.594c34.694-34.844 24.42-81.152-10.274-115.995l-83.683-84.279c-34.694-34.844-90.831-34.844-125.525 0l209.208 210.548 10.274-10.274z" p-id="2235" fill="#5599FF"></path>
+    </symbol>
+    <!-- 删除图标 -->
+    <symbol id="delete_picture" viewBox="0 0 1024 1024">
+        <path d="M202.666667 256h-42.666667a32 32 0 0 1 0-64h704a32 32 0 0 1 0 64H266.666667v565.333333a53.333333 53.333333 0 0 0 53.333333 53.333334h384a53.333333 53.333333 0 0 0 53.333333-53.333334V352a32 32 0 0 1 64 0v469.333333c0 64.8-52.533333 117.333333-117.333333 117.333334H320c-64.8 0-117.333333-52.533333-117.333333-117.333334V256z m224-106.666667a32 32 0 0 1 0-64h170.666666a32 32 0 0 1 0 64H426.666667z m-32 288a32 32 0 0 1 64 0v256a32 32 0 0 1-64 0V437.333333z m170.666666 0a32 32 0 0 1 64 0v256a32 32 0 0 1-64 0V437.333333z" p-id="4236" fill="#d81e06"></path>
+    </symbol>
+</svg>
+<div id="container">
+    <div id="header">
+        <div id="loginName">
+            <!--            <a  class="p"></a>-->
+            <img src="../img/any.jpeg" class="p" id="head_photo" name="head_photo" width="50px" height="50px" >
+            <span class="num" >账号</span>
+        </div>
+        <div id="safetyOut">
+            <a id="exit">退出</a>
+        </div>
+    </div>
+    <div id="content">
+        <div id="content_top">
+            <div class="b1">
+                <!--申请会议-->
+                <button id="apply" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal"></button>
+                <p>申请会议</p>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" style="width: 360px;margin: auto">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel1">
+                                    申请会议
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                <form id="meeting_form">
+                                    会&nbsp;&nbsp;议&nbsp;&nbsp;号：<input name="meeting_num" id="meetingNum" value="" readonly="readonly"><br><br>
+                                    会议主题：<input name="meeting_name" id="meetingName"><br><br>
+                                    申&nbsp;&nbsp;请&nbsp;&nbsp;人：<input name="apply_name" id="applyName" type="text"><br><br>
+                                    开始时间：<input name="start_time" id="startTime" type="datetime-local"><br><br>
+                                    结束时间：<input name="end_time" id="endTime" type="datetime-local"><br><br>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" id="apply_meeting"data-dismiss="modal">提交</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+            </div>
+            <div class="b2">
+                <!--加入会议-->
+                <button id="join" type="button" class="btn btn-primary btn-sm"data-toggle="modal" data-target="#myModal01"></button>
+                <p>加入会议</p>
+                <!-- 模态框（Modal） -->
+                <div class="modal fade" id="myModal01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" style="width: 300px;margin: auto">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel2">
+                                    加入会议
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                <form id="join_num_form">
+                                    会议号：<input name="meeting_num" id="meeting_num"><br><br>
+                                </form>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" id="join_meeting"data-dismiss="modal">加入会议</button>
+                                <button type="button" class="btn btn-success" id="join_list" data-dismiss="modal">加入列表</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+            </div>
+        </div>
+        <div id="content_bottom">
+            <div id="content_bottom_top">
+                <button id="applied_btn" type="button">我申请的</button>
+                <button id="joined_btn" type="button">我加入的</button>
+            </div>
+            <div id="content_bottom_content">
+                <div id="applied_btn_meeting">
+                    <div id="applied_meeting_div01">
+                        <table>
+                            <thead id="applied_list_thead">
+                            <tr id="applied_list_tr">
+                                <td>会议名</td>
+                                <td>会议号</td>
+                                <td>查看</td>
+                                <td>修改</td>
+                                <td>删除</td>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div id="applied_meeting_outside">
+                        <div id="applied_meeting_div02">
+                            <table>
+                                <thead id="applied_list_thead1">
+                                <tr id="applied_list_tr1">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </thead>
+                                <tbody id="applied_list_tbody">
+                                <!--                                后台反数据list-->
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="joined_btn_meeting">
+                    <div id="joined_meeting_div01">
+                        <table >
+                            <thead id="joined_list_thead">
+                            <tr id="joined_list_tr">
+                                <td>会议名</td>
+                                <td>会议号</td>
+                                <td>查看</td>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div id="joined_meeting_outside">
+                        <div id="joined_meeting_div02">
+                            <table>
+                                <thead id="joined_list_thead1">
+                                <tr id="joined_list_tr1">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </thead>
+                                <tbody id="joined_list_tbody">
+                                <!--                                后台反数据-->
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

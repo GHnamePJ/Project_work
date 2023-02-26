@@ -1,0 +1,2 @@
+<!--components/lineChart/lineChart.wxml-->
+<canvas type="2d" id="line" class="line-class" style="width:{{width}}px;height:{{height}}px" />

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="新增一行"/>
+		<table border="1">
+			<tr><td>序号</td><td>姓名</td><td>性别</td><td>年龄</td><td>操作</td></tr>
+			<tr><td></td><td><input type="text" name="stuName"></td><td><input type="text" name="stuSex"></td><td><input type="text" name="stuAge"></td><td><input type="button" name="delete" value="删除" onclick="alert('click')"></td></tr>
+		</table>
+		
+		<script type="text/javascript">
+			
+		var addTr=	function(){
+			//1.先找到克隆目标
+			var table=document.getElementsByTagName("table")[0];
+			var trModel=table.childNodes[1].childNodes[2];
+			
+			//2.克隆
+			var trClone=trModel.cloneNode(true);
+			
+			//3.添加
+			table.appendChild(trClone);
+		}
+		
+		//为按钮绑定click事件
+		var btn=document.getElementsByTagName("input")[0];
+		btn.onclick=addTr;
+		
+		</script>
+	</body>
+</html>

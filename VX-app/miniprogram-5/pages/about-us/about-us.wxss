@@ -1,0 +1,46 @@
+/* pages/about-us/about-us.wxss */
+#container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+  background: rgba(212, 252, 255, 0.1);
+  /* background: linear-gradient(#ffffff,#e9f3ff); */
+}
+.about_text{
+  display: flex;
+  width: 86%;
+  flex-direction: column;
+  margin-top: 30px;
+  border-radius: 15px;
+  /* border: 0.5px solid rgb(255, 234, 234); */
+  box-shadow: 3px 1px 3px 0.2px rgba(3, 3, 3, 0.1);
+  padding: 14px;
+  background: rgba(255, 255, 255);
+  /* background: linear-gradient(#ffffff,#e2eefd); */
+  
+}
+.about_text:nth-child(2){
+  border-radius: 10px;
+}
+.about_text:nth-child(3){
+  border-radius: 10px;
+}
+.about_text>p{
+  /* font-family: 'fantasy'; */
+  color: rgb(114, 114, 202);
+  margin-bottom: 5px;
+  font-size: 14pt;
+  font-weight: bold;
+  
+}
+.about_text>text{
+  font-size: 13pt;
+  color: rgb(47, 48, 45);
+  user-select:text;
+  /* font-family: "黑体"; */
+}
+/* .l-list{
+  margin-left: 10px;
+} */

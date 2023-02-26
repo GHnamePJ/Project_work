@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GroovyCompilerProjectConfiguration">
+    <excludes>
+      <file url="file://Y:/apache-maven-3.5.4/conf/archetype-catalog.xml" />
+    </excludes>
+  </component>
+</project>

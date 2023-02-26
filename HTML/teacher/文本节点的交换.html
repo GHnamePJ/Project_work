@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+		<p> 第一个段落</p>
+		<p> 第二个段落</p>
+		</div>
+		<script type="text/javascript">
+			//找到p标签
+			var div=document.getElementsByTagName('div')[0];
+			var p=div.getElementsByTagName('p');
+			//var p=document.getElementsByName('exchange')[0].getElementsByTagName('p');
+			
+			// console.log(p);
+			//点击后进行段落内容的交换
+			div.onclick=function(){//为div绑定鼠标点击事件
+				var temp=p[0].innerText;
+				p[0].innerText=p[1].innerText;
+				p[1].innerText=temp;
+			}
+		</script>
+	</body>
+</html>

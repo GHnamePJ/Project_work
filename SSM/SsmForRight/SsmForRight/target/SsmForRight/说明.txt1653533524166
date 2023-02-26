@@ -1,0 +1,11 @@
+1.照相机已关闭
+2.运行MySQL要手动去任务管理器的服务里启动MySQL，
+3.cmd窗口切换磁盘时直接输入磁盘名加”：“，进到磁盘cd控格加路径
+4.安装sdk闪退更改tools下Android.bat文件的查找jdk方法
+5.navicat2059：
+	mysql -u root -p #进入数据库
+	ALTER USER 'root'@'localhost' IDENTIFIED BY '你的mysql密码' PASSWORD EXPIRE NEVER; #修改加密规则
+	ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '你的mysql密码'; #修改密码
+	FLUSH PRIVILEGES; #刷新数据
+5.配置ODBC
+	①IP server:localhost

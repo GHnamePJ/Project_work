@@ -1,0 +1,15 @@
+<!--components/head/head.wxml-->
+<view class="head" style="padding-top: {{paddingTopNum}}px;padding-left: {{paddingLeftNum}}; ">
+  <l-icon name="caidan" size="50" color="black" l-class="icon iconfont" />
+</view>
+<view style="margin-top: 60px;"></view>
+<view>1111</view>
+<view>www</view>
+<view>www</view>
+<view>www</view>
+<view style="height: 800px;">www</view>
+<view>www</view>
+<view>www</view>
+<view>www</view>
+
+

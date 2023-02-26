@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mapper.UserInfoMapper">
+    <resultMap id="AddressMapper" type="AddressInfo">
+        <id property="id" column="id"/>
+        <result property="streetName" column="streetName"/>
+        <result property="zipcode" column="zipcode"/>
+        <result property="userInfoId" column="userInfo_Id"/>
+        <collection property="user" ofType="UserInfo">
+            <id property="id" column="id"/>
+            <result property="loginName" column="loginName"/>
+            <result property="password" column="password"/>
+            <result property="realName" column="realName"/>
+        </collection>
+    </resultMap>
+    <select id="getUser_address" parameterType="int" resultMap="AddressMapper">
+        select  u.realName, a.userInfo_Id,a.streetName from t_user u,t_address a where u.id=a.userInfo_Id and u.id=#{id}
+    </select>
+</mapper>

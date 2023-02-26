@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="forDaoCuid">
+    <!-- select one -->
+    <select id="getUserById" parameterType="java.lang.Integer" resultType="cn.mybatis.example.dao.po.UserInfo">
+        select * from t_user where id=#{id}
+    </select>
+
+    <!-- select list -->
+    <select id="getUserByName" parameterType="string" resultType="cn.mybatis.example.dao.po.UserInfo">
+        <!-- select * from t_user where realName like '%${value}%' -->
+        SELECT  *  FROM  t_user  WHERE  realName like CONCAT('%',#{realName},'%')
+    </select>
+
+    <!-- insert -->
+    <insert id="insertUser" parameterType="cn.mybatis.example.dao.po.UserInfo"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into t_user (loginName, password, realName) values (#{loginName}, #{password}, #{realName})
+    </insert>
+    <!-- update -->
+    <update id="updateUser" parameterType="cn.mybatis.example.dao.po.UserInfo">
+        update t_user set loginName=#{loginName},realName=#{realName} where id=#{id}
+    </update>
+    <!-- delete -->
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        delete from t_user where id=#{id}
+    </delete>
+</mapper>

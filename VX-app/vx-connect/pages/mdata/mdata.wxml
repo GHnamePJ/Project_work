@@ -1,0 +1,20 @@
+<!--pages/mdata/mdata.wxml-->
+<view id="container" style="height:{{containerWidth}};">
+  <l-tabs bind:linchange="changeTabs" l-header-class="tabs" placement="top" animated="true" swipeable="true" style="width: {{tabWidth}};" active-color="#699BFE">
+    <l-tabpanel tab="查询" key="one" slot="one" id="tabpanel">
+      <view class="tab-content" id="content">
+        <pj-query-data id="query-data"></pj-query-data>
+      </view>
+    </l-tabpanel>
+    <l-tabpanel tab="统计" key="two" slot="two" id="tabpanel1">
+      <view class="tab-content" id="content1">
+      </view>
+    </l-tabpanel>
+    <l-tabpanel tab="预测" key="three" slot="three" id="tabpanel2">
+      <view class="tab-content" id="content2">
+
+      </view>
+    </l-tabpanel>
+  </l-tabs>
+
+</view>

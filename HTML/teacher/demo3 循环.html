@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--<script type="text/javascript">
+			var f; // 华氏
+			var c = 0; // 摄氏
+			var count = 1; // 条目
+			
+			document.write('<table border="1">');
+			while(count <= 10 && c <= 250) {
+				f = c * 9 / 5.0 + 32; // 转换
+				document.write("<tr><td>" + c + "</td><td>" + f + "</td></tr>");
+				c = c + 20;
+				count++;
+			}
+			document.write('</table>');
+		</script>-->
+		
+		<script type="text/javascript">
+			document.write('<table border="1">');
+			for(var i=1;i<=9;i++){
+				document.write('<tr>');
+				for(var j=1;j<=i;j++){
+					document.write('<td>'+i+'*'+j+'='+i*j+'</td>');
+				}
+				document.write('</tr>');
+			}
+			document.write('</table>');
+		</script>
+		<table>
+		<tr><td></td></tr>
+		</table>
+	</body>
+
+</html>

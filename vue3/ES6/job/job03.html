@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>router_job03</title>
+    <script src="./vue.global.js"></script>
+    <script src="./vue-router.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <router-link to="/Login">登录</router-link><br />
+            <router-link to="/Register">注册</router-link>
+        </div>
+        <router-view></router-view>
+    </div>
+    <script>
+        //局部组件
+        const Login = {
+            template: ``
+        }
+        const Register = {
+            template: ``
+        }
+        // 路由 
+        const routes = [
+            {
+                path: '/Login',
+                name: 'Login',
+                component: Login,
+            },
+            {
+                path: '/Register',
+                name: 'Register',
+                component: Register,
+            }
+        ]
+        //创建路由实例
+        const router = VueRouter.createRouter({
+            history: VueRouter.createWebHashHistory(),
+            routes
+        })
+        //创建实例
+        const app = Vue.createApp({
+
+        })
+        app.use(router)
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

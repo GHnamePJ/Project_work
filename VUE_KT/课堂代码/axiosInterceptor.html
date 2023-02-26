@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>get,post请求, 拦截器示例,运行环境为tomcat</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+ 
+</head>
+<body>
+<div id="app" class="container">
+  <h1>axios简单使用示例</h1>
+  <a href="javascript:;" class="btn btn-primary" @click="get">Get请求</a>
+  <a href="javascript:;" class="btn btn-primary" @click="post">Post请求</a>
+  <a href="javascript:;" class="btn btn-primary" @click="http">http请求</a>
+  <p>{{msg}}</p>
+</div>
+<script>
+  let vueApp = Vue.createApp({    
+    setup () {
+       let msg = Vue.ref('')       
+
+       const interceptorFun = () => {
+          // 请求的拦截
+          axios.interceptors.request.use(function(config) {
+              console.log('request init');
+              return config;
+          })
+          // 响应的拦截
+          axios.interceptors.response.use(function(response) {
+              console.log('response init');
+              return response;
+          })
+       }
+
+       Vue.onMounted(interceptorFun)
+
+       const get = () => {
+          axios.get('./data.json',{
+            params: {
+              userId: '999'
+            },
+            headers: {
+              token: 'lisi'
+            }
+          }).then(res => {
+              msg.value = res.data;          
+          }).catch(function (error) {
+            console.log('error init.' + error);
+          })
+      }
+      const post = () => {
+          axios.post('./data.json',{
+            params: {
+              userId: '333'
+            },
+            header: {
+              token: 'wangwu'
+            }
+          }).then(res => {
+              msg.value = res.data;
+          }).catch(function (error) {
+            console.log('error ' + error);
+          })
+      }
+      const http = () => {
+          axios({
+            url: './data.json',
+            methods: 'get',
+            data: {
+              userId: '444'
+            },
+            params: {
+              userId: '444'
+            },
+            headers: {
+              token: 'zhangsan'
+            }
+          }).then(res => {
+              msg.value = res.data;
+          })
+      }
+
+      return {
+          msg,
+          get,
+          post,
+          http,
+          interceptorFun
+      }
+    }     
+  })
+  vueApp.mount('#app')
+  // let vueApp = Vue.createApp({    
+  //   data () {
+  //     return {
+  //       msg: ''
+  //     }
+      
+  //   },
+  //   // 全局拦截器的使用
+  //   mounted: function () {
+  //     // 请求的拦截
+  //     axios.interceptors.request.use(function(config) {
+  //       console.log('request init');
+  //       return config;
+  //     })
+  //     // 响应的拦截
+  //     axios.interceptors.response.use(function(response) {
+  //       console.log('response init');
+  //       return response;
+  //     })
+  //   },
+  //   methods: {      
+  //     get: function () {
+  //       axios.get('./data.json',{
+  //         params: {
+  //           userId: '999'
+  //         },
+  //         headers: {
+  //           token: 'lisi'
+  //         }
+  //       }).then(res => {
+  //         this.msg = res.data;          
+  //       }).catch(function (error) {
+  //         console.log('error init.' + error);
+  //       })
+  //     },
+  //     post: function () {
+  //       axios.post('./data.json',{
+  //         params: {
+  //           userId: '333'
+  //         },
+  //         header: {
+  //           token: 'wangwu'
+  //         }
+  //       }).then(res => {
+  //         this.msg = res.data;
+  //       }).catch(function (error) {
+  //         console.log('error ' + error);
+  //       })
+  //     },
+  //     http: function () {
+  //       axios({
+  //         url: './data.json',
+  //         methods: 'get',
+  //         data: {
+  //           userId: '444'
+  //         },
+  //         params: {
+  //           userId: '444'
+  //         },
+  //         headers: {
+  //           token: 'zhangsan'
+  //         }
+  //       }).then(res => {
+  //         this.msg = res.data;
+  //       })
+  //     }
+  //   }
+  // })
+  // vueApp.mount('#app')
+</script>
+</body>
+</html>

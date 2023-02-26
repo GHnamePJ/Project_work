@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				list-style: none;
+			}
+			nav>ul{
+				/* position: relative; */
+				
+			}
+			 
+			nav>ul li{
+				width:100px;
+				float: left;
+			}
+			ul>li a{
+				display: block;
+				width:100px;
+				height: 80px;
+				background:#E0FFFF;
+				text-align: center;
+				line-height: 80px;
+				font-size: 20px;
+			}
+			nav>ul>li>ul{
+				display: none;
+			}
+			nav>ul>li:hover>ul{
+				display: block;
+			}
+			
+			nav>ul>li>div{
+				width:800px;
+				height: 300px;
+				background:antiquewhite;
+				display: none;
+				/* position:absolute; */
+				left:0;
+			}
+			nav>ul>li:hover>div{
+				display: block;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li><a href="#">Pages</a>
+					<ul>
+						<li><a href="#">下拉单1</a></li>
+						<li><a href="#">下拉单2</a></li>
+						<li><a href="#">下拉单3</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Blog</a>
+					<ul>
+						<li><a href="#">下拉单1</a></li>
+						<li><a href="#">下拉单2</a></li>
+						<li><a href="#">下拉单3</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Products</a>
+					<div>这是product的菜单内容</div>
+				</li>
+				<li><a href="#">Contact</a>
+					<div>这是contact的菜单内容</div>
+				</li>
+				<li><a href="#">Home</a></li>
+			</ul>
+		</nav>
+	</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on事件阻止默认行为简单示例</title>
+    <!-- <script src="https://unpkg.com/vue@next"></script> -->
+    <script src="./../vue.global.js"></script>   
+</head>
+<body>
+<div id="app">
+    <div>
+        <!--鼠标移入移出事件，点击事件，可以写成对象方式-->
+        <!-- <button v-on="{mouseenter:onEnter,mouseout:onOut}" @click="onClick">点击</button> -->
+        <!-- <button v-on:mouseenter="onEnter" v-on:mouseout="onOut" @click="onClick">点击</button> -->
+        <button @mouseenter="onEnter" @mouseout="onOut" @click="onClick">点击</button>
+        <!--使用默认提交事件-->
+        <form action="/login">
+            <input type="text">
+            <button type="submit">默认提交</button>
+        </form>
+
+        <!--阻止默认提交方法一，当不阻止时将会跳转到login-->
+        <form @submit="onSubmit1($event)" action="/login">
+            <input type="text">
+            <button type="submit">阻止提交方式一</button>
+        </form>
+        <!--阻止默认提交方法二（Vue）, 当不阻止时将会跳转到login-->
+        <form @submit.prevent="onSubmit2" action="/login">
+            <input type="text">
+            <button type="submit">阻止提交方式二</button>
+        </form>
+        <!--键入事件-->
+        键入内容：
+        <form v-on:keyup="onKeyup">
+            <input type="text">           
+        </form>
+        <!--输入回车（默认提交），此处阻止默认提交事件-->
+        <form @keyup.enter="onEnter" @submit.prevent="onSubmit2">
+            <input type="text">  
+            <button type="submit">阻止提交方式三</button>          
+        </form>
+    </div>
+</div>
+</body>
+<script >
+            function onClick(){
+                console.log('onClick')
+            }
+            var obj = {
+                id:'aa',
+                methods:{
+                    onClick: function(){}
+                }
+                
+            }
+
+    var vm = Vue.createApp({        
+        methods:{
+            onClick:function(){
+                console.log('onClick')
+            },
+            onEnter:function(){ //输入回车事件
+                console.log("onEnter")
+            },
+            onOut:function(){
+                console.log("onOut")
+            },
+            onSubmit1:function(e){
+                e.preventDefault();
+                console.log("onSubmit")
+            },
+            onSubmit2:function(){
+                console.log("onSubmit2")
+            },
+            onKeyup:function(){
+                console.log("onKeyup" )
+            }
+        }
+    })
+    vm.mount("#app")
+</script>
+</html>

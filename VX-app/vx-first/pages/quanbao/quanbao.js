@@ -1,0 +1,160 @@
+// pages/quanbao/quanbao.js
+Page({
+  data: {
+    obj:[
+      {
+        id:1,
+        src:"/static/image/quanbao/1.jpg",
+        text:"霸气mini卡",
+        money:"￥20.00",
+        num:6,
+        // 商品列表详情
+        buyquanbao:{
+            Quan_num:6,
+            card_obj:[
+              {
+                image:"https://img-shop.qmimg.cn/s23107/2019/10/09/ea5b8ed493c0cc310d.jpg",
+                num:1,
+                text:"第2件半价券(mini卡)",
+              },
+              {
+                image:"https://img-shop.qmimg.cn/s23107/2019/10/09/ea5b8ed493c0cc310d.jpg",
+                num:19,
+                text:"满58元减现金券(mini卡)",
+              },
+              {
+                image:"https://img-shop.qmimg.cn/s23107/2019/10/09/ea5b8ed493c0cc310d.jpg",
+                num:22,
+                text:"满108减现金券(mini卡)",
+              }
+            ]
+          },
+      },
+      {
+        id:2,
+        src:"/static/image/quanbao/2.jpg",
+        text:"霸气心享卡",
+        money:"￥66.00",
+        num:6,
+        // 商品详情
+        buyquanbao:{
+          Quan_num:88,
+          card_obj:[
+            {
+              image:"/static/image/quanbao/1.jpg",
+              num:1,
+              text:"买3赠1券(心享卡)",
+            },
+            {
+              image:"/static/image/quanbao/1.jpg",
+              num:5,
+              text:"第2件半价券(心享卡)",
+            },
+            {
+              image:"/static/image/quanbao/1.jpg",
+              num:67,
+              text:"满58元减现金券(心享卡)",
+            },
+            {
+              image:"/static/image/quanbao/1.jpg",
+              num:10,
+              text:"满108减现金券(心享卡)",
+            }
+          ]
+        },
+      },
+      {
+        id:3,
+        src:"/static/image/quanbao/3.jpg",
+        text:"霸气分享卡",
+        money:"￥99.00",
+        num:6,
+        // 商品详情
+        buyquanbao:{
+          Quan_num:6,
+          card_obj:[
+            {
+              image:"/static/image/quanbao/1.jpg",
+              num:1,
+              text:"买2赠1券(分享卡)",
+            },
+            {
+              image:"/static/image/quanbao/1.jpg",
+              num:1,
+              text:"买3赠1券(分享卡)",
+            },
+            {
+              image:"/static/image/quanbao/1.jpg",
+              num:1,
+              text:"第3件半价券(分享卡)",
+            },
+            {
+              image:"/static/image/quanbao/1.jpg",
+              num:1,
+              text:"满58元减现金券(分享卡)",
+            },
+            {
+              image:"/static/image/quanbao/1.jpg",
+              num:1,
+              text:"满108减现金券(分享卡)",
+            },
+          ]
+        },
+      },
+      {
+        id:4,
+        src:"/static/image/quanbao/4.jpg",
+        text:"霸气欢聚卡",
+        money:"￥200.00",
+        num:6,
+        // 商品详情
+        buyquanbao:{
+          Quan_num:6,
+          card_obj:[
+            {
+              image:"/static/image/quanbao/1.jpg",
+              num:2,
+              text:"第二件半价券(欢聚卡)",
+            },
+            {
+              image:"/static/image/quanbao/1.jpg",
+              num:2,
+              text:"买2赠1券(欢聚卡)",
+            },
+            {
+              image:"/static/image/quanbao/1.jpg",
+              num:3,
+              text:"买3赠1券(欢聚卡)",
+            },
+            {
+              image:"/static/image/quanbao/1.jpg",
+              num:3,
+              text:"买5赠1券(欢聚卡)",
+            },
+            {
+              image:"/static/image/quanbao/1.jpg",
+              num:3,
+              text:"满108减现金券(欢聚卡)",
+            },
+          ]
+        },
+      },
+    ]
+  },
+  // 处理点击的是哪一个商品，并获取商品信息
+
+  // 1.获取根据自定义的属性获取商品下标
+  // 2.根据商品下标获取商品id
+  // 3.将商品详情放到本地储存
+  buy(event){
+    var index = event.currentTarget.dataset.index;
+    console.log(index);
+    var product = this.data.obj[index]
+    console.log(product)
+    wx.setStorageSync('product',product)
+    wx.navigateTo({
+      url: "/pages/buy/buy",
+    })
+    console.log()
+  } 
+})

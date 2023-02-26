@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>router_job01</title>
+    <script src="./vue.global.js"></script>
+    <script src="./vue-router.global.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <div>
+            <router-link to="/Home">Home</router-link>
+            <br />
+        </div>
+        <router-view></router-view>
+    </div>
+    <script>
+        // 点击后显示的内容
+        const Home = {
+            template:
+                `<div>
+                    <router-link to="/Login">Login</router-link>
+                    &nbsp;&nbsp;&nbsp;
+                    <router-link to="/Register">Register</router-link>
+                    <br />
+                </div>
+                <router-view></router-view>`,
+        }
+        const Login = {
+            template:
+                `<div>
+                    <br />
+                    用户名：<input v-model='data.username' placeholder="请输入用户名" type="text" />
+                    <br /><br />
+                    密&nbsp;&nbsp;码&nbsp;&nbsp;：<input v-model='data.password' placeholder="请输入密码" type="password" />
+                    <br /><br />
+                    <button @click="toLogin">登录</button>
+                </div >
+                `,
+            setup() {
+                let data = Vue.reactive({
+                    username: '2222',
+                    password: '111'
+                })
+                const toLogin = function () {
+                    console.log(data)
+                    if (data.username != "" && data.password != "") {
+                        console.log("主页")
+                        router.push({ name: 'Home' })
+                    } else {
+                        console.log("注册")
+                        router.push({ name: 'Register' })
+                    }
+                }
+                return {
+                    data,
+                    toLogin
+                }
+            }
+        }
+        const Register = {
+            template:
+                `<div>
+                    <br />
+                    用户名：<input v-model="data.username" placeholder="请输入用户名" type="text" />
+                    <br /><br />
+                    密&nbsp;&nbsp;码&nbsp;&nbsp;：<input v-model="data.password" placeholder="请输入密码" type="password"/>
+                    <br /><br />
+                    email&nbsp;&nbsp&nbsp：<input v-model="data.email" placeholder="请输入邮箱" type="text"/> 
+                    <br /><br />
+                    <button @click="toRegister">注册</button>
+                </div>`,
+            setup() {
+                const data = Vue.reactive({
+                    username: '',
+                    password: '',
+                    email: ''
+                })
+                const toRegister = function () {
+                    console.log(data)
+                    if (data.username != "" && data.password != "" && data.email != "") {
+                        console.log("登录")
+                        router.push({ name: 'Login' })
+
+                    } else {
+                        console.log("注册")
+                        router.push({ name: 'Register' })
+                    }
+                }
+                return {
+                    data,
+                    toRegister
+                }
+            }
+        }
+
+        // 路由 
+        const routes = [
+            {
+                path: '/Home',
+                name: 'Home',
+                component: Home,
+                children: [
+                    { path: '/Login', name: 'Login', component: Login },
+                    { path: '/Register', name: 'Register', component: Register }
+                ],
+            },
+        ]
+
+        const router = VueRouter.createRouter({
+            history: VueRouter.createWebHashHistory(),
+            routes
+        })
+
+        const app = Vue.createApp({
+
+        })
+        app.use(router)
+        app.mount('#app')
+
+    </script>
+
+
+</body>
+
+</html>

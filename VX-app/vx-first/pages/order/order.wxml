@@ -1,0 +1,20 @@
+<!--pages/order/order.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="content_one">
+      <image src="/static/image/order/loading.gif" mode="widthFix"></image>
+    </view>
+    <view class="content_two">
+      <text>您还没有点餐</text>
+      <text>快去犒劳一下自己吧</text>
+    </view>
+    <view class="content_three">
+      <view bindtap="dianchan">
+        去点餐
+      </view>
+    </view>
+    <view class="content_four" bindtap="history">
+      查看历史订单
+    </view>
+  </view>
+</view>

@@ -1,0 +1,269 @@
+/* pages/mdata/mdata.wxss */
+/* pages/mdata/mdata.wxss */
+@import "/style/iconcss.wxss";
+
+/* 圈圈 */
+ 
+.container {
+  position: relative;
+  margin: auto;
+  width: 100px;
+  float:right;
+  margin-right: -30px;
+  margin-top:-40px;
+  height: 100px;
+}
+.container .circle {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  background: rgba(43, 86, 226, 0.1);
+}
+.container .circle:nth-of-type(1) {
+  width: 175px;
+  height: 170px;
+  margin-top:-20px;
+  margin-right:-25px;
+  animation: rt 8s infinite linear;
+  /***box-shadow: 0 0 0 0 rgb(206, 184, 110), inset 0 0 0px 0 rgb(206, 184, 110);**/
+}
+.container .circle:nth-of-type(2) {
+   width: 155px;
+  height: 156px;
+  margin-right:-15px;
+  animation: rt 10s infinite linear;
+ /** box-shadow: 0 0 1px 0 rgb(0, 211, 141), inset 0 0 10px 0 rgb(0, 211, 141);**/
+}
+.container .circle:nth-of-type(3) {
+  width: 165px;
+  height: 156px;
+  margin-right:-5px;
+  animation: rt 9s infinite linear;
+ /** box-shadow: 0 0 1px 0 rgb(67, 3, 109), inset 0 0 10px 0 rgb(67, 3, 109);**/
+}
+@keyframes rt {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+ }
+/* 切换气象站 */
+#qiehuan{
+  display: flex;
+  width: 100%;
+  height: 100rpx;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+  /* background-color: rgb(235, 235, 235); */
+}
+#qiehuan l-icon{
+  margin-right: 50rpx;
+}
+#qiehuan text{
+  font-size: 40rpx;
+  color: rgb(138, 138, 138);
+  /* 英文间距 */
+  /* word-spacing:12rpx; */
+  /* 中文间距 */
+  letter-spacing: 12rpx;
+}
+/* 日期-温度 */
+#data-temperature{
+  height: 210rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: aliceblue; */
+}
+#data-temperature text:first-child{
+  font-size: 36rpx;
+  color: rgb(160, 158, 158);
+}
+#data-temperature text:nth-child(2){
+  font-size: 130rpx;
+  color: rgb(128, 128, 128);
+
+}
+/* 时间-气温滚动 */
+#time-temperature{
+  width: 100%;
+  height: 350rpx;
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  /* background-color: rgba(167, 205, 228, 0.521); */
+}
+.scroll {
+  position: relative;
+  height: 155px;
+  width: 95%;
+}
+
+.hours {
+  color: #666666;
+  display: flex;
+  height: 150px;
+  position: absolute;
+  top: 5%;
+}
+
+
+
+.hours>view {
+  min-width: 3.5em;
+  text-align: center;
+}
+
+
+.line {
+  /* width: 90%; */
+  position: absolute;
+  bottom: 0;
+}
+.templement{
+  width: 95%;
+}
+/* 时间滚动条 */
+#time-scroll{
+  width:96%;
+  /* height: 400rpx; */
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  /* background-color: rgb(236, 236, 236); */
+}
+/* #time{
+  display: flex;
+  width: 90%;
+  height: 80rpx;
+  margin: auto;
+  align-items:center;
+} */
+#time>text:nth-child(2){
+  margin-left: 22rpx;
+  font-size: 34rpx;
+}
+.time-scroll-content{
+  /* 设置同一行显示 */
+  display: inline-block;
+  width: 142rpx;
+  text-align: center;
+}
+.time-scroll-content text{
+  display: block;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  color: rgb(126, 126, 126);
+}
+
+/* 气象因素 */
+#newest{
+  width: 100%;
+}
+#newest>text:first-child{
+  color: #666666;
+  font-size: 38rpx;
+  margin-left: 50rpx;
+  line-height: 100rpx;
+  letter-spacing: 8rpx;
+  text-shadow: #c4cfe7a6 2rpx 2rpx;
+  border-bottom: 5rpx solid rgba(51, 62, 165, 0.459);
+}
+
+#newest-factor{
+  display: flex;
+  width: 90%;
+  height: 130rpx;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 30rpx;
+  border-radius: 30rpx;
+  background-color: rgb(246, 246, 246);
+  position: relative;
+}
+#newest-factor>l-icon:first-child{
+  margin-left: 50rpx;
+}
+#newest-factor>text{
+  margin-left: 50rpx;
+}
+#newest-factor>text:nth-child(3){
+ position: absolute;
+ right: 80rpx;
+}
+
+/* 弹窗 */
+.l-popup {
+  width: 100vw;
+  height: 100vh;
+}
+
+.botton {
+  width: 92%;
+  height: 50vh;
+  padding: 30rpx;
+  border-radius: 15rpx 15rpx 0 0;
+  background-color: white;
+}
+
+.botton-title {
+  font-size: 45rpx;
+  color: rgba(107, 79, 207, 0.9);
+  text-shadow: rgba(30, 31, 34, 0.4) 0px 3px 8px;
+}
+
+.botton-content {
+  width: 100%;
+  height: 90%;
+  /* background-color: rosybrown; */
+}
+
+.station-view {
+  width: 100%;
+  height: 125rpx;
+  border-radius: 15rpx;
+  margin-top: 25rpx;
+  display: flex;
+  background-color: rgba(117, 150, 232, 0.7);
+}
+
+.station-name {
+  width: 50%;
+  padding-left: 25rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background-color: saddlebrown; */
+}
+
+
+.img {
+  width: 20%;
+}
+
+.station-num {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  font-size: 35rpx;
+  padding-right: 25rpx;
+  justify-content: flex-end;
+  align-items: flex-end;
+  /* background-color: rgb(192, 145, 112); */
+}
+
+
+

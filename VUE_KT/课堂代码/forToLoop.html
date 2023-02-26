@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ES6中for循环（for for-in forEach for-of）</title>
+</head>
+<body>
+<script type="text/javascript">
+  //for ...in
+  // let demo = [11,12,13,14]
+  // for(let i in demo){  
+  //   console.log(i); // 0 1 2 3数组序号
+  // }
+  //for...of
+  //let demo = [1,2,3,4]
+  // for(let i of demo){
+  //   console.log(i);  // 11 12 13 14数组元素值
+  // }
+  
+  let arr= [{'name':'a'},{'name':'b'},{'name':'c'}];
+  let obj = {'name':'a','address':'bb'};
+  //适于数据遍历，但不适于对象遍历
+  for(let i=0; i<arr.length; i++) {
+    console.log(arr[i]);
+  }
+  //for-in适于对象属性遍历，用于数据组遍历效率低下
+  for(let j in obj) {    
+    console.log("forin:" + j + '  ');    
+  }
+  for(let j in obj) {
+    console.log("forin:" + obj[j]);
+  }
+  //foreach遍历时不能使用break,continue关键字
+  arr.forEach((element) => {
+    //if(element.name === 'b')break;  //语法错误
+    console.log("foreach:" + element.name);
+  })
+  //ES6新增，克服了foreach,for-in的缺陷，适于需要使用Break,continue关键字的数组遍历
+  for(let i of arr) {
+    if(i.name === 'a') break;
+    console.log(i);
+  }
+</script>
+</body>
+</html>

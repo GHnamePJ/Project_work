@@ -1,0 +1,28 @@
+2022-12-26 15:41:23,611 INFO DEFAULT_GROUP@@service-user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.124.10:9094:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-12-26 15:41:23,617 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-user, ips: 192.168.124.10:9094_true,
+
+2022-12-26 16:44:08,530 INFO {POS} {IP-DISABLED} valid: 192.168.124.10:9094@DEFAULT@DEFAULT_GROUP@@service-user, region: unknown, msg: client timeout after 15000, last beat: 1672043870664
+
+2022-12-26 16:44:08,620 INFO DEFAULT_GROUP@@service-user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.124.10:9094:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2022-12-26 16:44:08,620 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-user, ips: 
+
+2022-12-26 16:44:11,090 INFO DEFAULT_GROUP@@service-user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.124.10:9094:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-12-26 16:44:11,090 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-user, ips: 192.168.124.10:9094_true,
+
+2022-12-26 22:17:12,592 INFO {POS} {IP-DISABLED} valid: 192.168.124.10:9094@DEFAULT@DEFAULT_GROUP@@service-user, region: unknown, msg: client timeout after 15000, last beat: 1672059635836
+
+2022-12-26 22:17:12,614 INFO DEFAULT_GROUP@@service-user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.124.10:9094:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2022-12-26 22:17:12,614 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-user, ips: 
+
+2022-12-26 22:17:15,344 INFO DEFAULT_GROUP@@service-user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.124.10:9094:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-12-26 22:17:15,344 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-user, ips: 192.168.124.10:9094_true,
+
+2022-12-26 23:12:49,263 INFO DEFAULT_GROUP@@service-user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.124.10:9094:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-12-26 23:12:49,263 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-user, ips: 
+

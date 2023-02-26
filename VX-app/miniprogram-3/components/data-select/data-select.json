@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "data-select":"../../components/data-select/data-select",
+    "l-icon":"../../miniprogram_npm/lin-ui/icon/index",
+    "goBack":"/components/goback/goback",
+    "menu":"/components/menubar/menubar"
+  }
+}

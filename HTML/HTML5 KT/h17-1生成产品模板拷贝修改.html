@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0px;
+			}
+
+			.container {
+				width: 1200px;
+				height: 1300px;
+				margin: auto;
+				/* background: lightcoral; */
+			}
+
+			header {
+				height: 100px;
+			}
+
+			header>p {
+				color: black;
+				font-size: 40px;
+				text-align: center;
+				line-height: 70px;
+			}
+
+			.product {
+				height: 270px;
+				width: 550px;
+				background: lightblue;
+				border: 2px solid gray;
+				border-radius: 30px;
+				overflow: hidden;
+				margin: auto;
+				margin-bottom: 50px;
+			}
+
+			.product .left>img {
+				width: 270px;
+				border-radius: 28px;
+			}
+
+			.product .left {
+				width: 270px;
+				float: left;
+			}
+
+			.product .right {
+				width: 280px;
+				float: left;
+			}
+
+			.product .right>ul {
+				list-style: none;
+				margin-top: 80px;
+				padding: 20px;
+			}
+
+			.product .right>ul li {
+				font-size: 20px;
+				font-family: 楷体;
+				margin-bottom: 20px;
+			}
+			.product .right>ul li #xx{
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+
+			<header>
+				<p>胖橘的小店</p>
+			</header>
+
+			<div class="product">
+
+				<div class="left">
+					<img src="img/小羊毛衣.jpg" />
+				</div>
+
+				<div class="right">
+					<ul>
+						<li>
+							<a id="xx">产品：</a><a id="yy">小羊毛衣</a>
+						</li>
+						<li>
+							<a id="xx">价格：</a><a id="yy">￥36.8</a>
+						</li>
+						<li>
+							<a id="xx">产品描述：</a><a id="yy">秋冬款、日系、慵懒</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+
+
+		</div>
+		<script type="text/javascript">
+			var infos = [
+				["img/三色毛衣.jpg", "三色毛衣", "￥25.9", "冬季、圆领、学院风"],
+				["img/三色条纹毛衣.jpg", "三色条纹毛衣", "￥25.9", "翻领、可爱、宽松"],
+				["img/奶牛毛衣.jpg", "复古奶牛提花毛衣", "￥26.66", "圆领、宽松、百搭"]
+			];
+			//找到想要克隆的板块
+			var productdiv = document.getElementsByClassName('product')[0];
+			//通过循环拷贝节点product3次
+			for (var i = 0; i < infos.length; i++) {
+				//深度克隆
+				var productdivclone = productdiv.cloneNode(true);
+				//添加节点到网页
+				var container = document.childNodes[1].childNodes[2].childNodes[1]; //找到content节点
+				// var content1=document.childNodes[1];//查找html节点
+				// var content2=document.childNodes[1].childNodes[2];//找到body节点
+				container.appendChild(productdivclone);
+				//修改节点中的数据
+				//找到ul
+				var ul = productdivclone.childNodes[3].childNodes[1];
+				// 找到li1
+				var a1 = ul.childNodes[1].childNodes[2];
+				a1.innerText = infos[i][1];
+				var a2 = ul.childNodes[3].childNodes[2];
+				a2.innerText = infos[i][2];
+				var a3 = ul.childNodes[5].childNodes[2];
+				a3.innerText = infos[i][3];
+				//找到节点
+				var leftdiv = productdivclone.childNodes[1];
+				//修改图片
+				leftdiv.innerHTML = "<img src='" + infos[i][0] + "'>";
+			}
+			//删除模板
+			//找到模板的父节点
+			// var contentdiv=document.childNodes[1].childNodes[2].childNodes[1].childNodes[3];
+			// contentdiv.removeChild(Skydiv);
+		</script>
+	</body>
+</html>

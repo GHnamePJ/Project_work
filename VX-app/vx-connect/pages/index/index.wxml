@@ -1,0 +1,43 @@
+<!-- 请求数据 -->
+<button style="background: rgb(161, 206, 206);" bindtap="ToRequest">查询光遇角色</button>
+
+<view class="slide_r">
+  <view class="slideNav box">
+    <view class="slideNav_c">
+      <scroll-view class="categories" scroll-x="true" scroll-y="true">
+        <!-- 表格数据 -->
+        <view class="table">
+          <view class="tr bg-w">
+            <view class="th">ID</view>
+            <view class="th">角色</view>
+            <view class="th">账号</view>
+            <view class="th">ID</view>
+            <view class="th">角色</view>
+            <view class="th">账号</view>
+          </view>
+          <block wx:for="{{user}}" wx:key="index">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+              <view class="td">{{item.id}}</view>
+              <view class="td">{{item.username}}</view>
+              <view class="td">{{item.password}}</view>
+              <view class="td">{{item.id}}</view>
+              <view class="td">{{item.username}}</view>
+              <view class="td">{{item.password}}</view>
+            </view>
+            <view class="tr" wx:else>
+              <view class="td">{{item.id}}</view>
+              <view class="td">{{item.username}}</view>
+              <view class="td">{{item.password}}</view>
+              <view class="td">{{item.id}}</view>
+              <view class="td">{{item.username}}</view>
+              <view class="td">{{item.password}}</view>
+            </view>
+          </block>
+        </view>
+
+
+
+      </scroll-view>
+    </view>
+  </view>
+</view>

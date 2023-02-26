@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ES5 模板引擎原理</title>
+</head>
+<body>
+<div id="content1"></div>
+        <div id="content2"></div>
+        <script>
+            /*采用模板拼接html*/
+            // html内容模板
+            var template = ''
+            +'<div>'
+            +   '{%=a%}'
+            +   '{%if (a===1){%}'
+            +       '<span>'
+            +           'a是1'
+            +       '</span>'
+            +   '{%}%}'
+            +'</div>';
+            
+            // 自定义模板引擎
+            // 能解析输出与if条件语句的函数
+            function TEMPLATEparser(template, variables) {
+                // 语法替换
+                var funcStr = template
+                .replace(/\{\%\=(\w+)\%\}/, function (code, variable) {
+                    return '"; str += "' + variable + '"; str += "';
+                })
+                .replace(/\{\%(if.*?)\%\}(.*?)\{\%(\})\%\}/, function (code, judge, content, end) {
+                    return '";' + judge + 'str+="' + content + '";' + end + 'str += "';
+                });
+                // 返回拼装函数
+                return new Function(variables, 'var str = ""; str += "' + funcStr + '";return str;');
+            }
+
+            // 实验使用模板引擎去解析并传入变量生成模板
+            var outHTML = TEMPLATEparser(template, 'a')(1);
+            document.getElementById('content1').innerHTML = outHTML;
+            outHTML = TEMPLATEparser(template, 'a')(2);
+            document.getElementById('content2').innerHTML = outHTML;
+            /*结束*/
+
+            //new Function的用法
+            let sum = new Function('a', 'b', 'return a + b');
+            alert( sum(1, 2) ); // 3
+
+            //ES6中
+            let str = 'return ' + '`Hello ${name}!`';
+            let func = new Function('name', str);
+            alert(func('Jack')) // "Hello Jack!"           
+        </script>
+</body>
+</html>

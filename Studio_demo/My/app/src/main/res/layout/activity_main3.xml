@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Main3Activity"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="#C19AC9"
+        android:gravity="center"
+        android:text="注册"
+        android:textSize="50sp" />
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="270dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="80dp"
+        android:src="@mipmap/bdd" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="用户名："
+        android:textSize="30sp"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="100dp"
+
+        />
+
+    <EditText
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="210dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="密     码:"
+        android:textSize="30sp"
+        android:layout_marginTop="420dp"
+        android:layout_marginLeft="100dp"
+        />
+
+    <EditText
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:password="true"
+        android:layout_marginTop="420dp"
+        android:layout_marginLeft="210dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="性     别："
+        android:textSize="30dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="100dp"
+        />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="男"
+            android:textSize="20sp"
+            android:layout_marginTop="490dp"
+            android:layout_marginLeft="270dp"
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="女"
+            android:textSize="20sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="270dp"
+            />
+    </RadioGroup>
+</RelativeLayout>

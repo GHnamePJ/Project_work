@@ -1,0 +1,93 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <swiper style="height:{{swiperHei}};" class="container-swiper" indicator-dots="true" indicator-color="f00" autoplay="true" interval="3000" circular="true">
+    <!-- 渲染方法一,遍历对象 -->
+    <!-- <block wx:for="{{obj}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.url}}" mode="widthFix" bindload="img"></image>
+      </swiper-item>
+    </block> -->
+    <!-- 渲染方法二 ，直接遍历-->
+    <swiper-item wx:for="{{image}}" wx:key="index">
+      <image src="{{item}}" mode="widthFix" bindload="img"></image>
+    </swiper-item>
+  </swiper>
+
+  <view class="zq_wm">
+    <view id="way">
+      <navigator class="way_left" url="/pages/menu/menu" open-type="switchTab">
+        <image class="ico" src="/static/image/way/invite.png"></image>
+        <text>自取</text>
+      </navigator>
+      <view class="way_right" bindtap="waimai">
+        <image class="ico" src="/static/image/way/take-out.png"></image>
+        <text>外卖</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="jifen_huiyuan">
+    <view class="jifen_huiyuan_content">
+      <view id="jifen">
+        <view class="jifen_top">我的积分<text> 411</text></view>
+        <view>进入积分商城兑换奈雪礼品></view>
+      </view>
+      <view class="huiyuan" bindtap="vip">
+        <image class="huiyuan_ico" src="/static/image/vip/menber.png"></image>
+        <text>会员码</text>
+      </view>
+    </view>
+  </view>
+  <!-- 商城 -->
+  <view class="shangcheng">
+  <!-- 内容 -->
+    <view class="shangchen_content">
+    <!-- 左边 -->
+      <view class="content_left">
+      <!-- 左上-->
+        <view class="left_top">
+          <view class="left_top_one">
+            <view>
+              <image src="/static/image/shangcheng/csc.png"></image>
+              <text>奈雪的茶商城</text> 
+            </view>
+            <view>
+              <text class="one_text">优质礼盒网红零食</text>
+            </view>
+          </view>
+        </view>
+        <!-- 左下 -->
+        <view class="left_bottom">
+          <image src="/static/image/shangcheng/yzclh.png" mode="widthFix"></image>
+        </view>
+      </view>
+      <!-- 右边 -->
+      <view class="content_right">
+        <view class="right_top" bindtap="teabar">
+          <view>
+            <image class="min_ico" src="/static/image/shangcheng/mcsb.png"></image>
+            <text>卖茶送包</text>
+          </view>
+          <image class="max_ico" src="/static/image/shangcheng/mcsb_bg.png"></image>
+        </view>
+        <view class="right_bottom" bindtap="quanbao">
+          <view>
+            <image class="min_ico" src="/static/image/shangcheng/hyjb.png"></image>
+            <text>会员券包</text>
+          </view>
+          <image class="max_ico" src="/static/image/shangcheng/hyjb_bg.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="bottom_top">
+      <text>会员新鲜事</text>
+      <image src="/static/image/index/arrow-right.png" mode="widthFix"></image>
+    </view>
+    <view class="bottom_bottom">
+      <image src="/static/image/index/images.jpg" mode="widthFix"></image>
+      <text>"梅"你不行|霸气杨梅清爽回归</text>
+    </view>
+  </view>
+</view>

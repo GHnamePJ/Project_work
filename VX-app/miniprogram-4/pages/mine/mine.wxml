@@ -1,0 +1,28 @@
+<view id="container">
+  <!-- 头部 -->
+  <view id="top">
+    <image id="photo" src="{{photo}}"></image>
+    <text>Pj-Xk</text>
+  </view>
+  <!-- 中间 -->
+  <view id="mid">
+    <view id="mid-content">
+        <l-list icon="warning" icon-size="120rpx" title="关于我们" l-content-class="content-text" gap="20" l-class="l-list" bind:lintap="about" />
+
+        <l-list right-desc="3095499045@qq.com" icon="customer-service" icon-size="120rpx" title="联系我们" is-link="" l-content-class="content-text" gap="20" l-class="l-list" l-right-class="l-right-class">
+          <view slot="left-section">
+          </view>
+        </l-list>
+        <l-list right-desc="1.0.0" icon="order" icon-size="120rpx" title="当前版本" is-link="" l-content-class="content-text" gap="20" l-class="l-list" l-right-class="l-right-class">
+          <view slot="left-section">
+          </view>
+        </l-list>
+    </view>
+  </view>
+  <!-- 底部 -->
+  <view id="bottom">
+   
+    <l-button type="error" shape="semicircle" plain="{{true}}" bg-color="transparent" l-hover-class="" width="500" height="100" bind:lintap="exit">退出登录</l-button>
+  </view>
+
+</view>

@@ -1,0 +1,10 @@
+<resources>
+    <!-- activity_manin.xml -->
+    <string name="app_name">My</string>
+    <string name="hello_world">Hello,World！</string>
+    <string name="my_message">欢迎进入Android阵营！</string>
+    <!-- activity_manin2.xml -->
+    <string name="b1">学习</string>
+    <string name="b2">看剧</string>
+    <string name="b3">熬夜</string>
+</resources>

@@ -1,0 +1,77 @@
+/* pages/quanbao/quanbao.wxss */
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+.content{
+  display: flex;
+  width: 90%;
+  /* height: 90%; */
+  margin-top: 16px;
+  background: white;
+  padding: 10px;
+}
+.card{
+  display: flex;
+  justify-content:space-evenly;
+}
+.left{
+  margin-right: 7px;
+}
+.left>image{
+  width: 90px;
+  height: 90px;
+}
+.mid{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  color: rgb(97, 84, 84);
+  font-size: 15px;
+  margin: 6px;
+}
+.money{
+  font-size: 12px;
+  font-weight: bold;
+}
+.right{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 102px;
+  height: 100%;
+}
+.right>text{
+  display: block;
+  width: 55px;
+  height: 27px;
+  text-align: center;
+  line-height: 27px;
+  border-radius: 38px;
+  color: #adb838;
+  border: solid 1px #adb838;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.foot{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  height: 60px;
+
+}
+.foot_content{
+  width: 100%;
+  height: 50px;
+  background: #f1f8fa;
+  text-align: center;
+  line-height: 50px;
+  color: #adb838;
+  position: fixed;
+  bottom: 0px;
+}

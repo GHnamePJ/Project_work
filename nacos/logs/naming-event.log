@@ -1,0 +1,24 @@
+2022-12-27 15:42:56,325 INFO DEFAULT_GROUP@@service-user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.124.10:9094:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-12-27 15:42:56,325 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-user, ips: 192.168.124.10:9094_true,
+
+2022-12-27 16:06:16,661 INFO DEFAULT_GROUP@@service-user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.124.10:9094:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-12-27 16:06:16,661 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-user, ips: 
+
+2022-12-27 16:09:48,855 INFO DEFAULT_GROUP@@service-user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.124.10:9094:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-12-27 16:09:48,855 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-user, ips: 192.168.124.10:9094_true,
+
+2022-12-27 16:10:05,872 INFO DEFAULT_GROUP@@service-user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.124.10:9094:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-12-27 16:10:05,872 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-user, ips: 
+
+2022-12-27 16:10:25,321 INFO DEFAULT_GROUP@@service-user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.124.10:9094:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-12-27 16:10:25,321 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-user, ips: 192.168.124.10:9094_true,
+
+2022-12-27 21:39:08,145 INFO DEFAULT_GROUP@@service-user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.124.10:9094:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-12-27 21:39:08,145 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-user, ips: 
+

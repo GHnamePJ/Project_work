@@ -1,0 +1,23 @@
+<!--pages/quanbao/quanbao.wxml-->
+<view class="container">
+  <view class="content" wx:for="{{obj}}" wx:key="index">
+      <view class="card">
+        <view class="left">
+          <image src="{{item.src}}"></image>
+        </view>
+        <view class="mid">
+          <text class="text">{{item.text}}</text>
+          <text class="money">{{item.money}}</text>
+        </view>
+        <view class="right">
+          <text bindtap="buy" data-index="{{index}}">去购买</text>
+        </view>
+      </view>
+  </view>
+  <view class="foot">
+    <view class="foot_content">
+      <text>购买记录</text>
+    </view>
+    
+  </view>
+</view>

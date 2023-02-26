@@ -1,0 +1,17 @@
+<!--pages/about-us/about-us.wxml-->
+<goBack></goBack>
+
+<view id="container">
+  <view class="about_text">
+      <p>项目简介</p>
+      <text>本项目《信创技术下气象数据采集分析系统及教学资源开发》是2022年信息技术学院储备项目《工业数据总线Modbus教学平台》的一 部分在储备项目《工业数据总线Modbus教学平台》中购置了相关设备。本项目将基于在储备项目《工业数据总线Modbus教学平台》购置的设备进行案例系统和教学资源开发。</text>
+  </view>
+  <view class="about_text">
+      <p>项目团队</p>
+      <text>Pj、Yu</text>
+  </view>
+  <!-- <view class="about_text">
+    <p>当前版本</p>
+    <text>1.0.0</text>
+  </view> -->
+</view>

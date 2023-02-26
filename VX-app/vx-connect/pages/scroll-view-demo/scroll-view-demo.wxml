@@ -1,0 +1,9 @@
+<!--pages/scroll-view-demo/scroll-view-demo.wxml-->
+<view class="hotService">
+	<!-- 这里为滚动的内容部分 -->
+			<scroll-view scroll-x="true">
+						<view wx:for="1234567" wx:key="{{index}}" class="block{{index}} block">
+						</view>
+			</scroll-view>
+</view>
+

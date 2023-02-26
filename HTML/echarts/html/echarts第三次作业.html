@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>echarts_domeo3</title>
+		<script src="../js/echarts.js"></script>
+		<style>
+			#panel1{
+				width: 600px;
+				height: 600px;
+				display: inline-block;
+				margin-bottom: 40px;
+			}
+			#panel2{
+				width: 600px;
+				height: 600px;
+				display: inline-block;
+				margin-left: 40px;
+				margin-bottom: 40px;
+			}
+			#panel3{
+				width: 600px;
+				height: 600px;
+				display: inline-block;
+				margin-bottom: 40px;
+			}
+			#panel4{
+				width: 600px;
+				height: 600px;
+				margin-left: 40px;
+				display: inline-block;
+				margin-bottom: 40px;
+			}
+			#panel5{
+				width: 600px;
+				height: 600px;
+				display: inline-block;
+				margin-bottom: 40px;
+			}
+			#panel6{
+				width: 600px;
+				height: 600px;
+				display: inline-block;
+				margin-left: 40px;
+				margin-bottom: 40px;
+			}
+			#panel7{
+				width: 600px;
+				height: 600px;
+				display: inline-block;
+				margin-bottom: 40px;
+			}
+			#panel8{
+				width: 600px;
+				height: 600px;
+				display: inline-block;
+				margin-left: 40px;
+				margin-bottom: 40px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="panel1"></div>
+		<div id="panel2"></div>
+		<div id="panel3"></div>
+		<div id="panel4"></div>
+		<div id="panel5"></div>
+		<div id="panel6"></div>
+		<div id="panel7"></div>
+		<div id="panel8"></div>
+	</body>
+	<script>
+		// 图一
+		var panel1=echarts.init(document.getElementById("panel1"));
+		var p1={
+			title:{
+				text:'多系列柱状图',
+				left:'center'
+			},
+			tooltip:{},
+			xAxis:{
+				data:['小王子','红楼梦','人间告白','浮生六记','瓦尔登湖'],
+			},
+			yAxis:{},
+			series:[
+				{
+					name:'2021上半年销售量',
+					type:'bar',
+					data:[
+					{
+						value:32,
+						itemStyle:{
+							color:'#55aa00'
+						}
+					},
+					40,
+					47,
+					{
+						value:86,
+						itemStyle:{
+							color:'#cd2d21'
+						}
+					},
+					55],
+					color:'#0097e2',
+					label:{
+						show:true,
+						position:'top',
+					},	
+				},
+				{
+					name:'2021下半年销售量',
+					type:'bar',
+					data:[
+						{
+							value:72,
+							itemStyle:{
+								color:'#cd2d21'
+							}
+						},
+						50,
+						57,
+						{
+							value:26,
+							itemStyle:{
+								color:'#55aa00'
+							}
+						},
+						45
+					],
+					color:'#0097e2',
+					label:{
+						show:true,
+						position:'top',
+					},		
+				}
+			],
+		};
+		panel1.setOption(p1);
+		// 图二
+		var panel2=echarts.init(document.getElementById("panel2"));
+		var p2={
+			title:{
+				text:'阶梯瀑布图',
+				left:'center'
+			},
+			tooltip:{
+				name:'消费金额'
+			},
+			legend: {
+				left:'left'
+			},
+			xAxis:{
+				data:['第一周','第二周','第三周','第四周','第五周'],
+			},
+			yAxis:{},
+			series:[
+				{
+					name:'小于',
+					type:'bar',
+					data:[
+						{
+							value:200,
+							itemStyle:{
+								color:'#7272ff'
+							}
+						}
+					,170,300,600,200],
+					stack: 'x',
+					itemStyle:{
+						normal: {
+						  barBorderColor: 'rgba(0,0,0,0)',
+						  color: 'rgba(0,0,0,0)'
+						},
+						emphasis: {
+						  barBorderColor: 'rgba(0,0,0,0)',
+						  color: 'rgba(0,0,0,0)'
+						}
+					}
+				},
+				{
+					name:'小苗',
+					type:'bar',
+					data:[0,270,400,200,100],
+					stack: 'x',
+				}
+			],
+		}
+		panel2.setOption(p2);
+		//图三
+		var panel3=echarts.init(document.getElementById("panel3"));
+		var p3={
+			title:{
+				text:'折线图',
+				left:'left'
+			},
+			tooltip:{
+			},
+			legend: {
+				left:'center'
+			},
+			xAxis:{
+				data:['1号','2号','3号','4号','5号','6号','7号','8号','9号','10号'],
+			},
+			yAxis:{},
+			series:[
+				{
+					name:"3月上旬销售量",
+					type:'line',
+					data:[33,26,18,"-",23,33,16,18,25,30],
+					label:{
+						show:true,
+						position:'top',
+						textStyle: {
+							fontSize:16
+						},
+					},
+					//设置虚线
+					lineStyle: {
+					    type: 'dashed'
+					},
+				}
+			],
+		};
+		panel3.setOption(p3);
+		//图四
+		var panel4=echarts.init(document.getElementById("panel4"));
+		var p4={
+			title:{
+				text:'笛卡尔坐标系(散点图)',
+				left:'left'
+			},
+			tooltip:{
+			},
+			legend: {
+				left:'center'
+			},
+			xAxis:{
+			},
+			yAxis:{},
+			series:[
+				{
+					type:'scatter',
+					data:[
+						[20,2],[10,1],[4,9],[22,10],[2,19],[2,10],[33,23],[36,10],[3,9],[7,2],[3,5],[7,2],[2,9],[8,8],[4,8]
+					],
+				}
+			],
+		};
+		panel4.setOption(p4);
+		//图五
+		var panel5=echarts.init(document.getElementById("panel5"));
+		var p5={
+			title:{
+				text:'平滑曲线图',
+				left:'left'
+			},
+			tooltip:{
+			},
+			legend: {
+				left:'center'
+			},
+			xAxis:{
+				data:['1号','2号','3号','4号','5号','6号','7号','8号','9号','10号'],
+			},
+			yAxis:{},
+			series:[
+				{
+					name:"3月上旬销售量",
+					type:'line',
+					data:[33,26,18,22,23,33,16,18,25,30],
+					smooth: true,
+				}
+			],
+		};
+		panel5.setOption(p5);
+		//图六
+		var panel6=echarts.init(document.getElementById("panel6"));
+		var p6={
+			title:{
+				text:'堆叠折线图',
+				left:'left'
+			},
+			tooltip:{
+			},
+			legend: {
+				left:'center'
+			},
+			xAxis:{
+				data:['1号','2号','3号','4号','5号','6号','7号','8号','9号','10号'],
+			},
+			yAxis:{},
+			series:[
+				{
+					name:"3月上旬面膜销售量",
+					type:'line',
+					data:[33,26,18,22,23,33,16,18,25,30],
+					//*
+					stack: 'x',
+				},
+				{
+					name:"3月中旬口红销售量",
+					type:'line',
+					data:[23,16,8,20,20,30,6,8,15,10],
+					stack: 'x',
+				}
+			],
+		};
+		panel6.setOption(p6);
+		//图七
+		var panel7=echarts.init(document.getElementById("panel7"));
+		var p7={
+			title:{
+				text:'区域面积图',
+				left:'left'
+			},
+			tooltip:{
+			},
+			legend: {
+				left:'center'
+			},
+			xAxis:{
+				data:['1号','2号','3号','4号','5号','6号','7号','8号','9号','10号'],
+			},
+			yAxis:{},
+			series:[
+				{
+					name:"3月上旬面膜销售量",
+					type:'line',
+					data:[33,26,18,22,23,33,16,18,25,30],
+					//*
+					stack: 'x',
+					areaStyle: {}
+				},
+				{
+					name:"3月中旬口红销售量",
+					type:'line',
+					data:[23,16,8,20,20,30,6,8,15,10],
+					stack: 'x',
+					areaStyle: {}
+				}
+			],
+		};
+		panel7.setOption(p7);
+		//图七
+		var panel8=echarts.init(document.getElementById("panel8"));
+		var p8={
+			title:{
+				text:'阶梯折线图',
+				left:'left'
+			},
+			tooltip:{
+			},
+			legend: {
+				left:'center'
+			},
+			xAxis:{
+				data:['1号','2号','3号','4号','5号','6号','7号','8号','9号','10号'],
+			},
+			yAxis:{},
+			series:[
+				{
+					name:"3月上旬温度",
+					type:'line',
+					data:[33,26,18,22,23,33,16,18,25,30],
+					//*
+					step: 'start',
+				}
+			],
+		};
+		panel8.setOption(p8);
+	</script>
+</html>
+
+
+

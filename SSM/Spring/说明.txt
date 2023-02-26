@@ -1,0 +1,17 @@
+Spring_Student:(XML)
+	单个实体类，实例化bean，使用setter（<property>）+构造器（<constructor-arg >）两种方式混合实现依赖注入
+Spring_Student_Factory:(XML)
+	单个实体类，实例化bean， 使用setter（<property>）+构造器（<constructor-arg >）两种方式混合实现依赖注入,静态工厂实例返回一个对象
+SpringIoc_Demo：(XML)
+	多个实体类，实列化bean,setter+使用构造器实现依赖注入（基本类型属性+类类型属性）
+SpringIoc_Demo01：【注解（①:@Configuration:声明类代替xml文件②:@Value给属性赋值③;@Bean实例化一个类对象）】
+	多个实体类，使用实列化bean,使用setter+构造器实现依赖注入（基本类型属性+类类型属性）
+	
+SpringIoc_Demo02：【注解（①:@Configuration:声明类代替xml文件
+				       ②:@ComponentScan():自动扫描指定包下的所有类对其进行实例化 
+				       ③:@Component:指定包下的类
+				       ④:@Value:给属性赋值
+			 	       ⑤:@Bean:实例化一个类对象）】
+	多个实体类，使用实列化bean,使用setter+构造器实现依赖注入（基本类型属性+类类型属性）
+SpringAop_xml：(XML)
+	

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ES6中let, const用法示例</title>
+</head>
+<body>
+<script type="text/javascript">
+  // let var1 
+  // var1 = 'variable 1'
+  // alert('var1:' + var1)
+
+  // const var2= 'aaa'
+  // alert('var2:' + var2)
+  // const var3  //语法报错。需要赋初值
+  // var3 = 'bbb'
+  // alert('var3:' + var3)
+  // const var4={}
+  // var4.name='ccc' 
+  // alert('var4:' + var4.name)  //ccc
+  
+ 
+  
+  //块作用域
+  for (let k = 0; k < 2; k++) {    
+      setTimeout(function () {
+        console.log(k); //输出0,1,2,3,4
+      },0);    
+  }
+  console.log(k); // error
+
+ 
+  
+</script>
+</body>
+</html>

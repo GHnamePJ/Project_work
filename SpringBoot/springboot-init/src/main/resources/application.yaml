@@ -1,0 +1,24 @@
+server:
+  port: 8083
+
+name: xiaoke
+#对象
+person:
+  name: pj #${name}
+  age: 20
+  address:
+    - shanghai
+    - beijing
+#  行内写法
+person2: {name: pj,age: 20}
+
+#数组
+address:
+  - shanghai
+  - beijing
+#  行内写法
+address1: [shanghai,beijing]
+
+#纯量
+msg1: 'hello \n world'  #单引号不识别转义字符
+msg2: "hello \n world" #双引号可以识别转义字符

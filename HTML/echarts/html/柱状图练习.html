@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>根据宽高调整图形位置</title>
+    <!-- 引入 echarts.js -->
+    <script src="../js/echarts.js" rel="external nofollow" ></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 900px;height:850px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        // 指定图表的配置项和数据
+        var option = {
+			baseOption:{
+				legend: {
+					orient:'vertical',
+					right: '0%',
+					data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+				},
+				series : [
+					{
+						name: '访问来源',
+						type: 'pie',
+						center: ['50%', '30%'],
+						radius: ['20%', '35%'] ,
+						data:[
+							{value:235, name:'视频广告'},
+							{value:274, name:'联盟广告'},
+							{value:310, name:'邮件营销'},
+							{value:335, name:'直接访问'},
+							{value:400, name:'搜索引擎'}
+						]
+					},
+					{
+						name: '访问来源',
+						type: 'pie',
+						center: ['50%', '70%'],
+						radius: ['20%', '35%'] ,
+						data:[
+							{value:235, name:'视频广告'},
+							{value:274, name:'联盟广告'},
+							{value:310, name:'邮件营销'},
+							{value:335, name:'直接访问'},
+							{value:400, name:'搜索引擎'}
+						]
+					}
+				]
+			},
+			media:[
+				{
+					query: {
+						//maxHeight: 400,
+						minAspectRatio: 1.0
+					},   // 这里写规则。
+					option: {       // 这里写此规则满足下的option。
+						series : [
+							{
+								center: ['30%', '50%'],
+							},
+							{
+								center: ['70%', '50%'],
+							}
+						]
+					}
+				},
+				{
+					query: {
+						//minHeight: 400,
+						maxAspectRatio: 1.0
+					},   // 这里写规则。
+					option: {       // 这里写此规则满足下的option。
+						series : [
+							{
+								center: ['50%', '30%'],
+							},
+							{
+								center: ['50%', '70%'],
+							}
+						]
+					}
+				}
+			]
+			
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

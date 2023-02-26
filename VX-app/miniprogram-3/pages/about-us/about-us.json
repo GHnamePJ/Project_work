@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "goBack":"/components/goback/goback",
+    "menu":"/components/menubar/menubar"
+  }
+}               

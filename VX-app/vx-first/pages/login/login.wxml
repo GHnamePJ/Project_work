@@ -1,0 +1,25 @@
+<!--pages/login/login.wxml-->
+<view class="login">
+  <view class="logo">
+    <image class="logo_ico" src="/static/image/login/logo.png"></image>
+  </view>
+  <view class="text">
+    <text>一杯好茶，一口软欧包</text>
+    <text>在奈雪遇见两种美好</text>
+  </view>
+
+  <view class="login_btn">
+    <view class="btn_login" bindtap="login">
+      <image class="login_ico" src="/static/image/login/wechat.png"></image>
+      <text>微信一键登录</text>
+    </view>
+  </view>
+  <text class="text1">新用户登录即加入会员，享会员权益</text>
+  <view class="images">
+    <view class="image_text" wx:for="{{obj}}" wx:key="index">
+      <image src="{{item.url}}"></image>
+      <text >{{item.text}}</text>
+    </view>
+  </view>
+  <text class="text2">会员权益说明</text>
+</view>

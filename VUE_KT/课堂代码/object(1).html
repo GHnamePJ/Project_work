@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ES6中对象的方法</title>
+</head>
+<body>
+<script type="text/javascript">
+
+//  let product={productName:"",category:"",price:"",stock:""}
+
+//   product.productName='手机'
+
+//   product.category='数码电器'
+
+//   product.price=2300
+
+//   product.stock=50
+
+//   for(let i in product){
+//       console.log(i)
+//       console.log(product[i])
+
+//   }
+  // function product(price){
+  //   this.price = price
+  // }
+  //原型定义1
+  // product.prototype.name = 'lisi'
+  // product.prototype.stock = 50
+  //原型定义2
+  // product.prototype = {
+  //   name: 'lisi'
+  // }  
+  // let p1 = new product(20);
+  // console.log(p1.valueOf());
+
+  // let var1 = {}
+  // Object.assign()可以接收多个参数：第一个参数为目标对象，后边的参数为源对象；其作用是用来合并多个js对象：将多个源对象合并到目标对象上，如果出现同名的属性（方法）后合并的会覆盖掉之前合并的同名属性（方法）。
+  // 也就是后边的优先级更高一点。assign不会合并不可枚举的属性
+  // var1 = Object.assign({}, {name:'aaa',address:'bbb',isStudent: true})
+  // //alert('var1: ' + var1.name + ' ' + var1.isStudent)
+  // //遍历
+  // for(obj in var1){
+  //遍历对象中的每个属性
+  //   alert(obj)// alert(var1[obj]) //得到属性值
+  // }
+
+  // var obj = { foo: "bar", baz: 42 };
+  // var keys = Object.keys(obj)  // 返回对象属性数组["foo", "baz"]
+  // alert(keys[0])
+
+  //构造函数，原型
+  // function Person(name){
+  //   this.name = name
+  //   this.say = function(){
+  //     console.log(this.name + ' hello')
+  //   }
+  // }
+  // //原型上的变量和方法
+  // Person.prototype.level = 'middle'
+  // Person.prototype.print = function(){console.log(this.level + ' print info ' + Person.MAX)}
+  // Person.MAX = 100 //类常量
+
+  // var p = new Person('lisi')
+  // p.say()
+  // p.print()
+  // console.log(p.hasOwnProperty('name'))//检测对象自有属性
+  // console.log(Person.hasOwnProperty('MAX'))//检测对象原型自有属性
+
+
+  class Student {
+    constructor(name,id){
+      // 返回当前对象的构造器（类型函数）。利用该属性，可以检测复合类型数据的类型，如对象，数组和函数等。
+        this.name = name
+        this.id = id
+    }
+}
+
+let s = new Student('list', 1)
+console.log(s)
+
+</script>
+</body>
+</html>

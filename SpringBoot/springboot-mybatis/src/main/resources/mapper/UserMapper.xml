@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pj.springbootmybatis.mapper.UserXmlMapper">
+    <!--这里resultType="User"的User是在配置文件中给包设置了别名才可以直接写类名的   -->
+<!--    <select id="FindAll" resultType="User">-->
+<!--        select * from t_user-->
+<!--    </select>-->
+</mapper>

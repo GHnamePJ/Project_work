@@ -1,0 +1,58 @@
+2023-02-22 09:47:36,676 INFO Starting Nacos v1.4.1 on Pj with PID 13500 (E:\Project_work\nacos\target\nacos-server.jar started by iamat in E:\Project_work\nacos\bin)
+
+2023-02-22 09:47:36,676 INFO The following profiles are active: standalone
+
+2023-02-22 09:47:39,745 INFO Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@31be6b49' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+2023-02-22 09:47:39,761 INFO Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+2023-02-22 09:47:40,324 INFO Tomcat initialized with port(s): 8848 (http)
+
+2023-02-22 09:47:40,386 INFO Starting service [Tomcat]
+
+2023-02-22 09:47:40,386 INFO Starting Servlet engine: [Apache Tomcat/9.0.38]
+
+2023-02-22 09:47:40,730 INFO At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+
+2023-02-22 09:47:40,792 INFO Initializing Spring embedded WebApplicationContext
+
+2023-02-22 09:47:40,792 INFO Root WebApplicationContext: initialization completed in 4037 ms
+
+2023-02-22 09:47:41,324 INFO HikariPool-1 - Starting...
+
+2023-02-22 09:47:41,339 WARN Registered driver with driverClassName=org.apache.derby.jdbc.EmbeddedDriver was not found, trying direct instantiation.
+
+2023-02-22 09:47:41,683 INFO HikariPool-1 - Driver does not support get/set network timeout for connections. (Feature not implemented: No details.)
+
+2023-02-22 09:47:41,683 INFO HikariPool-1 - Start completed.
+
+2023-02-22 09:47:42,668 INFO Nacos-related cluster resource initialization
+
+2023-02-22 09:47:42,683 INFO The cluster resource is initialized
+
+2023-02-22 09:47:43,277 INFO Reflections took 47 ms to scan 1 urls, producing 4 keys and 6 values 
+
+2023-02-22 09:47:43,309 INFO Reflections took 0 ms to scan 1 urls, producing 6 keys and 26 values 
+
+2023-02-22 09:47:43,340 INFO Reflections took 16 ms to scan 1 urls, producing 3 keys and 15 values 
+
+2023-02-22 09:47:43,340 INFO Reflections took 0 ms to scan 1 urls, producing 2 keys and 12 values 
+
+2023-02-22 09:47:44,151 INFO Initializing ExecutorService 'applicationTaskExecutor'
+
+2023-02-22 09:47:44,323 INFO Adding welcome page: class path resource [static/index.html]
+
+2023-02-22 09:47:44,823 INFO Creating filter chain: Ant [pattern='/**'], []
+
+2023-02-22 09:47:44,870 INFO Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@72bd2871, org.springframework.security.web.context.SecurityContextPersistenceFilter@2cca611f, org.springframework.security.web.header.HeaderWriterFilter@47248a48, org.springframework.security.web.csrf.CsrfFilter@6ea246af, org.springframework.security.web.authentication.logout.LogoutFilter@25f61c2c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6fc0bbc6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ebe2e47, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77429040, org.springframework.security.web.session.SessionManagementFilter@628b819d, org.springframework.security.web.access.ExceptionTranslationFilter@7066363]
+
+2023-02-22 09:47:44,979 INFO Initializing ExecutorService 'taskScheduler'
+
+2023-02-22 09:47:45,010 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+
+2023-02-22 09:47:45,135 INFO Tomcat started on port(s): 8848 (http) with context path '/nacos'
+
+2023-02-22 09:47:45,135 INFO Started Nacos in 10.203 seconds (JVM running for 11.102)
+
+2023-02-22 09:47:45,135 INFO Nacos started successfully in stand alone mode. use embedded storage
+

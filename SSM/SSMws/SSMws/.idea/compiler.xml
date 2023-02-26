@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="MybatisByDao" />
+        <module name="MybatisByDynamicProxy" />
+        <module name="MybatisByDynamicProxySql" />
+        <module name="MybatisByDynamicProxyAnnoSql" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="MybatisByDAO" target="1.7" />
+      <module name="MybatisByDao" target="1.7" />
+      <module name="MybatisByDynamicProxy" target="1.7" />
+      <module name="MybatisByDynamicProxyAnnoSql" target="1.7" />
+      <module name="MybatisByDynamicProxySql" target="1.7" />
+      <module name="MybatisByMapper" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

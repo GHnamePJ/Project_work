@@ -1,0 +1,48 @@
+#biaoti{
+	font-size:30px;
+	color:coral;
+	text-align:center;
+}
+#gy1{
+	width:250px;
+	height:250px;
+	border-radius:15px;
+	position:absolute;
+	left: 600px;
+	top:230px;
+	box-shadow:gray 10px 10px 20px 2px;
+	transform:rotate(3deg);
+}
+#gy2{
+	width:250px;
+	height:250px;
+	/* 圆角 */
+	border-radius:15px;
+	/* 绝对定位 */
+	position:absolute;
+	left:350px;
+	top:350px;
+	/* 阴影 */
+	box-shadow:gray 10px 10px 20px 2px;
+	/* 旋转 */
+	transform:rotate(-5deg);
+}
+#gy3{
+	width:250px;
+	height:250px;
+	border-radius:15px;
+	position:absolute;
+	left:300px;
+	top:100px;
+	box-shadow:gray 10px 10px 20px 2px;
+	transform:rotate(5deg);
+}
+.onebox{
+	width:1200px;
+	height:550px;
+	background-color:skyblue;
+	/* 圆角 */
+	border-radius:20px;
+	/* 居中 */
+	margin:0 auto;
+}

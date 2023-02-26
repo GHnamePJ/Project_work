@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+		table{
+			width:1000px;
+			height:500px;
+		}
+		</style>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function createtable(rol,col){
+				document.write("<table border='1'>");
+				for(var i=1;i<=rol;i++){
+					document.write("<tr>");
+					for(var j=1;j<=col;j++){
+						document.write("<td>"+""+"</td>");
+					}
+					document.write("</tr>");
+				}
+				document.write("</table>");
+			}
+			createtable(5,6);
+		</script>
+	</body>
+</html>

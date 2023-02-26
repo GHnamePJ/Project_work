@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id="Student_bean" class="org.example.XML_demo.Student">
+            <property name="name" value="胖橘"/>
+            <property name="sex" value="女"/>
+            <constructor-arg name="address" value="广东轻工职业技术学院"/>
+        </bean>
+        <bean id="Use_bean" class="org.example.XML_demo.Use">
+            <property name="student" ref="Student_bean"/>
+        </bean>
+</beans>

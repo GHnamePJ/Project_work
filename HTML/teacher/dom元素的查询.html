@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.red{
+				color: red;
+			}
+			.yellow{
+				color: yellow;
+			}
+			.size{
+				font-size: 46px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d1" name='first' class="red yellow">div1</div>
+		<div id="d2" class="yellow">div2</div>
+		<p id="p1" name='first'>段落1</p>
+		<p id="para1" class="red" name="second">段落2</p>
+		<p id="p2" class="yellow">段落3</p>
+		<h1 id="head1" class="red ">标题1</h1>
+		<h1 id="h1" class="yellow " name="second">标题2</h1>
+		<h1 id="h2" class="red">标题3</h1>
+		<h2>二级标题</h2>
+		<script type="text/javascript">
+			//找到对应的element，通过id查找，得到唯一的一个元素
+			var div=document.getElementById('d1');
+			console.log(div);
+			//练习，通过id编号查找到 p1元素 和 head1
+			
+			//找到所有的标题h1标签,通过标签名称进行查找，得到一个collection，需要指出下标才能指定一个元素
+			
+			var allH1=document.getElementsByTagName('h1');
+			console.log(allH1);
+			console.log(allH1[1]);
+			//找到元素后，修改对应的属性,两个参数，一个属性 一个是属性值
+			allH1[1].setAttribute("class","yellow  size");
+			//根据name属性找到,属性值一致的元素都会被找到,访问具体某一个元素要指定下标
+			var firstAll=document.getElementsByName('first');
+			console.log(firstAll);
+			console.log(firstAll[1]);
+			firstAll[1].setAttribute('name','third');
+			
+			//通过class属性,属性值一致的元素都会被找到,访问具体某一个元素要指定下标
+			var yellowEl=document.getElementsByClassName('yellow');
+			console.log(yellowEl);
+			console.log(yellowEl[0]);
+			
+			//通过getAttribute('属性名称')，得到对应的属性值
+		console.log(	yellowEl[0].getAttribute('class') );
+			
+			//练习：1 查找标签名为p的所有元素  ，显示第二个元素     2 通过name=second  ，显示第二个元素  3通过class=red ，显示第二个元素
+			
+		</script>
+	</body>
+</html>

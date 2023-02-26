@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title><静态对象构造函数/title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		var computer=new Object();
+		computer.showstartup=function(){
+			document.write("正在开机......");
+		}
+		computer.showshutdown=function(){
+			document.write("正在关机......");
+		}
+		computer.showstartup();
+		computer.showshutdown();
+		</script>
+	</body>
+</html>

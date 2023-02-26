@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>橘子网店account</title>
+		<link type="text/css" rel="stylesheet" href="css/c18实训网页account.css">
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div class="mask_one">
+					<ul>
+						<li><a href="#"><span></span>info@example</a></li>
+						<li><a href="#"><span></span>0 462 261 61 61</a></li>
+						<li><a href="#"><span></span>Cteate an Account</a></li>
+						<li><a href="#"><span></span>Login</a></li>
+					</ul>
+				</div>
+				<div class="mask_two">
+					<div class="mask_two_text">
+						Amberegul
+					</div>
+					<div class="mask_b">
+						<ul>
+							<li><a href="#">$0.00(0 items)</a></li>
+							<li><a href="#"><span></span></a></li>
+							<li><a href="#">Empty Cart</a></li>
+						</ul>
+					</div>
+					<div class="mask_a">
+						<ul>
+							<li>
+								<a href="#">Home</a>
+								<div class="mask_a_one">Hone</div>
+							</li>
+							<li>
+								<a href="#">Page</a>
+								<div class="mask_a_one">Page</div>
+							</li>
+							<li>
+								<a href="#">Blog</a>
+								<div class="mask_a_one">Blog</div>
+							</li>
+							<li>
+								<a href="#">Products</a>
+								<ul>
+									<li>
+										<p>BEST SELLING</p>
+										<hr />
+										<p>
+											<a>Lorem lpsum</a>
+											<br />
+											<a>$.60.00</a>
+											<img src="实训images/pi.jpg" />
+										</p>
+			
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Contact</a>
+								<div class="mask_a_one">Contact</div>
+							</li>
+							<li>
+								<a href="#"><span></span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mask_two_text1">
+					<p>
+						<a>Home</a><span></span><a>Account</a>
+					</p>
+				</div>
+			</header>
+			
+			<div class="content">
+				<div class="one">
+					<p>ACCOUNT</p>
+					<img src="实训images/product.jpg"/>
+				</div>
+				<div class="two">
+					<p>REGISTERED CUDTOMERS</p>
+					<P>if you have an account with us,please log in.</P>
+					<p>Email Address</p>
+					<input />
+					<p>Password</p>
+					<input />
+					<p>Forgot Your Password?</p>
+					<input type="submit" value="LOGIN" />
+					<p>NEW CUSTOMERS</p>
+					<p>By creating an account with our store,you will be able to move through the checjout process faster,store multiple shipping addresses, view and track your orders in your account and more.</p>
+					<input type="submit" value="CREATEANACCOUNT"/>
+				</div>
+				<div class="three">
+						<div class="kuang">
+							<p>HAPPY SHOPPING</p>
+							<p>Lorem lpsum sit amet consectuer adipiscing elit sed diam </p>
+							<p>nonummy nibh euismod</p>
+						</div>
+						<img src="实训images/product2.jpg" >
+					
+				</div>
+			</div>
+			<hr/>
+			<footer>
+				<div class="footer_top">
+					<a>QUICK CONTACT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+					<a>TOP RATED PRODUCTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				</div>
+				<div class="footer_botton">
+					<div class="footer_botton_left">
+						<form action="#" method="get">
+							<input placeholder="ENTER YOUR NAME*" />
+							<input placeholder="ENTER YOUR EMALT*" />
+							<input placeholder="ENTER YOUR PHONE" />
+							<textarea placeholder="ENTER YOUR MESSAGE*"></textarea>
+							<br />
+							<input type="submit" value="SEND MESSAGE" id="ok" />
+						</form>
+					</div>
+					<div class="footer_botton_mid">
+						<div class="mid_a">
+							<li>
+								<a>Winter Combo Style</a>
+								<br />
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+								<br>
+								<a>$70.00</a><a>$40.00</a>
+							</li>
+							<li>
+								<div class="yuan">
+									<a>SALE</a>
+								</div>
+								<img src="实训images/f1.jpg" />
+							</li>
+						</div>
+					</div>
+					<div class="footer_botton_right">
+						<div class="right_top">
+							<img src="实训images/lo.png" />
+							<p>
+								<a>Amberegul Theme</a>
+								<a>Was designed for opencart
+									magento, woocommerce
+									and prestashop platforms.
+									It is based on Bootstrap.</a>
+							</p>
+						</div>
+						<div class="right_botton">
+							<li>Bandung Indonesia</li>
+							<li>40553</li>
+							<li><span></span>+62 226759804</li>
+							<li><span></span>blithemes</li>
+							<li><span></span>info@example.com</li>
+							<li><span></span>http://example.com</li>
+							<p><img src="实训images/pa.png" /></p>
+						</div>
+					</div>
+				</div>
+				<b>
+					<hr>
+				</b>
+				<p>Copyright 2015.Company name All rights reserved.</p>
+				
+				
+			</footer>
+		</div>
+		<script type="text/javascript">
+			//克隆脚部mid_a
+			var footer_botton_mid = document.getElementsByClassName("footer_botton_mid")[0];
+			var mid_a = footer_botton_mid.getElementsByClassName("mid_a")[0];
+			for (var i = 0; i < 2; i++) {
+				var mid_aclone = mid_a.cloneNode(true);
+				footer_botton_mid.appendChild(mid_aclone);
+				if (i == 0) {
+					var img = mid_aclone.childNodes[3].childNodes[3];
+					img.setAttribute("src", "实训images/f2.jpg")
+					
+				}
+				if (i == 1) {
+					var img = mid_aclone.childNodes[3].childNodes[3];
+					img.setAttribute("src", "实训images/f3.jpg")
+				}
+			}
+			//input获取焦点
+			var footer_botton_left=document.getElementsByClassName("footer_botton_left")[0];
+			var input1=footer_botton_left.childNodes[1].childNodes[1];
+			var input2=footer_botton_left.childNodes[1].childNodes[3];
+			var input3=footer_botton_left.childNodes[1].childNodes[5];
+			var textarea=footer_botton_left.childNodes[1].childNodes[7];
+			input1.onclick=function(){
+				input1.style.border="rgba(255,0,0) solid 2.5px";
+			}
+			input1.onblur=function(){
+				input1.style.border="";
+			}
+			input2.onclick=function(){
+				input2.style.border="rgba(255,0,0) solid 2.5px";
+			}
+			input2.onblur=function(){
+				input2.style.border="";
+			}
+			input3.onclick=function(){
+				input3.style.border="rgba(255,0,0) solid 2.5px";
+			}
+			input3.onblur=function(){
+				input3.style.border="";
+			}
+			textarea.onclick=function(){
+				textarea.style.border="rgba(255,0,0) solid 2.5px";
+			}
+			textarea.onblur=function(){
+				textarea.style.border="";
+			}
+			
+			
+			//克隆导航图片并修改
+			//左边
+			var mask_a=document.getElementsByClassName("mask_a")[0];
+			var product_li=mask_a.childNodes[1].childNodes[7].childNodes[3].childNodes[1];
+			var product_p=product_li.childNodes[5];
+			
+			for(var i=0;i<2;i++){
+				var product_pclone=product_p.cloneNode(true);
+				product_li.appendChild(product_pclone);
+				var text=product_pclone.childNodes[1];
+				var money=product_pclone.childNodes[5];
+				var product_img=product_pclone.childNodes[7];
+				if(i==0){
+					product_img.setAttribute("src","实训images/pi11.jpg");
+					text.innerText="Dummy Text";
+					money.innerText="$.160.00";
+				}
+				if(i==1){
+					product_img.setAttribute("src","实训images/pi12.jpg");
+					text.innerText="Standard Chunk";
+					money.innerText="$.80.00";
+				}
+			}
+			//右边
+			var product_ul=mask_a.childNodes[1].childNodes[7].childNodes[3];
+			var product_li2=product_li.cloneNode(true);
+			product_ul.appendChild(product_li2);
+			var product_li2=mask_a.childNodes[1].childNodes[7].childNodes[3].childNodes[3];
+			var product_biaoti=product_li2.childNodes[1];
+			product_biaoti.innerText="TOP RATE";
+			//1
+			var product_img1=product_li2.childNodes[5].childNodes[7];
+			product_img1.setAttribute("src","实训images/pi13.jpg");
+			var text1=product_li2.childNodes[5].childNodes[1];
+			text1.innerText="Perspiciatis Und";
+			var money1=product_li2.childNodes[5].childNodes[5];
+			money1.innerText="$.90.00";
+			//2
+			var product_img2=product_li2.childNodes[7].childNodes[7];
+			product_img2.setAttribute("src","实训images/pi.jpg");
+			var text2=product_li2.childNodes[7].childNodes[1];
+			text2.innerText="Veritatis Et";
+			var money2=product_li2.childNodes[7].childNodes[5];
+			money2.innerText="$.60.00";
+			//3
+			var product_img3=product_li2.childNodes[8].childNodes[7];
+			product_img3.setAttribute("src","实训images/pi11.jpg")
+			var text3=product_li2.childNodes[8].childNodes[1];
+			text3.innerText="Lorem lpsum";
+			var money3=product_li2.childNodes[8].childNodes[5];
+			money3.innerText="$.100.00";
+		</script>
+	</body>
+</html>

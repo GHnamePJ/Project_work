@@ -1,0 +1,11 @@
+/* components/goback/goback.wxss */
+@import "/style/iconcss.wxss";
+.nav-bar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.nav-bar .menu {
+  padding-left: 20%;
+}

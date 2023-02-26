@@ -1,0 +1,368 @@
+/* pages/login/login.wxss */
+@import "/style/iconcss.wxss";
+
+.login-all {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* filter:  drop-shadow(0px 10px 10px rgba(224, 215, 215, 0.5)); */
+  background: url('https://gd-hbimg.huaban.com/7011561f0e54199e4777a83f6d7a0eeea3eff64bb4fea-StikDW_fw240webp') no-repeat;
+    /* background-size: cover; */
+}
+
+/* .login-all::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -999;
+  filter: blur(1rpx);
+  border-radius: 50rpx 15rpx 0rpx 50rpx;
+  background: url('https://gd-hbimg.huaban.com/7011561f0e54199e4777a83f6d7a0eeea3eff64bb4fea-StikDW_fw240webp') no-repeat center fixed;
+  background-size: cover;
+}
+.login-all::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -999;
+  border-radius: 50rpx 15rpx 0rpx 50rpx;
+  background-color: rgba(255, 255, 255, 0.72);
+} */
+
+/* 上 */
+.loginTitle {
+  flex: 1;
+}
+
+.loginTitle .title {
+  padding: 50rpx;
+  font-size: 100rpx;
+}
+
+.loginForm {
+  width: 100%;
+  flex:3.5;
+  /* background-color: rgb(204, 239, 254); */
+  display: flex;
+  flex-direction: row;
+}
+
+.loginForm-top {
+  flex: 1;
+  /* background-color: rgb(212, 155, 69); */
+}
+
+.loginForm-buttom {
+  width: 100%;
+  height: 100%;
+  flex: 20;
+  background-color: rgba(255, 255, 255,1);
+  border-radius: 50rpx 15rpx 0rpx 50rpx;
+  box-shadow: 0 14rpx 40rpx 20rpx rgba(0, 0, 0, 0.3);
+  filter:  drop-shadow(0px 20px 10px rgba(161, 113, 113, 0.5));
+  display: flex;
+  flex-direction: column;
+}
+.loginForm-buttom::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -999;
+  filter: blur(7rpx);
+  border-radius: 50rpx 15rpx 0rpx 50rpx;
+  background: url('https://gd-hbimg.huaban.com/7011561f0e54199e4777a83f6d7a0eeea3eff64bb4fea-StikDW_fw240webp') no-repeat center fixed;
+  background-size: cover;
+}
+.loginForm-buttom::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -999;
+  border-radius: 50rpx 15rpx 0rpx 50rpx;
+  background-color: rgba(255, 255, 255, 0.72);
+}
+
+
+
+#loginforms {
+  width: 100%;
+  height: 100%;
+}
+
+#registerforms {
+  width: 100%;
+  height: 100%;
+}
+
+/* title 登录 */
+.loginstitle {
+  width: 100%;
+  height: 15%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 60rpx;
+  font-family: "幼圆";
+  /* background-color: rosybrown; */
+}
+
+/* 表单模块 */
+.login-content {
+  width: 100%;
+  height: 65%;
+  /* background-color: rgb(191, 195, 207); */
+}
+
+/* 表单 */
+.login-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: space-evenly;
+
+}
+
+/* 用户名 */
+.login-userName {
+  width: 80%;
+  height: 23%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 80rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.7);
+}
+
+.userName {
+  display: flex;
+  
+  font-size: 30rpx;
+}
+
+/* 密码 */
+.password {
+  display: flex;
+  font-size: 30rpx;
+}
+
+.login-password {
+  width: 80%;
+  height: 23%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.7);
+}
+
+/* 输入框 */
+.input {
+  display: table-cell;
+  font-size: 50rpx;
+}
+
+/* 忘记密码 */
+.login-no-password {
+  display: flex;
+  justify-content: left;
+  padding-left: 10%;
+  margin-bottom: 60rpx;
+}
+
+/* 登录按钮 */
+.btn-area {
+  width: 100%;
+  height: 20%;
+  margin: auto;
+}
+
+.login-btn {
+  width: 100%;
+  color: white;
+  background-color: rgb(57, 99, 188);
+}
+
+/* 注册切换 */
+.login-register {
+  width: 100%;
+  height: 15%;
+  padding-top: 30rpx;
+  /* background-color: bisque; */
+  display: flex;
+  justify-content: space-around;
+  font-family: "幼圆";
+}
+
+/* 注册title */
+.registerstitle {
+  width: 40%;
+  height: 40%;
+  font-size: 50rpx;
+  color: black;
+}
+
+.toregister {
+  width: 10%;
+  height: 40%;
+  font-size: 50rpx;
+}
+
+.navigator-hover {
+  color: white;
+  background-color: white;
+}
+
+/* 隐藏样式 */
+.loginforms {
+  display: none;
+}
+
+
+/* 注册表单 */
+
+/* title 登录 */
+.register {
+  width: 100%;
+  height: 15%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 60rpx;
+  font-family: "幼圆";
+  /* background-color: rosybrown; */
+}
+
+/* 表单模块 */
+.register-content {
+  width: 100%;
+  height: 65%;
+  /* background-color: rgb(191, 195, 207); */
+}
+
+/* 表单 */
+.register-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+
+}
+
+/* 用户名 */
+.register-userName {
+  width: 80%;
+  height: 20%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 50rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.7);
+}
+
+.userName {
+  display: flex;
+  font-size: 30rpx;
+}
+
+/* 密码 */
+.password {
+  display: flex;
+  font-size: 30rpx;
+}
+
+.register-password {
+  width: 80%;
+  height: 20%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 50rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.7);
+}
+
+/* 输入框 */
+.input {
+  display: table-cell;
+  font-size: 50rpx;
+}
+
+/* 确认密码 */
+.register-true-password {
+  width: 80%;
+  height: 20%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 50rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.7);
+}
+
+/* 登录按钮 */
+.btn-area {
+  width: 100%;
+  margin: auto;
+}
+
+.register-btn {
+  width: 100%;
+  color: white;
+  background-color: rgb(57, 99, 188);
+}
+
+/* 注册切换 */
+.login-login {
+  width: 100%;
+  height: 15%;
+  padding-top: 30rpx;
+  /* background-color: bisque; */
+  display: flex;
+  justify-content: space-around;
+  font-family: "幼圆";
+}
+
+/* 注册title */
+.login {
+  width: 40%;
+  height: 40%;
+  font-size: 50rpx;
+  color: black;
+}
+
+.tologin {
+  width: 10%;
+  height: 40%;
+  font-size: 50rpx;
+}
+
+
+
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				margin: 0;
+			}
+			#container{
+				width:800px;
+				/*辅助线*/
+				/*height: 800px;
+				background:lightcyan;*/
+				/*板块剧中				 */
+				margin: auto;
+				
+				
+			}
+			header{
+				height:74px ;
+				background:lightcoral;
+			}
+			
+			#content{
+				height: 650px;
+				background: lightpink;
+			}
+			
+			#banner{
+				height: 206px;
+				background: lightpink no-repeat center;
+			}
+			#main{
+				/*height:444px ;
+				background: lightgray;*/
+			}
+			#left{
+				width:270px;
+				background:lightsalmon;
+				height: 444px;
+				float: left;
+				/*元素在横向空间增加了30px*/
+				padding:15px;
+			}
+			#right{
+				width:500px;
+				height: 444px;
+				background: lightblue;
+				float: left;
+			}
+			 footer{
+				height: 80px;
+				background:lightgoldenrodyellow;
+			}
+			
+			/*无序列表构造导航条*/
+			header>nav{
+				float: right;
+				margin-right: 20px;
+				margin-top:15px;
+			}
+			ul{
+				list-style: none;
+				
+			}
+			ul li{
+				width:80px;
+				float: left;
+				margin: 0 10px;
+			}
+			ul>li>a{
+			 color: #333;
+			 text-decoration: none;
+			 font-weight: bold;/* 加粗 */
+			 display:block;/* 方框大小 */
+				width:80px;
+				height: 30px;
+				background: lightpink;/* 背景色 */
+				/*文本横向剧中*/
+				text-align: center;
+				/*文本纵向居中，文本居中常用的方法*/
+				line-height: 30px;
+			}
+			ul>li>a:hover{/*a元素是in-line元素，宽度与内容同宽，如果想改变他的大小*/
+				background:lightcyan;
+			}
+			ul>li>a:active{
+				color: orange;
+			}
+			/* ul>a 下一层   ul a包含关系,不仅是下一层 还包含下面第二层 第三层... */
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<header>
+				<nav>
+					<ul><a href=""></a>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">博客</a></li>
+						<li><a href="#">相册</a></li>
+						<li><a href="#">留言</a></li>
+					</ul>
+				</nav>
+			</header>
+			<div id="content">
+				<div id="banner">
+					
+				</div>
+				<div id="main">
+					<div id="left">
+						段落文本
+					</div>
+					<div id="right">
+						
+					</div>
+					
+				</div>
+				<!--清空浮动-->
+				<div style="clear:left;"></div>
+			</div>
+			<footer>
+				
+			</footer>
+		</div>
+	</body>
+</html>

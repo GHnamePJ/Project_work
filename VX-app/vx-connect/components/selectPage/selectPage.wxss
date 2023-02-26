@@ -1,0 +1,60 @@
+/* components/select/select.wxss */
+.com-selectBox{
+  width: 70px;
+  /* background-color: rgb(241, 241, 229); */
+}
+.com-sContent{
+  border: 1px solid #597dc9;
+  border-radius: 6px;
+  background: rgb(218, 245, 255，0.5);
+  font-size: 16px;
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+}
+/* 图片 */
+.com-sImg{
+  position: absolute;
+  right: 6px;
+  top: 11px;
+  width: 18px;
+  height: 12px;
+  transition: all .3s ease;
+}
+.com-sTxt{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding:0 20px 0 6px;
+  font-size: 14px;
+  text-align:left;
+}
+.com-sList{
+  background: white;
+  width: inherit;
+  position: absolute;
+  /* 下拉框距离显示框的距离 */
+  bottom: 7px;
+  border: 1px solid #597dc9;
+  border-radius: 6px;
+  /* border-top: none; */
+  /* border-bottom: none; */
+  box-sizing: border-box;
+  z-index: 3;
+  max-height: 120px;
+  overflow: auto;
+}
+.com-sItem{
+  height: 30px;
+  line-height: 30px;
+  border-top: 1px solid #e2e2e2;
+  padding: 0 6px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+}
+.com-sItem:first-child{
+  border-top: none;
+}

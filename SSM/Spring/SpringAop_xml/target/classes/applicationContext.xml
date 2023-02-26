@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--目标类-->
+    <bean id="SpeechImpl_bean" class="org.example.SpeechImpl"/>
+    <bean id="ConcertImpl_bean" class="org.example.ConcertImpl"/>
+    <!--切面类-->
+    <bean id="BeforeAspectAdvice_bean" class="org.example.BeforeAspectAdvice"/>
+    <bean id="AfterAspectAdvice_bean" class="org.example.AfterAspectAdvice"/>
+    <bean id="WrapAspectAdvice_bean" class="org.example.WrapAspectAdvice"/>
+    <!--Spring框架自带的代理-->
+    <!--之前-->
+    <bean id="ISpeech_proxy_bean1" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces" value="org.example.ISpeech"/>
+        <property name="target" ref="SpeechImpl_bean"/>
+        <property name="interceptorNames" value="BeforeAspectAdvice_bean"/>
+    </bean>
+    <!--之后-->
+    <bean id="ISpeech_proxy_bean2" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces" value="org.example.ISpeech"/>
+        <property name="target" ref="SpeechImpl_bean"/>
+        <property name="interceptorNames" value="AfterAspectAdvice_bean"/>
+    </bean>
+    <!--环绕-->
+    <bean id="IConcert_proxy_bean" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces" value="org.example.IConcert"/>
+        <property name="target" ref="ConcertImpl_bean"/>
+        <property name="interceptorNames" value="WrapAspectAdvice_bean"/>
+    </bean>
+</beans>

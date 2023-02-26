@@ -1,0 +1,68 @@
+<!--pages/buy/buy.wxml-->
+<view class="container">
+  <view class="content">
+    <!-- one -->
+    <view class="content_one">
+      <image src="{{src}}"></image>
+    </view>
+    <!-- two -->
+    <view class="content_two">
+      <view class="two_top">
+        <text>{{name}}</text>
+        <text>购买记录</text>
+      </view>
+      <view class="two_bottom">
+        <text>共{{num}}张优惠券</text>
+      </view>
+    </view>
+    <!-- three -->
+    <view class="content_three">
+      <view class="quan" wx:for="{{quan}}" wx:key="index">
+        <view class="quan_top">
+          <image src="https://img-shop.qmimg.cn/s23107/2019/10/09/ea5b8ed493c0cc310d.jpg" mode="widthFix"></image>
+          <view class="top_right">
+            <view>x {{item.num}}</view>
+            <view>{{item.text}}</view>
+            <view>领券当日开始90天内有效</view>
+          </view>
+        </view>
+        <view class="quan_bottom">
+          <view class="bottom_left">
+            使用时段： 00:00:00-23:59:59
+          </view>
+          <view class="bottom_right">
+            查看详情
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- four -->
+    <view class="content_four">
+      <view class="four_bottom">
+        {{money}}购买
+      </view>
+    </view>
+    <!-- five -->
+    <view class="content_five">
+      <view class="five_one">
+        购买须知
+      </view>
+      <view class="five_two">
+        <view>售卖时间：2020-03-30~2020-05-15</view>
+        <view>购买限制：无限制</view>
+      </view>
+      <view class="five_three">
+          <view>【基本规则】</view>
+          <view>1、成功购买后，优惠券可在奈雪点单小程序内使用或线下门店出示会员码使用。</view>
+          <view>2、优惠券规则以优惠券使用详情为准。</view>
+          <view>3、单笔订单仅限使用一张优惠券，且不与其他活动共享。</view>
+          <view>4、用户购买券包使用的手机号需和小程序登录的会员手机号保持一致。</view>
+          <view>5、如逾期未使用优惠券，优惠券将自动失效，请在有效期内使用。</view>
+          <view>【注意】</view>
+          <view> 1、奈雪会员卡包为奈雪的茶公开售卖的一种付费卡包，成功购买，不可转赠、不可退换、不可兑换现金。</view>
+          <view>2、此券包有效期90天。</view>
+          <view></view>
+      </view>
+    </view>
+  </view>
+</view>
