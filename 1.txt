@@ -1,2 +1,1 @@
-hi，mastr！
-hi,cc
+master
